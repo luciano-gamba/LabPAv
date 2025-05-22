@@ -1,0 +1,11 @@
+#include "VENDEDOR.h"
+
+VENDEDOR::VENDEDOR() {
+}
+
+VENDEDOR::VENDEDOR(const VENDEDOR& orig) {
+}
+
+VENDEDOR::~VENDEDOR() {
+}
+
