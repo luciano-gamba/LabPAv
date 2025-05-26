@@ -1,0 +1,11 @@
+#include "PRODUCTO.h"
+
+PRODUCTO::PRODUCTO() {
+}
+
+PRODUCTO::PRODUCTO(const PRODUCTO& orig) {
+}
+
+PRODUCTO::~PRODUCTO() {
+}
+

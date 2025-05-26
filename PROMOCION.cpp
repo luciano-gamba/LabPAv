@@ -1,0 +1,11 @@
+#include "PROMOCION.h"
+
+PROMOCION::PROMOCION() {
+}
+
+PROMOCION::PROMOCION(const PROMOCION& orig) {
+}
+
+PROMOCION::~PROMOCION() {
+}
+

@@ -36,11 +36,18 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/CLIENTE.o \
+	${OBJECTDIR}/COMENTARIO.o \
+	${OBJECTDIR}/COMPRA.o \
 	${OBJECTDIR}/DataDireccion.o \
+	${OBJECTDIR}/DataProducto.o \
+	${OBJECTDIR}/PRODUCTO.o \
+	${OBJECTDIR}/PROMOCION.o \
 	${OBJECTDIR}/USUARIO.o \
 	${OBJECTDIR}/VENDEDOR.o \
+	${OBJECTDIR}/compra_producto.o \
 	${OBJECTDIR}/date.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/promocion_producto.o
 
 
 # C Compiler Flags
@@ -72,10 +79,35 @@ ${OBJECTDIR}/CLIENTE.o: CLIENTE.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CLIENTE.o CLIENTE.cpp
 
+${OBJECTDIR}/COMENTARIO.o: COMENTARIO.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/COMENTARIO.o COMENTARIO.cpp
+
+${OBJECTDIR}/COMPRA.o: COMPRA.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/COMPRA.o COMPRA.cpp
+
 ${OBJECTDIR}/DataDireccion.o: DataDireccion.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataDireccion.o DataDireccion.cpp
+
+${OBJECTDIR}/DataProducto.o: DataProducto.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataProducto.o DataProducto.cpp
+
+${OBJECTDIR}/PRODUCTO.o: PRODUCTO.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PRODUCTO.o PRODUCTO.cpp
+
+${OBJECTDIR}/PROMOCION.o: PROMOCION.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PROMOCION.o PROMOCION.cpp
 
 ${OBJECTDIR}/USUARIO.o: USUARIO.cpp
 	${MKDIR} -p ${OBJECTDIR}
@@ -87,6 +119,11 @@ ${OBJECTDIR}/VENDEDOR.o: VENDEDOR.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VENDEDOR.o VENDEDOR.cpp
 
+${OBJECTDIR}/compra_producto.o: compra_producto.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/compra_producto.o compra_producto.cpp
+
 ${OBJECTDIR}/date.o: date.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -96,6 +133,11 @@ ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/promocion_producto.o: promocion_producto.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/promocion_producto.o promocion_producto.cpp
 
 # Subprojects
 .build-subprojects:

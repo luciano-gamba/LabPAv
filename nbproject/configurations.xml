@@ -5,10 +5,17 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>CLIENTE.h</itemPath>
+      <itemPath>COMENTARIO.h</itemPath>
+      <itemPath>COMPRA.h</itemPath>
       <itemPath>DataDireccion.h</itemPath>
+      <itemPath>DataProducto.h</itemPath>
+      <itemPath>PRODUCTO.h</itemPath>
+      <itemPath>PROMOCION.h</itemPath>
       <itemPath>USUARIO.h</itemPath>
       <itemPath>VENDEDOR.h</itemPath>
+      <itemPath>compra_producto.h</itemPath>
       <itemPath>date.h</itemPath>
+      <itemPath>promocion_producto.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -18,11 +25,18 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>CLIENTE.cpp</itemPath>
+      <itemPath>COMENTARIO.cpp</itemPath>
+      <itemPath>COMPRA.cpp</itemPath>
       <itemPath>DataDireccion.cpp</itemPath>
+      <itemPath>DataProducto.cpp</itemPath>
+      <itemPath>PRODUCTO.cpp</itemPath>
+      <itemPath>PROMOCION.cpp</itemPath>
       <itemPath>USUARIO.cpp</itemPath>
       <itemPath>VENDEDOR.cpp</itemPath>
+      <itemPath>compra_producto.cpp</itemPath>
       <itemPath>date.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
+      <itemPath>promocion_producto.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -50,9 +64,29 @@
       </item>
       <item path="CLIENTE.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="COMENTARIO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="COMENTARIO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="COMPRA.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="COMPRA.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="DataDireccion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataDireccion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataProducto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataProducto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PRODUCTO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PRODUCTO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PROMOCION.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PROMOCION.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="USUARIO.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -62,11 +96,19 @@
       </item>
       <item path="VENDEDOR.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="compra_producto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="compra_producto.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="date.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="date.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="promocion_producto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="promocion_producto.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -93,9 +135,29 @@
       </item>
       <item path="CLIENTE.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="COMENTARIO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="COMENTARIO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="COMPRA.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="COMPRA.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="DataDireccion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataDireccion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataProducto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataProducto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PRODUCTO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PRODUCTO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PROMOCION.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PROMOCION.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="USUARIO.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -105,11 +167,19 @@
       </item>
       <item path="VENDEDOR.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="compra_producto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="compra_producto.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="date.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="date.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="promocion_producto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="promocion_producto.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
