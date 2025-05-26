@@ -7,7 +7,9 @@
       <itemPath>CLIENTE.h</itemPath>
       <itemPath>COMENTARIO.h</itemPath>
       <itemPath>COMPRA.h</itemPath>
+      <itemPath>DataComentario.h</itemPath>
       <itemPath>DataDireccion.h</itemPath>
+      <itemPath>DataProd.h</itemPath>
       <itemPath>DataProducto.h</itemPath>
       <itemPath>PRODUCTO.h</itemPath>
       <itemPath>PROMOCION.h</itemPath>
@@ -27,7 +29,9 @@
       <itemPath>CLIENTE.cpp</itemPath>
       <itemPath>COMENTARIO.cpp</itemPath>
       <itemPath>COMPRA.cpp</itemPath>
+      <itemPath>DataComentario.cpp</itemPath>
       <itemPath>DataDireccion.cpp</itemPath>
+      <itemPath>DataProd.cpp</itemPath>
       <itemPath>DataProducto.cpp</itemPath>
       <itemPath>PRODUCTO.cpp</itemPath>
       <itemPath>PROMOCION.cpp</itemPath>
@@ -72,9 +76,17 @@
       </item>
       <item path="COMPRA.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="DataComentario.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataComentario.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="DataDireccion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataDireccion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataProd.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataProd.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="DataProducto.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -143,9 +155,17 @@
       </item>
       <item path="COMPRA.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="DataComentario.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataComentario.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="DataDireccion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataDireccion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataProd.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataProd.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="DataProducto.cpp" ex="false" tool="1" flavor2="0">
       </item>

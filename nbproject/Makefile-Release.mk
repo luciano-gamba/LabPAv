@@ -38,7 +38,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/CLIENTE.o \
 	${OBJECTDIR}/COMENTARIO.o \
 	${OBJECTDIR}/COMPRA.o \
+	${OBJECTDIR}/DataComentario.o \
 	${OBJECTDIR}/DataDireccion.o \
+	${OBJECTDIR}/DataProd.o \
 	${OBJECTDIR}/DataProducto.o \
 	${OBJECTDIR}/PRODUCTO.o \
 	${OBJECTDIR}/PROMOCION.o \
@@ -89,10 +91,20 @@ ${OBJECTDIR}/COMPRA.o: COMPRA.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/COMPRA.o COMPRA.cpp
 
+${OBJECTDIR}/DataComentario.o: DataComentario.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataComentario.o DataComentario.cpp
+
 ${OBJECTDIR}/DataDireccion.o: DataDireccion.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataDireccion.o DataDireccion.cpp
+
+${OBJECTDIR}/DataProd.o: DataProd.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataProd.o DataProd.cpp
 
 ${OBJECTDIR}/DataProducto.o: DataProducto.cpp
 	${MKDIR} -p ${OBJECTDIR}
