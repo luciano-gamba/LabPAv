@@ -1,5 +1,6 @@
 #ifndef DATAPROD_H
 #define DATAPROD_H
+#include <string>
 
 class DataProd {
 public:

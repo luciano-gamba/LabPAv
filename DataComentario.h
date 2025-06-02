@@ -1,6 +1,6 @@
 #ifndef DATACOMENTARIO_H
 #define DATACOMENTARIO_H
-#include <string.h>
+#include <string>
 #include "date.h"
 
 class DataComentario {

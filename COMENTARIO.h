@@ -1,6 +1,6 @@
 #ifndef COMENTARIO_H
 #define COMENTARIO_H
-#include <string.h>
+#include <string>
 #include "date.h"
 
 class COMENTARIO {

@@ -1,6 +1,6 @@
 #ifndef DATAPRODUCTO_H
 #define DATAPRODUCTO_H
-#include <string.h>
+#include <string>
 
 class DataProducto {
 public:
