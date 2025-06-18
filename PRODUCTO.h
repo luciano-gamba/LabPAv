@@ -7,6 +7,11 @@ public:
     PRODUCTO();
     PRODUCTO(const PRODUCTO& orig);
     virtual ~PRODUCTO();
+    int getCodigo(); 
+    int getStock();
+    float getPrecio();
+    std::string getNombre();
+    std::string getDescripcion();
 private:
     int codigo;
     int stock;
