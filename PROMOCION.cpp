@@ -1,6 +1,12 @@
 #include "PROMOCION.h"
 
-set<string> Controlador::solicitarListaPromociones(){
+void PROMOCION::obtenerFechaSistema(){
+    time_t ya = time(NULL);
+    date d = date(localtime(&ya)->tm_mday,localtime(&ya)->tm_mon+1,localtime(&ya)->tm_year+1900);
+    this->fechaSis = d;
+}
+
+set<string> PROMOCION::solicitarListaPromociones(){
     set<string> promocionesActivas;
     date fechaSistema = obtenerFechaSistema(); //despues se hara esta funcion
 

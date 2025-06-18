@@ -9,10 +9,13 @@ public:
     PROMOCION();
     PROMOCION(const PROMOCION& orig);
     virtual ~PROMOCION();
+    void obtenerFechaSistema();
+    
 private:
     std::string nombrePromo;
     std::string descripcionPromo;
     date fechaVen;
+    date fechaSis;
 };
 
 #endif /* PROMOCION_H */
