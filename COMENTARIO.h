@@ -1,16 +1,29 @@
 #ifndef COMENTARIO_H
 #define COMENTARIO_H
 #include <string>
+#include <ctime>
 #include "date.h"
+using namespace std;
+
 
 class COMENTARIO {
 public:
     COMENTARIO();
-    COMENTARIO(const COMENTARIO& orig);
-    virtual ~COMENTARIO();
+    ~COMENTARIO();
+   
+    void setCodComent(int n);
+    void setTexto(string t);
+    void setFechaCom();
+    
+    int getCodComent();
+    string getTexto();
+    date getFechaCom();
+    
+    string getInfoComentario();
+    
 private:
     int codComent;
-    std::string texto;
+    string texto;
     date fechaCom;
 };
 

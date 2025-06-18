@@ -2,15 +2,19 @@
 #define USUARIO_H
 #include <string>
 #include "date.h"
+using namespace std;
 
 class USUARIO {
 public:
     USUARIO();
-    USUARIO(const USUARIO& orig);
     virtual ~USUARIO();
+    
+    string getNickname();
+    
+    
 private:
-    std::string nickname;
-    std::string contrasenia;
+    string nickname;
+    string contrasenia;
     date fechaNac;
 };
 
