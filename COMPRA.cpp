@@ -1,6 +1,13 @@
 #include "COMPRA.h"
 
-void compra::agregarProducto(codigoProd string, cant int) {
+COMPRA::COMPRA() {
+}
+
+COMPRA::~COMPRA() {
+}
+
+
+void COMPRA::agregarProducto(codigoProd string, cant int) {
     iterator* it = this->misProductos->getIterator();
     producto* p;
     bool encontrado = false;
@@ -27,11 +34,5 @@ DataCompra* Controlador::mostrarDetalleCompra(){
     
     DataCompra* detalle = new DataCompra(fechaC,montoC,c);
     return detalle;
-}
-
-COMPRA::COMPRA(const COMPRA& orig) {
-}
-
-COMPRA::~COMPRA() {
 }
 

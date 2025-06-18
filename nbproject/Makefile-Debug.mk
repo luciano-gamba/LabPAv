@@ -93,147 +93,147 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/utecmercadosuelto: ${OBJECTFILES}
 ${OBJECTDIR}/_ext/a0b48249/Integer.o: ../../Escritorio/ICollection/Integer.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/a0b48249
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/a0b48249/Integer.o ../../Escritorio/ICollection/Integer.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/a0b48249/Integer.o ../../Escritorio/ICollection/Integer.cpp
 
 ${OBJECTDIR}/_ext/a0b48249/String.o: ../../Escritorio/ICollection/String.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/a0b48249
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/a0b48249/String.o ../../Escritorio/ICollection/String.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/a0b48249/String.o ../../Escritorio/ICollection/String.cpp
 
 ${OBJECTDIR}/_ext/977bdecf/List.o: ../../Escritorio/ICollection/collections/List.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/977bdecf
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/977bdecf/List.o ../../Escritorio/ICollection/collections/List.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/977bdecf/List.o ../../Escritorio/ICollection/collections/List.cpp
 
 ${OBJECTDIR}/_ext/977bdecf/ListIterator.o: ../../Escritorio/ICollection/collections/ListIterator.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/977bdecf
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/977bdecf/ListIterator.o ../../Escritorio/ICollection/collections/ListIterator.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/977bdecf/ListIterator.o ../../Escritorio/ICollection/collections/ListIterator.cpp
 
 ${OBJECTDIR}/_ext/977bdecf/ListNode.o: ../../Escritorio/ICollection/collections/ListNode.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/977bdecf
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/977bdecf/ListNode.o ../../Escritorio/ICollection/collections/ListNode.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/977bdecf/ListNode.o ../../Escritorio/ICollection/collections/ListNode.cpp
 
 ${OBJECTDIR}/_ext/977bdecf/OrderedDictionary.o: ../../Escritorio/ICollection/collections/OrderedDictionary.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/977bdecf
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/977bdecf/OrderedDictionary.o ../../Escritorio/ICollection/collections/OrderedDictionary.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/977bdecf/OrderedDictionary.o ../../Escritorio/ICollection/collections/OrderedDictionary.cpp
 
 ${OBJECTDIR}/_ext/977bdecf/OrderedDictionaryEntry.o: ../../Escritorio/ICollection/collections/OrderedDictionaryEntry.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/977bdecf
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/977bdecf/OrderedDictionaryEntry.o ../../Escritorio/ICollection/collections/OrderedDictionaryEntry.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/977bdecf/OrderedDictionaryEntry.o ../../Escritorio/ICollection/collections/OrderedDictionaryEntry.cpp
 
 ${OBJECTDIR}/_ext/52371e0/ICollectible.o: ../../Escritorio/ICollection/interfaces/ICollectible.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/52371e0
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/52371e0/ICollectible.o ../../Escritorio/ICollection/interfaces/ICollectible.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/52371e0/ICollectible.o ../../Escritorio/ICollection/interfaces/ICollectible.cpp
 
 ${OBJECTDIR}/_ext/52371e0/ICollection.o: ../../Escritorio/ICollection/interfaces/ICollection.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/52371e0
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/52371e0/ICollection.o ../../Escritorio/ICollection/interfaces/ICollection.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/52371e0/ICollection.o ../../Escritorio/ICollection/interfaces/ICollection.cpp
 
 ${OBJECTDIR}/_ext/52371e0/IDictionary.o: ../../Escritorio/ICollection/interfaces/IDictionary.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/52371e0
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/52371e0/IDictionary.o ../../Escritorio/ICollection/interfaces/IDictionary.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/52371e0/IDictionary.o ../../Escritorio/ICollection/interfaces/IDictionary.cpp
 
 ${OBJECTDIR}/_ext/52371e0/IIterator.o: ../../Escritorio/ICollection/interfaces/IIterator.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/52371e0
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/52371e0/IIterator.o ../../Escritorio/ICollection/interfaces/IIterator.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/52371e0/IIterator.o ../../Escritorio/ICollection/interfaces/IIterator.cpp
 
 ${OBJECTDIR}/_ext/52371e0/IKey.o: ../../Escritorio/ICollection/interfaces/IKey.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/52371e0
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/52371e0/IKey.o ../../Escritorio/ICollection/interfaces/IKey.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/52371e0/IKey.o ../../Escritorio/ICollection/interfaces/IKey.cpp
 
 ${OBJECTDIR}/_ext/52371e0/OrderedKey.o: ../../Escritorio/ICollection/interfaces/OrderedKey.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/52371e0
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/52371e0/OrderedKey.o ../../Escritorio/ICollection/interfaces/OrderedKey.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/52371e0/OrderedKey.o ../../Escritorio/ICollection/interfaces/OrderedKey.cpp
 
 ${OBJECTDIR}/CLIENTE.o: CLIENTE.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CLIENTE.o CLIENTE.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CLIENTE.o CLIENTE.cpp
 
 ${OBJECTDIR}/COMENTARIO.o: COMENTARIO.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/COMENTARIO.o COMENTARIO.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/COMENTARIO.o COMENTARIO.cpp
 
 ${OBJECTDIR}/COMPRA.o: COMPRA.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/COMPRA.o COMPRA.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/COMPRA.o COMPRA.cpp
 
 ${OBJECTDIR}/CONTROLADOR.o: CONTROLADOR.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CONTROLADOR.o CONTROLADOR.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CONTROLADOR.o CONTROLADOR.cpp
 
 ${OBJECTDIR}/DataDireccion.o: DataDireccion.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataDireccion.o DataDireccion.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataDireccion.o DataDireccion.cpp
 
 ${OBJECTDIR}/DataProd.o: DataProd.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataProd.o DataProd.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataProd.o DataProd.cpp
 
 ${OBJECTDIR}/DataProducto.o: DataProducto.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataProducto.o DataProducto.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataProducto.o DataProducto.cpp
 
 ${OBJECTDIR}/ICONTROLADOR.o: ICONTROLADOR.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ICONTROLADOR.o ICONTROLADOR.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ICONTROLADOR.o ICONTROLADOR.cpp
 
 ${OBJECTDIR}/PRODUCTO.o: PRODUCTO.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PRODUCTO.o PRODUCTO.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PRODUCTO.o PRODUCTO.cpp
 
 ${OBJECTDIR}/PROMOCION.o: PROMOCION.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PROMOCION.o PROMOCION.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PROMOCION.o PROMOCION.cpp
 
 ${OBJECTDIR}/USUARIO.o: USUARIO.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/USUARIO.o USUARIO.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/USUARIO.o USUARIO.cpp
 
 ${OBJECTDIR}/VENDEDOR.o: VENDEDOR.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VENDEDOR.o VENDEDOR.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VENDEDOR.o VENDEDOR.cpp
 
 ${OBJECTDIR}/compra_producto.o: compra_producto.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/compra_producto.o compra_producto.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/compra_producto.o compra_producto.cpp
 
 ${OBJECTDIR}/date.o: date.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/date.o date.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/date.o date.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 ${OBJECTDIR}/promocion_producto.o: promocion_producto.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/promocion_producto.o promocion_producto.cpp
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/promocion_producto.o promocion_producto.cpp
 
 # Subprojects
 .build-subprojects:
