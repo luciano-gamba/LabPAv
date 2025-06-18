@@ -22,35 +22,35 @@
     </logicalFolder>
     <logicalFolder name="ICollection" displayName="ICollection" projectFiles="true">
       <logicalFolder name="collections" displayName="collections" projectFiles="true">
-        <itemPath>../../Escritorio/ICollection/collections/List.cpp</itemPath>
-        <itemPath>../../Escritorio/ICollection/collections/List.h</itemPath>
-        <itemPath>../../Escritorio/ICollection/collections/ListIterator.cpp</itemPath>
-        <itemPath>../../Escritorio/ICollection/collections/ListIterator.h</itemPath>
-        <itemPath>../../Escritorio/ICollection/collections/ListNode.cpp</itemPath>
-        <itemPath>../../Escritorio/ICollection/collections/ListNode.h</itemPath>
-        <itemPath>../../Escritorio/ICollection/collections/OrderedDictionary.cpp</itemPath>
-        <itemPath>../../Escritorio/ICollection/collections/OrderedDictionary.h</itemPath>
-        <itemPath>../../Escritorio/ICollection/collections/OrderedDictionaryEntry.cpp</itemPath>
-        <itemPath>../../Escritorio/ICollection/collections/OrderedDictionaryEntry.h</itemPath>
+        <itemPath>ICollection/collections/List.cpp</itemPath>
+        <itemPath>ICollection/collections/List.h</itemPath>
+        <itemPath>ICollection/collections/ListIterator.cpp</itemPath>
+        <itemPath>ICollection/collections/ListIterator.h</itemPath>
+        <itemPath>ICollection/collections/ListNode.cpp</itemPath>
+        <itemPath>ICollection/collections/ListNode.h</itemPath>
+        <itemPath>ICollection/collections/OrderedDictionary.cpp</itemPath>
+        <itemPath>ICollection/collections/OrderedDictionary.h</itemPath>
+        <itemPath>ICollection/collections/OrderedDictionaryEntry.cpp</itemPath>
+        <itemPath>ICollection/collections/OrderedDictionaryEntry.h</itemPath>
       </logicalFolder>
       <logicalFolder name="interfaces" displayName="interfaces" projectFiles="true">
-        <itemPath>../../Escritorio/ICollection/interfaces/ICollectible.cpp</itemPath>
-        <itemPath>../../Escritorio/ICollection/interfaces/ICollectible.h</itemPath>
-        <itemPath>../../Escritorio/ICollection/interfaces/ICollection.cpp</itemPath>
-        <itemPath>../../Escritorio/ICollection/interfaces/ICollection.h</itemPath>
-        <itemPath>../../Escritorio/ICollection/interfaces/IDictionary.cpp</itemPath>
-        <itemPath>../../Escritorio/ICollection/interfaces/IDictionary.h</itemPath>
-        <itemPath>../../Escritorio/ICollection/interfaces/IIterator.cpp</itemPath>
-        <itemPath>../../Escritorio/ICollection/interfaces/IIterator.h</itemPath>
-        <itemPath>../../Escritorio/ICollection/interfaces/IKey.cpp</itemPath>
-        <itemPath>../../Escritorio/ICollection/interfaces/IKey.h</itemPath>
-        <itemPath>../../Escritorio/ICollection/interfaces/OrderedKey.cpp</itemPath>
-        <itemPath>../../Escritorio/ICollection/interfaces/OrderedKey.h</itemPath>
+        <itemPath>ICollection/interfaces/ICollectible.cpp</itemPath>
+        <itemPath>ICollection/interfaces/ICollectible.h</itemPath>
+        <itemPath>ICollection/interfaces/ICollection.cpp</itemPath>
+        <itemPath>ICollection/interfaces/ICollection.h</itemPath>
+        <itemPath>ICollection/interfaces/IDictionary.cpp</itemPath>
+        <itemPath>ICollection/interfaces/IDictionary.h</itemPath>
+        <itemPath>ICollection/interfaces/IIterator.cpp</itemPath>
+        <itemPath>ICollection/interfaces/IIterator.h</itemPath>
+        <itemPath>ICollection/interfaces/IKey.cpp</itemPath>
+        <itemPath>ICollection/interfaces/IKey.h</itemPath>
+        <itemPath>ICollection/interfaces/OrderedKey.cpp</itemPath>
+        <itemPath>ICollection/interfaces/OrderedKey.h</itemPath>
       </logicalFolder>
-      <itemPath>../../Escritorio/ICollection/Integer.cpp</itemPath>
-      <itemPath>../../Escritorio/ICollection/Integer.h</itemPath>
-      <itemPath>../../Escritorio/ICollection/String.cpp</itemPath>
-      <itemPath>../../Escritorio/ICollection/String.h</itemPath>
+      <itemPath>ICollection/Integer.cpp</itemPath>
+      <itemPath>ICollection/Integer.h</itemPath>
+      <itemPath>ICollection/String.cpp</itemPath>
+      <itemPath>ICollection/String.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -90,6 +90,7 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>../../Escritorio/ICollection</Elem>
+    <Elem>ICollection</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -106,136 +107,6 @@
           </incDir>
         </ccTool>
       </compileType>
-      <item path="../../Escritorio/ICollection/Integer.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/Integer.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/String.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/String.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/List.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/List.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/ListIterator.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/ListIterator.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/ListNode.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/ListNode.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/OrderedDictionary.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/OrderedDictionary.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/OrderedDictionaryEntry.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/OrderedDictionaryEntry.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/ICollectible.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/ICollectible.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/ICollection.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/ICollection.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/IDictionary.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/IDictionary.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/IIterator.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/IIterator.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/IKey.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/IKey.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/OrderedKey.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/OrderedKey.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="CLIENTE.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CLIENTE.h" ex="false" tool="3" flavor2="0">
@@ -267,6 +138,106 @@
       <item path="ICONTROLADOR.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ICONTROLADOR.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/Integer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/Integer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/String.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/String.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/collections/List.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/collections/List.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListIterator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListIterator.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListNode.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionary.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionary.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionaryEntry.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionaryEntry.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollectible.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollectible.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IDictionary.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IDictionary.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IIterator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IIterator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IKey.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IKey.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/OrderedKey.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/OrderedKey.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="PRODUCTO.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -319,136 +290,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="../../Escritorio/ICollection/Integer.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/Integer.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/String.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/String.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/List.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/List.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/ListIterator.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/ListIterator.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/ListNode.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/ListNode.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/OrderedDictionary.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/OrderedDictionary.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/OrderedDictionaryEntry.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/collections/OrderedDictionaryEntry.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/ICollectible.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/ICollectible.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/ICollection.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/ICollection.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/IDictionary.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/IDictionary.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/IIterator.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/IIterator.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/IKey.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/IKey.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/OrderedKey.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="../../Escritorio/ICollection/interfaces/OrderedKey.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="CLIENTE.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CLIENTE.h" ex="false" tool="3" flavor2="0">
@@ -480,6 +321,106 @@
       <item path="ICONTROLADOR.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ICONTROLADOR.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/Integer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/Integer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/String.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/String.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/collections/List.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/collections/List.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListIterator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListIterator.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListNode.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionary.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionary.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionaryEntry.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionaryEntry.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollectible.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollectible.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IDictionary.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IDictionary.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IIterator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IIterator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IKey.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IKey.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/OrderedKey.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/OrderedKey.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="PRODUCTO.cpp" ex="false" tool="1" flavor2="0">
       </item>

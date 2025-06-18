@@ -8,7 +8,7 @@ class COMPRA {
 public:
     COMPRA();
     virtual ~COMPRA();
-    void COMPRA::agregarProducto(codigoProd string, cant int)
+    void agregarProducto(string codigoProd ,int cant);
 private:
     std::set<DataProducto> items;
     date fechaCompra;
