@@ -15,10 +15,7 @@ void PROMOCION::obtenerFechaSistema(){
     this->fechaSis = d;
 }
 
-
-
-/*
-ICollection* PROMOCION::solicitarListaPromociones(){
+/*string PROMOCION::solicitarListaPromociones(){
     set<string> promocionesActivas;
     date fechaSistema = obtenerFechaSistema(); //despues se hara esta funcion
 
@@ -34,3 +31,17 @@ ICollection* PROMOCION::solicitarListaPromociones(){
     return promocionesActivas;
 }
 */
+string PROMOCION::getNombre(){
+    return this->nombrePromo;
+}
+string PROMOCION::getDescrip(){
+    return this->descripcionPromo;
+}
+
+date PROMOCION::getFechaVen(){
+    return this->fechaVen;
+}
+
+string PROMOCION::getInfoPromo(){
+    return "<>NombrePromo: "+(this->nombrePromo)+"\n<>Desc: "+this->descripcionPromo+"\n<>Fecha: "+this->fechaVen.getInfoDate();
+}

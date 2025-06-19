@@ -12,6 +12,10 @@ public:
     virtual ~PROMOCION();
     void obtenerFechaSistema();
     string solicitarListaPromociones();
+    string getNombre();
+    string getDescrip();
+    string getInfoPromo();
+     date getFechaVen();
     
 private:
     std::string nombrePromo;
