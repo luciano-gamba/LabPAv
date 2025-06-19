@@ -1,12 +1,22 @@
 #include "PROMOCION.h"
 
+PROMOCION::PROMOCION() {
+}
+
+PROMOCION::PROMOCION(const PROMOCION& orig) {
+}
+
+PROMOCION::~PROMOCION() {
+}
+
 void PROMOCION::obtenerFechaSistema(){
     time_t ya = time(NULL);
     date d = date(localtime(&ya)->tm_mday,localtime(&ya)->tm_mon+1,localtime(&ya)->tm_year+1900);
     this->fechaSis = d;
 }
 
-set<string> PROMOCION::solicitarListaPromociones(){
+/*
+string PROMOCION::solicitarListaPromociones(){
     set<string> promocionesActivas;
     date fechaSistema = obtenerFechaSistema(); //despues se hara esta funcion
 
@@ -21,13 +31,4 @@ set<string> PROMOCION::solicitarListaPromociones(){
     delete it;
     return promocionesActivas;
 }
-
-PROMOCION::PROMOCION() {
-}
-
-PROMOCION::PROMOCION(const PROMOCION& orig) {
-}
-
-PROMOCION::~PROMOCION() {
-}
-
+*/

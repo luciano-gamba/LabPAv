@@ -66,7 +66,6 @@
       <itemPath>DataDireccion.cpp</itemPath>
       <itemPath>DataProd.cpp</itemPath>
       <itemPath>DataProducto.cpp</itemPath>
-      <itemPath>ICONTROLADOR.cpp</itemPath>
       <itemPath>PRODUCTO.cpp</itemPath>
       <itemPath>PROMOCION.cpp</itemPath>
       <itemPath>USUARIO.cpp</itemPath>
@@ -134,8 +133,6 @@
       <item path="DataProducto.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataProducto.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ICONTROLADOR.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ICONTROLADOR.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -317,8 +314,6 @@
       <item path="DataProducto.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataProducto.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ICONTROLADOR.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ICONTROLADOR.h" ex="false" tool="3" flavor2="0">
       </item>

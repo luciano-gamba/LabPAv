@@ -1,8 +1,9 @@
 #ifndef PROMOCION_H
 #define PROMOCION_H
-#include <string.h>
 #include <string>
+#include <ctime>
 #include "date.h"
+using namespace std;
 
 class PROMOCION {
 public:

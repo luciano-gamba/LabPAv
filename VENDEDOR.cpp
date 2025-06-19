@@ -9,15 +9,15 @@ VENDEDOR::VENDEDOR(const VENDEDOR& orig) {
 
 VENDEDOR::~VENDEDOR() {
 }
-
-ICollecction* VENDEDOR::GetProductosAsoc(){
+/*
+string VENDEDOR::GetProductosAsoc(){
     
     IIterator* IT=This->MisProductos.GetIterator();
     PRODUCTO* P;
     int codP;
-    std::string nomP;
-    std::string ProdVdato;
-    IColecction* ProdV = new List(); //Creo una collecction donde guardare los datos que luego listare y esta función devolvera.
+    string nomP;
+    string ProdVdato;
+    string ProdV; //Creo una collecction donde guardare los datos que luego listare y esta función devolvera.
     for(IT,IT->hasCurrent(),IT->next()){
         P = (PRODUCTO)IT->getCurrent();
         codP=P.getCodigo(); 
@@ -32,4 +32,5 @@ VENDEDOR::crearPromo(std::string nombreProm,std::string descripcionProm,date fec
     PROMOCION prom = new PROMOCION(nombreProm ,descripcionProm ,fechaVen);
     This->MisPromociones.Add(prom);
     
-}    
+} 
+ */   

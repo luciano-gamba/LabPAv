@@ -3,7 +3,7 @@
 
 class ICONTROLADOR {
 public:
-    virtual ~ICONTROLADOR(){};
+    //virtual ~ICONTROLADOR();
 };
 
 #endif /* ICONTROLADOR_H */

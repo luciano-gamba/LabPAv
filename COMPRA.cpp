@@ -6,8 +6,8 @@ COMPRA::COMPRA() {
 COMPRA::~COMPRA() {
 }
 
-
-void COMPRA::agregarProducto(codigoProd string, cant int) {
+/*
+void COMPRA::agregarProducto(string codigoProd ,int cant ) {
     iterator* it = this->misProductos->getIterator();
     producto* p;
     bool encontrado = false;
@@ -35,4 +35,4 @@ DataCompra* Controlador::mostrarDetalleCompra(){
     DataCompra* detalle = new DataCompra(fechaC,montoC,c);
     return detalle;
 }
-
+*/

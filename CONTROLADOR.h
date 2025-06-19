@@ -11,7 +11,7 @@ public:
     //operaciones de funcionamiento
     CONTROLADOR *getInstancia();
     ~CONTROLADOR();
-    
+    CONTROLADOR();
 //CLIENTE
     
 //COMENTARIO
@@ -22,10 +22,11 @@ public:
     
     
 private:
-    CONTROLADOR *CONTROLADOR();
-    static CONTROLADOR *instancia = nullptr;
-    
-    
+   
+    /*
+        CONTROLADOR* instancia = nullptr;
+        CONTROLADOR();
+    */
     
     
 };

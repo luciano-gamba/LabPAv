@@ -1,5 +1,0 @@
-#include "ICONTROLADOR.h"
-
-ICONTROLADOR::~ICONTROLADOR() {
-}
-
