@@ -11,6 +11,7 @@ public:
     PROMOCION(const PROMOCION& orig);
     virtual ~PROMOCION();
     void obtenerFechaSistema();
+    string solicitarListaPromociones();
     
 private:
     std::string nombrePromo;

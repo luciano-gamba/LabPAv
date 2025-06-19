@@ -15,8 +15,10 @@ void PROMOCION::obtenerFechaSistema(){
     this->fechaSis = d;
 }
 
+
+
 /*
-string PROMOCION::solicitarListaPromociones(){
+ICollection* PROMOCION::solicitarListaPromociones(){
     set<string> promocionesActivas;
     date fechaSistema = obtenerFechaSistema(); //despues se hara esta funcion
 
