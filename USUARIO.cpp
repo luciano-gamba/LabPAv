@@ -15,7 +15,7 @@ string USUARIO::getNickname(){
 }
 
 void USUARIO::desAsignarComentarioAProd(COMENTARIO *c){
-    IKey *ik = new Integer(c->getCodComent())
+    IKey *ik = new Integer(c->getCodComent());
     this->misComentarios->remove(ik);
     delete ik;
 }

@@ -46,7 +46,7 @@ public:
     string listarNicknamesC();
     void selectNicknameC(string nick);
     void agregarProducto(string codigoProd, int cant);
-    DataCompra mostrarDetalleCompra();
+    //DataCompra mostrarDetalleCompra();
     
 private:
    

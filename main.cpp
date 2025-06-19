@@ -1,9 +1,14 @@
 #include <cstdlib>
 #include <iostream>
 using namespace std;
+#include "FABRICA.h"
+#include "ICONTROLADOR.h"
 
 int main(int argc, char** argv) {
 
+    FABRICA* fb= new FABRICA();
+    ICONTROLADOR* ICONT = fb->getControlador();
+    
     cout << "<><UtecMercadoSuelto><>" << endl<< endl;
     cout << "<1> Alta de Usuario" << endl;
     cout << "<2> Listado de Usuarios" << endl;
@@ -26,9 +31,10 @@ int main(int argc, char** argv) {
         case 1:
             break;
         case 2:
-            break;
+            
+            break; //Darle opciones de nicknames existentes tipo al listarlo le pones un numero alado (indice)
         case 3:
-            break;
+            break; //No se puede pedir una preecondicion de por ejemplo que el usuario no exista al querer crearlo debes revisar esto dentro de la oper que lo creo justamente
         case 4:
             break;
         case 5:

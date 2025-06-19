@@ -26,26 +26,24 @@ string VENDEDOR::dameProductosPendientes(){
     return productosPendientes;
 }
 
-/*
+
 string VENDEDOR::GetProductosAsoc(){
     
-    IIterator* IT=This->MisProductos.GetIterator();
+    IIterator* IT=this->misProductos->getIterator();
     PRODUCTO* P;
     int codP;
     string nomP;
-    string ProdVdato;
-    string ProdV; //Creo una collecction donde guardare los datos que luego listare y esta función devolvera.
-    for(IT,IT->hasCurrent(),IT->next()){
-        P = (PRODUCTO)IT->getCurrent();
-        codP=P.getCodigo(); 
-        nomP=P.getNombre(); //Ambos datos del producto que necesito para el listado
-        ProdVdato =to_string(codP) + " - " + nomP);
-        ProdV.Add(ProdVdato);
+    string ProdV = ""; //Creo una collecction donde guardare los datos que luego listare y esta función devolvera.
+    for(IT;IT->hasCurrent();IT->next()){
+        P = (PRODUCTO*)IT->getCurrent();
+        codP=P->getCodigo(); 
+        nomP=P->getNombre(); //Ambos datos del producto que necesito para el listado
+        ProdV=ProdV +to_string(codP) + " - " + nomP + "\n";
     }
     return ProdV;
-        
 }
-VENDEDOR::crearPromo(std::string nombreProm,std::string descripcionProm,date fechaVen){
+/*
+VENDEDOR::crearPromo(string nombreProm,string descripcionProm,date fechaVen){
     PROMOCION prom = new PROMOCION(nombreProm ,descripcionProm ,fechaVen);
     This->MisPromociones.Add(prom);
     

@@ -9,7 +9,7 @@ public:
     VENDEDOR();
     VENDEDOR(const VENDEDOR& orig);
     virtual ~VENDEDOR();
-    ICollection* GetProductosAsoc();
+    string GetProductosAsoc();
     void crearPromo(std::string nombreProm,std::string descripcionProm,date fechaVen);
     string dameProductosPendientes();
 private:
