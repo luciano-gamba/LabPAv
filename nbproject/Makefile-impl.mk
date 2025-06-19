@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=LabPAv-master
+PROJECTNAME=UtecMercadoSuelto
 
 # Active Configuration
 DEFAULTCONF=Debug

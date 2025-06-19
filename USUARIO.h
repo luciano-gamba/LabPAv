@@ -3,7 +3,11 @@
 #include <string>
 #include "date.h"
 #include "ICollection/interfaces/ICollectible.h"
+#include "ICollection/interfaces/IDictionary.h"
+#include "ICollection/collections/OrderedDictionary.h"
 using namespace std;
+
+class COMENTARIO;
 
 class USUARIO : public ICollectible {
 public:
@@ -12,11 +16,14 @@ public:
     
     string getNickname();
     
+    void desAsignarComentarioAProd(COMENTARIO *c);
     
 private:
     string nickname;
     string contrasenia;
     date fechaNac;
+    
+    IDictionary *misComentarios;
 };
 
 #endif /* USUARIO_H */

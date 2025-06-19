@@ -7,11 +7,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/proyecto/LabPAv-master/CONTROLADOR.cpp</file>
-            <file>file:/C:/proyecto/LabPAv-master/CONTROLADOR.h</file>
-            <file>file:/C:/proyecto/LabPAv-master/ICONTROLADOR.h</file>
-            <file>file:/C:/proyecto/LabPAv-master/ICollection/Integer.h</file>
-            <file>file:/C:/proyecto/LabPAv-master/ICollection/String.h</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/main.cpp</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/COMENTARIO.h</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/COMENTARIO.cpp</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/date.cpp</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/date.h</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/USUARIO.cpp</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/USUARIO.h</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/CONTROLADOR.h</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/CONTROLADOR.cpp</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/ICONTROLADOR.h</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/ICONTROLADOR.cpp</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/PRODUCTO.h</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/DataProd.h</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/VENDEDOR.h</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/PRODUCTO.cpp</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/COMPRA.cpp</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/COMPRA.h</file>
         </group>
     </open-files>
 </project-private>

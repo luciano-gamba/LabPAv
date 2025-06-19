@@ -4,6 +4,7 @@ COMENTARIO::COMENTARIO() {
 }
 
 COMENTARIO::~COMENTARIO() {
+    
 }
 
 void COMENTARIO::setCodComent(int n){
@@ -30,4 +31,20 @@ date COMENTARIO::getFechaCom(){
 
 string COMENTARIO::getInfoComentario(){
     return "<>Codigo: "+to_string(this->codComent)+"\n<>Texto: "+this->texto+"\n<>Fecha: "+this->fechaCom.getInfoDate();
+}
+
+
+COMENTARIO* COMENTARIO::crearRespuesta(string t){
+    
+    int nuevoCodigo = this->misComentarios->getSize();
+    COMENTARIO *c = new COMENTARIO();
+    
+    c->setCodComent(nuevoCodigo);
+    c->setFechaCom();
+    c->setTexto(t);
+    
+    IKey *ik = new Integer(nuevoCodigo);
+    ICollectible *ic = c;
+    this->misComentarios->add(ik,ic);
+    return c;
 }

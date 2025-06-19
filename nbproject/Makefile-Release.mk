@@ -42,7 +42,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/DataDireccion.o \
 	${OBJECTDIR}/DataProd.o \
 	${OBJECTDIR}/DataProducto.o \
-	${OBJECTDIR}/ICONTROLADOR.o \
 	${OBJECTDIR}/ICollection/Integer.o \
 	${OBJECTDIR}/ICollection/String.o \
 	${OBJECTDIR}/ICollection/collections/List.o \
@@ -124,11 +123,6 @@ ${OBJECTDIR}/DataProducto.o: DataProducto.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataProducto.o DataProducto.cpp
-
-${OBJECTDIR}/ICONTROLADOR.o: ICONTROLADOR.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ICONTROLADOR.o ICONTROLADOR.cpp
 
 ${OBJECTDIR}/ICollection/Integer.o: ICollection/Integer.cpp
 	${MKDIR} -p ${OBJECTDIR}/ICollection
