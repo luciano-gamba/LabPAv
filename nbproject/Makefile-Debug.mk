@@ -21,8 +21,8 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=GNU-Linux
-CND_DLIB_EXT=so
+CND_PLATFORM=MinGW-Windows
+CND_DLIB_EXT=dll
 CND_CONF=Debug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -42,7 +42,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/DataDireccion.o \
 	${OBJECTDIR}/DataProd.o \
 	${OBJECTDIR}/DataProducto.o \
-	${OBJECTDIR}/ICONTROLADOR.o \
 	${OBJECTDIR}/ICollection/Integer.o \
 	${OBJECTDIR}/ICollection/String.o \
 	${OBJECTDIR}/ICollection/collections/List.o \
@@ -84,11 +83,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/utecmercadosuelto
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/labpav-master.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/utecmercadosuelto: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/labpav-master.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/utecmercadosuelto ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/labpav-master ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/CLIENTE.o: CLIENTE.cpp
 	${MKDIR} -p ${OBJECTDIR}
@@ -124,11 +123,6 @@ ${OBJECTDIR}/DataProducto.o: DataProducto.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataProducto.o DataProducto.cpp
-
-${OBJECTDIR}/ICONTROLADOR.o: ICONTROLADOR.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ICONTROLADOR.o ICONTROLADOR.cpp
 
 ${OBJECTDIR}/ICollection/Integer.o: ICollection/Integer.cpp
 	${MKDIR} -p ${OBJECTDIR}/ICollection

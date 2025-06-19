@@ -1,4 +1,5 @@
 #include "PRODUCTO.h"
+#include "ICollection/interfaces/IIterator.h"
 
 PRODUCTO::PRODUCTO() {
 }
@@ -23,5 +24,17 @@ std::string PRODUCTO::getNombre(){
 }
 std::string PRODUCTO::getDescripcion(){
     return descripcion;
+}
+
+bool PRODUCTO::pendienteEnvio(){
+    bool recibio = true;
+    compra_producto* cp;
+    
+    IIterator* it=this->misCompraProductos->getIterator();
+    for(it; it->hasCurrent() and recibio; it->next()){
+        cp = (compra_producto*)it->getCurrent();
+        recibio = cp->getRecibido();
+    }
+    return recibio;
 }
 //Faltaria el getTipo o getCat pero el struct ese no se si va en un .h separado o dentro de alguno supongo que luego podemos preguntar

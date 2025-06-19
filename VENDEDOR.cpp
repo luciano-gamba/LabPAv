@@ -9,6 +9,23 @@ VENDEDOR::VENDEDOR(const VENDEDOR& orig) {
 
 VENDEDOR::~VENDEDOR() {
 }
+
+string VENDEDOR::dameProductosPendientes(){
+     bool pendiente;
+     PRODUCTO* p;
+     string productosPendientes;
+    
+    IIterator* it=this->misProductos->getIterator();
+    for(it; it->hasCurrent(); it->next()){
+      p = (PRODUCTO*)it->getCurrent();
+      pendiente = p->pendienteEnvio();
+      if(pendiente){
+          productosPendientes = productosPendientes + to_string(p->getCodigo()) + " " + p->getNombre() + "/n";
+      }
+    }
+    return productosPendientes;
+}
+
 /*
 string VENDEDOR::GetProductosAsoc(){
     

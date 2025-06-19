@@ -2,9 +2,10 @@
 #define USUARIO_H
 #include <string>
 #include "date.h"
+#include "ICollection/interfaces/ICollectible.h"
 using namespace std;
 
-class USUARIO {
+class USUARIO : public ICollectible {
 public:
     USUARIO();
     virtual ~USUARIO();

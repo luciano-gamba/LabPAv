@@ -6,6 +6,10 @@
 #include "COMENTARIO.h"
 #include "USUARIO.h"
 #include "DataCompra.h"
+#include "ICollection/interfaces/IKey.h"
+#include <string>
+#include "ICollection/String.h"
+#include "VENDEDOR.h"
 //#include "DataVendedor.h"
 //#include "DTProducto.h"
 //#include "dataCliente.h"
@@ -51,7 +55,7 @@ private:
         CONTROLADOR();
     */
     
-    
+    IDictionary* misVendedores;
 };
 
 #endif /* CONTROLADOR_H */
