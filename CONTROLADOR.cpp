@@ -35,28 +35,29 @@ string CONTROLADOR::listarProductosPendientes(string nick) {
 string CONTROLADOR::listarUsuarios(){
 
     string retorno;
-    IIterator* it = new this->misUsuarios->getIterator();
-    USUARIO* u;
-
-    while(it->hasCurrent()){
-        u = (USUARIO*) it->getCurrent();
-        retorno = retorno + u->getNickname() + "\n\n";
-        it->next();
-    }
+//    IIterator* it = new this->misUsuarios->getIterator());
+//    
+//    USUARIO* u;
+//
+//    while(it->hasCurrent()){
+//        u = (USUARIO*) it->getCurrent();
+//        retorno = retorno + u->getNickname() + "\n\n";
+//        it->next();
+//    }
     return retorno;
 }
 //PRODUCTO
 //int CONTROLADOR::ingresoProducto(string vendedor, DTProducto datosProd);
 string CONTROLADOR::ListarProductos(){
     string retorno;
-    IIterator* it = new this->misProductos->getIterator();
-    PRODUCTO* p;
-
-    while(it->hasCurrent()){
-        p = (PRODUCTO*) it->getCurrent();
-        retorno = retorno+"<>Codigo: "+p->getCodigo()+"\n<>Nombre: "+p->getNombre()+"\n<>Precio: $"+p->getPrecio()+"\n\n";
-        it->next();
-    }
+//    IIterator* it = new this->misProductos->getIterator();
+//    PRODUCTO* p;
+//
+//    while(it->hasCurrent()){
+//        p = (PRODUCTO*) it->getCurrent();
+//        retorno = retorno+"<>Codigo: "+p->getCodigo()+"\n<>Nombre: "+p->getNombre()+"\n<>Precio: $"+p->getPrecio()+"\n\n";
+//        it->next();
+//    }
     return retorno;
 
 }
