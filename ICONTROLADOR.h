@@ -11,7 +11,7 @@ public:
 //COMENTARIO
     
 //USUARIO
-   
+    virtual string listarUsuarios()=0;
 //PRODUCTO
     //virtual int ingresoProducto(string vendedor, DTProducto datosProd) = 0;
     virtual string ListarProductos() = 0;

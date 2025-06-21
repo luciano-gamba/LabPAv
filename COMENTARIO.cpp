@@ -1,6 +1,7 @@
 #include "COMENTARIO.h"
 
 COMENTARIO::COMENTARIO() {
+    
 }
 
 COMENTARIO::~COMENTARIO() {

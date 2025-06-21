@@ -2,13 +2,15 @@
 #define CONTROLADOR_H
 #include "ICONTROLADOR.h"
 #include "ICollection/interfaces/IDictionary.h" 
+#include "ICollection/interfaces/IKey.h"
+#include "ICollection/String.h"
+#include "ICollection/interfaces/IIterator.h"
 #include "CLIENTE.h"
 #include "COMENTARIO.h"
 #include "USUARIO.h"
 #include "DataCompra.h"
-#include "ICollection/interfaces/IKey.h"
+
 #include <string>
-#include "ICollection/String.h"
 #include "VENDEDOR.h"
 //#include "DataVendedor.h"
 //#include "DTProducto.h"
@@ -26,7 +28,7 @@ public:
 //COMENTARIO
     
 //USUARIO
-   
+    string listarUsuarios();
 //PRODUCTO
     //int ingresoProducto(string vendedor, DTProducto datosProd);
     string ListarProductos();
@@ -54,7 +56,8 @@ private:
         CONTROLADOR* instancia = nullptr;
         CONTROLADOR();
     */
-    
+    IDictionary* misProductos;
+    IDictionary* misUsuarios;
     IDictionary* misVendedores;
 };
 

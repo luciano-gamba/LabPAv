@@ -7,7 +7,7 @@ using namespace std;
 int main(int argc, char** argv) {
 
     FABRICA* fb= new FABRICA();
-    ICONTROLADOR* ICONT = fb->getControlador();
+    ICONTROLADOR* ic = fb->getControlador();
     
     cout << "<><UtecMercadoSuelto><>" << endl<< endl;
     cout << "<1> Alta de Usuario" << endl;
@@ -44,8 +44,10 @@ int main(int argc, char** argv) {
         case 7:
             break;
         case 8:
+            ic->
             break;
         case 9:
+            
             break;
         case 10:
             break;
