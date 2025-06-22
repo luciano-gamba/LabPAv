@@ -20,9 +20,9 @@ using namespace std;
 class CONTROLADOR: public ICONTROLADOR{
 public:
     //operaciones de funcionamiento
-    CONTROLADOR *getInstancia();
+    static CONTROLADOR *getInstancia();
     ~CONTROLADOR();
-    CONTROLADOR();
+    
 //CLIENTE
     //void ingresoCliente(dataCliente datosC, string contraseña);
 //COMENTARIO
@@ -52,10 +52,10 @@ public:
     
 private:
    
-    /*
-        CONTROLADOR* instancia = nullptr;
-        CONTROLADOR();
-    */
+    CONTROLADOR();
+    static CONTROLADOR* instancia;
+    
+
     IDictionary* misProductos;
     IDictionary* misUsuarios;
     IDictionary* misVendedores;

@@ -16,7 +16,7 @@ public:
     
     string getNickname();
     
-    void desAsignarComentarioAProd(COMENTARIO *c);
+    void desAsignarComentarioAUsu(COMENTARIO *c);
     
 private:
     string nickname;

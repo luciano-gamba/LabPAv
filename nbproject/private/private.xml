@@ -12,6 +12,11 @@
             <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/COMENTARIO.cpp</file>
             <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/USUARIO.h</file>
             <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/USUARIO.cpp</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/CONTROLADOR.cpp</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/ICONTROLADOR.h</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/CONTROLADOR.h</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/ICollection/interfaces/IIterator.h</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/ICollection/interfaces/IIterator.cpp</file>
         </group>
     </open-files>
 </project-private>

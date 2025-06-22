@@ -11,6 +11,7 @@
       <itemPath>DataDireccion.h</itemPath>
       <itemPath>DataProd.h</itemPath>
       <itemPath>DataProducto.h</itemPath>
+      <itemPath>FABRICA.h</itemPath>
       <itemPath>ICONTROLADOR.h</itemPath>
       <itemPath>PRODUCTO.h</itemPath>
       <itemPath>PROMOCION.h</itemPath>
@@ -66,6 +67,7 @@
       <itemPath>DataDireccion.cpp</itemPath>
       <itemPath>DataProd.cpp</itemPath>
       <itemPath>DataProducto.cpp</itemPath>
+      <itemPath>FABRICA.cpp</itemPath>
       <itemPath>PRODUCTO.cpp</itemPath>
       <itemPath>PROMOCION.cpp</itemPath>
       <itemPath>USUARIO.cpp</itemPath>
@@ -133,6 +135,10 @@
       <item path="DataProducto.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataProducto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="FABRICA.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FABRICA.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ICONTROLADOR.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -314,6 +320,10 @@
       <item path="DataProducto.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataProducto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="FABRICA.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FABRICA.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ICONTROLADOR.h" ex="false" tool="3" flavor2="0">
       </item>

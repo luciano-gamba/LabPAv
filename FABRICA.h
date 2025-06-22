@@ -4,13 +4,10 @@
 #include "ICONTROLADOR.h"
 class FABRICA {
 public:
-    FABRICA();
-    FABRICA(const FABRICA& orig);
-    virtual ~FABRICA();
-    
-    ICONTROLADOR* getControlador();
+    FABRICA();  
+    ~FABRICA();
+    ICONTROLADOR* getIControlador();
 private:
-
 };
 
 #endif /* FABRICA_H */

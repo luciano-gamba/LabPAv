@@ -6,10 +6,12 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
-//    FABRICA* fb= new FABRICA();
-//    ICONTROLADOR* ic = fb->getControlador();
+    FABRICA* fb= new FABRICA();
+    ICONTROLADOR* ic = fb->getIControlador();
     
-    cout << "<><UtecMercadoSuelto><>" << endl<< endl;
+    int opcion;
+    do{
+    cout << "\t<><UtecMercadoSuelto><>" << endl<< endl;
     cout << "<1> Alta de Usuario" << endl;
     cout << "<2> Listado de Usuarios" << endl;
     cout << "<3> Alta de Producto" << endl;
@@ -21,17 +23,14 @@ int main(int argc, char** argv) {
     cout << "<9> Eliminar Comentario" << endl;
     cout << "<10> Enviar Producto" << endl;
     cout << "<11> Expediente de Usuario" << endl;
-    
-   
     cout << endl <<"<> Ingrese opción: ";
-    int opcion;
     cin >> opcion;
+    }while(opcion<1 || opcion>11);
     
     switch (opcion){
         case 1:
             break;
         case 2:
-            
             break; //Darle opciones de nicknames existentes tipo al listarlo le pones un numero alado (indice)
         case 3:
             break; //No se puede pedir una preecondicion de por ejemplo que el usuario no exista al querer crearlo debes revisar esto dentro de la oper que lo creo justamente
@@ -44,11 +43,12 @@ int main(int argc, char** argv) {
         case 7:
             break;
         case 8:
-//            cout << ic->listarUsuarios();
-//            cout << ic->ListarProductos();
+            cout << ic->listarUsuarios();
+            cout << endl <<"<> Ingrese opción: ";
+            cout << ic->ListarProductos();
+            cout << endl <<"<> Ingrese opción: ";
             break;
         case 9:
-            
             break;
         case 10:
             break;

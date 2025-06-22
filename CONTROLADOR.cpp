@@ -1,19 +1,23 @@
 #include "CONTROLADOR.h"
 
-CONTROLADOR:: CONTROLADOR() {
+CONTROLADOR* CONTROLADOR::instancia = nullptr;
+
+CONTROLADOR::CONTROLADOR() {
+    this->misProductos = new OrderedDictionary;
+    this->misUsuarios = new OrderedDictionary;
+    this->misVendedores = new OrderedDictionary;
 }
 
 CONTROLADOR::~CONTROLADOR() {
 }
 
-/*
-CONTROLADOR::CONTROLADOR *getInstancia(){
-    if(CONTROLADOR::instancia==NULL){
-        CONTROLADOR::instancia = new CONTROLADOR();
+CONTROLADOR* CONTROLADOR::getInstancia(){
+    if(instancia==nullptr){
+       instancia = new CONTROLADOR();
     }
-    return (CONTROLADOR::instancia);
+    return instancia;
 }
-*/
+
 
 string CONTROLADOR::listarProductosPendientes(string nick) {
     string productosPendientes;
@@ -34,30 +38,31 @@ string CONTROLADOR::listarProductosPendientes(string nick) {
 //USUARIO
 string CONTROLADOR::listarUsuarios(){
 
-    string retorno;
-//    IIterator* it = new this->misUsuarios->getIterator());
-//    
-//    USUARIO* u;
-//
-//    while(it->hasCurrent()){
-//        u = (USUARIO*) it->getCurrent();
-//        retorno = retorno + u->getNickname() + "\n\n";
-//        it->next();
-//    }
+    string retorno = "\t<>USUARIOS<>\n\n";
+    IIterator* it = this->misUsuarios->getIterator();
+    
+    USUARIO* u;
+
+    while(it->hasCurrent()){
+        u = (USUARIO*) it->getCurrent();
+        retorno = retorno + u->getNickname() + "\n\n";
+        it->next();
+    }
     return retorno;
 }
 //PRODUCTO
-//int CONTROLADOR::ingresoProducto(string vendedor, DTProducto datosProd);
+//int CONTROLADOR::ingresoProducto(string vendedor, DTProducto datosProd){
+//}
 string CONTROLADOR::ListarProductos(){
-    string retorno;
-//    IIterator* it = new this->misProductos->getIterator();
-//    PRODUCTO* p;
-//
-//    while(it->hasCurrent()){
-//        p = (PRODUCTO*) it->getCurrent();
-//        retorno = retorno+"<>Codigo: "+p->getCodigo()+"\n<>Nombre: "+p->getNombre()+"\n<>Precio: $"+p->getPrecio()+"\n\n";
-//        it->next();
-//    }
+    string retorno = "\t<>PRODUCTOS<>\n\n";
+    IIterator* it = this->misProductos->getIterator();
+    PRODUCTO* p;
+
+    while(it->hasCurrent()){
+        p = (PRODUCTO*) it->getCurrent();
+        retorno = retorno+"<>Codigo: "+to_string(p->getCodigo())+"\n<>Nombre: "+p->getNombre()+"\n<>Precio: $"+to_string(p->getPrecio())+"\n\n";
+        it->next();
+    }
     return retorno;
 
 }
