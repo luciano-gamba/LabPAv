@@ -16,6 +16,16 @@ public:
     
     string getNickname();
     
+    string getContrasenia();
+    
+    date getFechaNac();
+    
+    void setNickname(string);
+    
+    void setContrasenia(string);
+    
+    void setFechaNac(date);
+    
     void desAsignarComentarioAUsu(COMENTARIO *c);
     
 private:

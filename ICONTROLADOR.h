@@ -2,12 +2,14 @@
 #define ICONTROLADOR_H
 #include <string>
 #include "DataCompra.h"
+#include "DataCliente.h"
+#include "DataVendedor.h"
 using namespace std;
 class ICONTROLADOR{
 public:
     //virtual ~ICONTROLADOR();
 //CLIENTE
-    //virtual void ingresoCliente(dataCliente datosC, string contraseña) = 0;
+    virtual void ingresoCliente(DataCliente* datosC, string contraseña) = 0;
 //COMENTARIO
     
 //USUARIO
@@ -20,7 +22,7 @@ public:
     //virtual set<dataCompraCliente> listarCompraProductoPendiente(int codigoProd) = 0;
     virtual void selectCompraProductoPendiente(int idCompra) = 0;
 //VENDEDOR    
-    //virtual void ingresoVendedor(dataVendedor datosV, string contraseña) = 0;
+    virtual void ingresoVendedor(DataVendedor* datosV, string contraseña) = 0;
     virtual string ListaVendedores() = 0;
     virtual string ListarProductosV(string NicknameV,string nombreProm,string descripcionProm,date fechaVenProm) = 0;
 //PROMOCION

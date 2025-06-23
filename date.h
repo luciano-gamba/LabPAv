@@ -6,7 +6,7 @@ using namespace std;
 class date {
 public:
     date();
-    date(int d, int m, int a);
+    date(int,int,int);
     virtual ~date();
     
     int getDia();

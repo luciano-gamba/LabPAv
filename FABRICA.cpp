@@ -6,7 +6,7 @@ FABRICA::FABRICA() {
 FABRICA::~FABRICA() {
 }
 ICONTROLADOR* FABRICA::getIControlador(){
-    return CONTROLADOR::getInstancia();
-    ;
+    //return CONTROLADOR::getInstancia();
+    return new CONTROLADOR();
 }
 

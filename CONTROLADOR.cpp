@@ -1,22 +1,24 @@
 #include "CONTROLADOR.h"
+#include <iostream>
 
-CONTROLADOR* CONTROLADOR::instancia = nullptr;
+//CONTROLADOR* CONTROLADOR::instancia = nullptr;
 
 CONTROLADOR::CONTROLADOR() {
     this->misProductos = new OrderedDictionary;
     this->misUsuarios = new OrderedDictionary;
     this->misVendedores = new OrderedDictionary;
+    this->misClientes = new OrderedDictionary;
 }
 
 CONTROLADOR::~CONTROLADOR() {
 }
 
-CONTROLADOR* CONTROLADOR::getInstancia(){
-    if(instancia==nullptr){
-       instancia = new CONTROLADOR();
-    }
-    return instancia;
-}
+//CONTROLADOR* CONTROLADOR::getInstancia(){
+//    if(instancia==nullptr){
+//       instancia = new CONTROLADOR();
+//    }
+//    return instancia;
+//}
 
 
 string CONTROLADOR::listarProductosPendientes(string nick) {
@@ -32,7 +34,20 @@ string CONTROLADOR::listarProductosPendientes(string nick) {
 //}
 
 //CLIENTE
-    //void CONTROLADOR::ingresoCliente(dataCliente datosC, string contraseña);
+void CONTROLADOR::ingresoCliente(DataCliente* datosC, string contraseña){    
+    CLIENTE* c = new CLIENTE(datosC,contraseña);
+    string llave = datosC->getNicknameCliente();
+    IKey* ik = new String(llave.c_str());
+    bool existe = this->misClientes->member(ik);
+    if(!existe){
+//        c = (CLIENTE*) 
+        this->misClientes->add(ik, c);
+        //this->misUsuarios->add(ik, c);
+    }else{
+        delete c;
+    }
+    cout << "Hecho!" << endl;
+}
 //COMENTARIO
     
 //USUARIO
@@ -74,8 +89,20 @@ void CONTROLADOR::selectCompraProductoPendiente(int idCompra){
 
 }
 //VENDEDOR    
-//void CONTROLADOR::ingresoVendedor(dataVendedor datosV, string contraseña){
-//}
+void CONTROLADOR::ingresoVendedor(DataVendedor* datosV, string contraseña){
+    VENDEDOR* v = new VENDEDOR(datosV,contraseña);
+    string llave = datosV->getNicknameVendedor();
+    IKey* ik = new String(llave.c_str());
+    bool existe = this->misVendedores->member(ik);
+    if(!existe){
+    //    v = (VENDEDOR*) 
+    this->misVendedores->add(ik, v);
+    }else{
+        delete v;
+    }
+    cout << "Hecho!" << endl;
+}
+
 string CONTROLADOR::ListaVendedores(){
     return "a";
 }

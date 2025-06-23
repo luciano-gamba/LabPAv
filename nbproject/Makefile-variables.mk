@@ -7,13 +7,13 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=GNU-Linux
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=utecmercadosuelto
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/utecmercadosuelto
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=utecmercadosuelto.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/utecmercadosuelto.tar
+CND_PLATFORM_Debug=Cygwin_1-Windows
+CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin_1-Windows
+CND_ARTIFACT_NAME_Debug=labpav
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_1-Windows/labpav
+CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin_1-Windows/package
+CND_PACKAGE_NAME_Debug=labpav.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_1-Windows/package/labpav.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux

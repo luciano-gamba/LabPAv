@@ -12,19 +12,21 @@
 
 #include <string>
 #include "VENDEDOR.h"
-//#include "DataVendedor.h"
+#include "DataVendedor.h"
 //#include "DTProducto.h"
-//#include "dataCliente.h"
+#include "DataCliente.h"
+#include "DataVendedor.h"
 using namespace std;
 
 class CONTROLADOR: public ICONTROLADOR{
 public:
     //operaciones de funcionamiento
-    static CONTROLADOR *getInstancia();
+    //static CONTROLADOR* getInstancia();
+    CONTROLADOR();
     ~CONTROLADOR();
     
 //CLIENTE
-    //void ingresoCliente(dataCliente datosC, string contraseña);
+    void ingresoCliente(DataCliente* datosC, string contraseña);
 //COMENTARIO
     
 //USUARIO
@@ -37,7 +39,7 @@ public:
     //set<dataCompraCliente> listarCompraProductoPendiente(int codigoProd);
     void selectCompraProductoPendiente(int idCompra);
 //VENDEDOR    
-    //void ingresoVendedor(dataVendedor datosV, string contraseña);
+    void ingresoVendedor(DataVendedor* datosV, string contraseña);
     string ListaVendedores();
     string ListarProductosV(string NicknameV,string nombreProm,string descripcionProm,date fechaVenProm);
 //PROMOCION
@@ -52,13 +54,14 @@ public:
     
 private:
    
-    CONTROLADOR();
-    static CONTROLADOR* instancia;
+    //CONTROLADOR();
+    //static CONTROLADOR* instancia;
     
 
     IDictionary* misProductos;
     IDictionary* misUsuarios;
     IDictionary* misVendedores;
+    IDictionary* misClientes;
 };
 
 #endif /* CONTROLADOR_H */

@@ -8,9 +8,12 @@
       <itemPath>COMENTARIO.h</itemPath>
       <itemPath>COMPRA.h</itemPath>
       <itemPath>CONTROLADOR.h</itemPath>
+      <itemPath>DataCliente.h</itemPath>
       <itemPath>DataDireccion.h</itemPath>
       <itemPath>DataProd.h</itemPath>
       <itemPath>DataProducto.h</itemPath>
+      <itemPath>DataUsuario.h</itemPath>
+      <itemPath>DataVendedor.h</itemPath>
       <itemPath>FABRICA.h</itemPath>
       <itemPath>ICONTROLADOR.h</itemPath>
       <itemPath>PRODUCTO.h</itemPath>
@@ -18,6 +21,7 @@
       <itemPath>USUARIO.h</itemPath>
       <itemPath>VENDEDOR.h</itemPath>
       <itemPath>compra_producto.h</itemPath>
+      <itemPath>dataCliente.h</itemPath>
       <itemPath>date.h</itemPath>
       <itemPath>promocion_producto.h</itemPath>
     </logicalFolder>
@@ -64,9 +68,12 @@
       <itemPath>COMENTARIO.cpp</itemPath>
       <itemPath>COMPRA.cpp</itemPath>
       <itemPath>CONTROLADOR.cpp</itemPath>
+      <itemPath>DataCliente.cpp</itemPath>
       <itemPath>DataDireccion.cpp</itemPath>
       <itemPath>DataProd.cpp</itemPath>
       <itemPath>DataProducto.cpp</itemPath>
+      <itemPath>DataUsuario.cpp</itemPath>
+      <itemPath>DataVendedor.cpp</itemPath>
       <itemPath>FABRICA.cpp</itemPath>
       <itemPath>PRODUCTO.cpp</itemPath>
       <itemPath>PROMOCION.cpp</itemPath>
@@ -124,6 +131,10 @@
       </item>
       <item path="CONTROLADOR.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="DataCliente.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataCliente.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="DataDireccion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataDireccion.h" ex="false" tool="3" flavor2="0">
@@ -135,6 +146,14 @@
       <item path="DataProducto.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataProducto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataUsuario.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataUsuario.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataVendedor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataVendedor.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="FABRICA.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -261,6 +280,8 @@
       <item path="compra_producto.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="compra_producto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dataCliente.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="date.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -309,6 +330,10 @@
       </item>
       <item path="CONTROLADOR.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="DataCliente.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataCliente.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="DataDireccion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataDireccion.h" ex="false" tool="3" flavor2="0">
@@ -320,6 +345,14 @@
       <item path="DataProducto.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataProducto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataUsuario.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataUsuario.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataVendedor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataVendedor.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="FABRICA.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -446,6 +479,8 @@
       <item path="compra_producto.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="compra_producto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dataCliente.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="date.cpp" ex="false" tool="1" flavor2="0">
       </item>

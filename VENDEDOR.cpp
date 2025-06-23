@@ -1,4 +1,5 @@
 #include "VENDEDOR.h"
+#include "DataVendedor.h"
 #include <cstdlib>
 
 VENDEDOR::VENDEDOR() {
@@ -8,6 +9,45 @@ VENDEDOR::VENDEDOR(const VENDEDOR& orig) {
 }
 
 VENDEDOR::~VENDEDOR() {
+}
+
+string VENDEDOR::getNicknameVendedor(){
+    return getNickname();
+}
+
+string VENDEDOR::getContraseniaVendedor(){
+    return getContrasenia();
+}
+
+date VENDEDOR::getFechaNacVendedor(){
+    return getFechaNac();
+}
+
+string VENDEDOR::getRUT(){
+    return this->RUT;
+}
+
+void VENDEDOR::setNicknameVendedor(string n){
+    setNickname(n);
+}
+
+void VENDEDOR::setContraseniaVendedor(string c){
+    setContrasenia(c);
+}
+
+void VENDEDOR::setFechaNacVendedor(date f){
+    setFechaNac(f);
+}
+
+void VENDEDOR::setRUT(string r){
+    this->RUT=r;
+}
+
+VENDEDOR::VENDEDOR(DataVendedor* datosV, string contrasenia){
+    this->setNicknameVendedor(datosV->getNicknameVendedor());
+    this->setContraseniaVendedor(contrasenia);
+    this->setFechaNacVendedor(datosV->getDateVendedor());
+    this->setRUT(datosV->getRUT());
 }
 
 string VENDEDOR::dameProductosPendientes(){
