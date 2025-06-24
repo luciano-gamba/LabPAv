@@ -14,6 +14,8 @@ public:
     int getAnio();
     
     string getInfoDate();
+    bool operator>(const date& otra) const; //manolo was here hypercharging the operator
+
     
 private:
     int dia;

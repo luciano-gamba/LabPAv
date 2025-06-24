@@ -24,3 +24,11 @@ int date::getAnio(){
 string date::getInfoDate(){
     return to_string(this->dia)+"/"+to_string(this->mes)+"/"+to_string(this->anio);
 }
+//cambio hecho por manolo pa que me funke el operador en promocion(se acepta una nueva sugerencia si hay otra solucion)
+bool date::operator>(const date& otra) const {
+    if (this->anio != otra.anio)
+        return this->anio > otra.anio;
+    if (this->mes != otra.mes)
+        return this->mes > otra.mes;
+    return this->dia > otra.dia;
+}

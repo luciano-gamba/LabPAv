@@ -1,6 +1,8 @@
 #ifndef PROMOCION_H
 #define PROMOCION_H
 #include <string>
+#include "USUARIO.h"
+#include "PRODUCTO.h"
 #include <ctime>
 #include "date.h"
 #include "ICollection/interfaces/ICollectible.h"
@@ -15,11 +17,15 @@ public:
     void obtenerFechaSistema();
     string solicitarListaPromociones();
     string getNombre();
-    string getDescrip();
-    string getInfoPromo();
+    string getDescripcion();
     date getFechaVen();
+    date getFechaSis() const; 
+    void setNombre(string);
+    void setDescripcion(string);
+    void setFechaVen(date);
     
 private:
+    IDictionary* coleccionPromociones;
     string nombrePromo;
     string descripcionPromo;
     date fechaVen;
