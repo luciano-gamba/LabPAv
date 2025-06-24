@@ -7,6 +7,14 @@ PRODUCTO::PRODUCTO() {
 PRODUCTO::PRODUCTO(const PRODUCTO& orig) {
 }
 
+PRODUCTO::PRODUCTO(DTProducto* datosProd, int cod){
+    this->codigo = cod;
+    this->nombre = datosProd->getNomProd();
+    this->precio = datosProd->getPrecio();
+    this->stock = datosProd->getCantStock();
+    this->descripcion = datosProd->getDescProd();
+}
+
 PRODUCTO::~PRODUCTO() {
 }
 

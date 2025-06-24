@@ -7,6 +7,12 @@ USUARIO::USUARIO() {
     //this->misComentarios = new OrderedDictionary();
 }
 
+USUARIO::USUARIO(string nick, string contra, date fecha){
+    this->nickname = nick;
+    this->contrasenia = contra;
+    this->fechaNac = fecha;
+}
+
 USUARIO::~USUARIO() {
 }
 

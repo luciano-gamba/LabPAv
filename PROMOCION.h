@@ -19,10 +19,11 @@ public:
     string getNombre();
     string getDescripcion();
     date getFechaVen();
-    date getFechaSis() const; 
+    date getFechaSis(); 
     void setNombre(string);
     void setDescripcion(string);
     void setFechaVen(date);
+    void setFechaSis(date);
     
 private:
     IDictionary* coleccionPromociones;

@@ -13,7 +13,7 @@
 #include <string>
 #include "VENDEDOR.h"
 #include "DataVendedor.h"
-//#include "DTProducto.h"
+#include "DTProducto.h"
 #include "DataCliente.h"
 #include "DataVendedor.h"
 using namespace std;
@@ -32,7 +32,7 @@ public:
 //USUARIO
     string listarUsuarios();
 //PRODUCTO
-    //int ingresoProducto(string vendedor, DTProducto datosProd);
+    void ingresoProducto(int vendedor, DTProducto* datosProd);
     string ListarProductos();
     string DescribeProducto(int codigoP);
     string listarProductosPendientes(string nick);

@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/COMENTARIO.o \
 	${OBJECTDIR}/COMPRA.o \
 	${OBJECTDIR}/CONTROLADOR.o \
+	${OBJECTDIR}/DTProducto.o \
 	${OBJECTDIR}/DataCliente.o \
 	${OBJECTDIR}/DataDireccion.o \
 	${OBJECTDIR}/DataProd.o \
@@ -112,6 +113,11 @@ ${OBJECTDIR}/CONTROLADOR.o: CONTROLADOR.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CONTROLADOR.o CONTROLADOR.cpp
+
+${OBJECTDIR}/DTProducto.o: DTProducto.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../../Escritorio/ICollection -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DTProducto.o DTProducto.cpp
 
 ${OBJECTDIR}/DataCliente.o: DataCliente.cpp
 	${MKDIR} -p ${OBJECTDIR}

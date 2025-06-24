@@ -12,6 +12,7 @@ class COMENTARIO;
 class USUARIO : public ICollectible {
 public:
     USUARIO();
+    USUARIO(string, string, date);
     virtual ~USUARIO();
     
     string getNickname();
