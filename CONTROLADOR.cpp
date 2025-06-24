@@ -34,15 +34,15 @@ string CONTROLADOR::listarProductosPendientes(string nick) {
 //}
 
 //CLIENTE
-void CONTROLADOR::ingresoCliente(DataCliente* datosC, string contraseña){    
-    CLIENTE* c = new CLIENTE(datosC,contraseña);
+void CONTROLADOR::ingresoCliente(DataCliente* datosC, string contrasenia){    
+    CLIENTE* c = new CLIENTE(datosC,contrasenia);
     string llave = datosC->getNicknameCliente();
     IKey* ik = new String(llave.c_str());
-    bool existe = this->misClientes->member(ik);
+    bool existe = this->misUsuarios->member(ik);
     if(!existe){
-//        c = (CLIENTE*) 
         this->misClientes->add(ik, c);
-        //this->misUsuarios->add(ik, c);
+        USUARIO* u = new USUARIO(llave, contrasenia, datosC->getDateCliente());
+        this->misUsuarios->add(ik, u);
     }else{
         delete c;
     }
@@ -66,8 +66,21 @@ string CONTROLADOR::listarUsuarios(){
     return retorno;
 }
 //PRODUCTO
-//int CONTROLADOR::ingresoProducto(string vendedor, DTProducto datosProd){
-//}
+void CONTROLADOR::ingresoProducto(int vendedor, DTProducto* datosProd){
+    int control = this->misVendedores->getSize();
+    if(control < vendedor){
+        cout << "VENDEDOR SELECCIONADO NO VÁLIDO" << endl;
+    }else{
+        IIterator* iter = this->misVendedores->getIterator();
+        VENDEDOR* v;
+        while(vendedor != 0){
+            v = (VENDEDOR*) iter->getCurrent();
+            iter->next();
+            vendedor = vendedor - 1;
+        }
+        v->añadirProducto(datosProd);
+    }
+}
 string CONTROLADOR::ListarProductos(){
     string retorno = "\t<>PRODUCTOS<>\n\n";
     IIterator* it = this->misProductos->getIterator();
@@ -89,14 +102,15 @@ void CONTROLADOR::selectCompraProductoPendiente(int idCompra){
 
 }
 //VENDEDOR    
-void CONTROLADOR::ingresoVendedor(DataVendedor* datosV, string contraseña){
-    VENDEDOR* v = new VENDEDOR(datosV,contraseña);
+void CONTROLADOR::ingresoVendedor(DataVendedor* datosV, string contrasenia){
+    VENDEDOR* v = new VENDEDOR(datosV,contrasenia);
     string llave = datosV->getNicknameVendedor();
     IKey* ik = new String(llave.c_str());
-    bool existe = this->misVendedores->member(ik);
+    bool existe = this->misUsuarios->member(ik);
     if(!existe){
-    //    v = (VENDEDOR*) 
-    this->misVendedores->add(ik, v);
+        this->misVendedores->add(ik, v);
+        USUARIO* u = new USUARIO(llave, contrasenia, datosV->getDateVendedor());
+        this->misUsuarios->add(ik, u);
     }else{
         delete v;
     }
@@ -104,8 +118,25 @@ void CONTROLADOR::ingresoVendedor(DataVendedor* datosV, string contraseña){
 }
 
 string CONTROLADOR::ListaVendedores(){
-    return "a";
+    string retorno = "\t<>VENDEDORES<>\n\n";
+    IIterator* it = this->misVendedores->getIterator();
+    
+    VENDEDOR* v;
+    int aux = 0;
+    if(it->hasCurrent()){
+       while(it->hasCurrent()){
+        aux = aux + 1;
+        string s = to_string(aux);
+        v = (VENDEDOR*) it->getCurrent();
+        retorno = retorno + s + ". " + v->getNicknameVendedor() + "\n\n";
+        it->next();
+       }
+    }else{
+        retorno = retorno + "No existen vendedores. [Seleccione 0 para salir]" + "\n\n";
+    }
+    return retorno;
 }
+
 string CONTROLADOR::ListarProductosV(string NicknameV,string nombreProm,string descripcionProm,date fechaVenProm){
     return "a";
 }

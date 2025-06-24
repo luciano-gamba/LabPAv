@@ -35,10 +35,10 @@ int main(int argc, char** argv) {
         switch (opcion){
             case 1: {
                 cout << "Cliente o Vendedor? (1-2)";
-                int op;
+                int opcion1;
                 do{
-                    cin >> op;
-                }while (op<1 or op>2);
+                    cin >> opcion1;
+                }while (opcion1<1 or opcion1>2);
                     cout << "Ingrese nickname: ";
                     string nick;
                     cin >> nick;
@@ -58,7 +58,7 @@ int main(int argc, char** argv) {
                     cout << "Ingrese contraseña: ";
                     string contr;
                     cin >> contr;
-                if(op==1){
+                if(opcion1==1){
                     cout << "Ingrese ciudad: ";
                     string ciudad;
                     cin >> ciudad;
@@ -89,7 +89,49 @@ int main(int argc, char** argv) {
                 cout << u;
                 }
                 break; //Darle opciones de nicknames existentes tipo al listarlo le pones un numero alado (indice)
-            case 3:
+            case 3:{
+                string v = ic->ListaVendedores(); //si no tiene nada v = ?
+                cout << v << endl;
+                cout << "Elige un vendedor válido: ";
+                int opcion3 = 0;
+                cin >> opcion3;
+                if(opcion3 > 0){
+                    cout << "Ingresa el nombre del producto: ";
+                    string nomProd;
+                    cin >> nomProd;
+                    cout << "Ingresa el precio del producto: ";
+                    float precio;
+                    cin >> precio;
+                    cout << "Ingresa el stock del producto: ";
+                    int cantStock;
+                    cin >> cantStock;
+                    cout << "Ingresa la descripción del producto: ";
+                    string descProd;
+                    cin >> descProd;
+                    cout << "Elija la categoria del producto: \n1.Ropa\n2.Electrodomesticos\n3.Otros\nOpcion: ";
+                    int opcionP = 0;
+                    do{    
+                        cin >> opcionP;
+                    }while(opcionP < 1 or opcionP > 3);
+                    TipoProducto tipo;
+                    switch (opcionP){
+                        case 1:{
+                            tipo = TipoProducto::Ropa;
+                            break;
+                        }
+                        case 2:{
+                            tipo = TipoProducto::Electrodomesticos;
+                            break;
+                        }
+                        case 3:{
+                            tipo = TipoProducto::Otros;
+                            break;
+                        }
+                    }
+                    DTProducto* datosProd = new DTProducto(nomProd, precio, cantStock, descProd, tipo);
+                    ic->ingresoProducto(opcion3,datosProd);
+                }
+            }
                 break; //No se puede pedir una preecondicion de por ejemplo que el usuario no exista al querer crearlo debes revisar esto dentro de la oper que lo creo justamente
             case 4:
                 break;

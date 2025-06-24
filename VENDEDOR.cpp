@@ -50,6 +50,14 @@ VENDEDOR::VENDEDOR(DataVendedor* datosV, string contrasenia){
     this->setRUT(datosV->getRUT());
 }
 
+void VENDEDOR::añadirProducto(DTProducto* datosProd){
+    int maxProd = this->misProductos->getSize() + 1;
+    PRODUCTO* p = new PRODUCTO(datosProd, maxProd);
+    IKey* ik = new Integer(maxProd);
+    this->misProductos->add(ik, p);
+    delete ik;
+}
+
 string VENDEDOR::dameProductosPendientes(){
      bool pendiente;
      PRODUCTO* p;

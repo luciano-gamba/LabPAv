@@ -4,6 +4,7 @@
 #include "DataCompra.h"
 #include "DataCliente.h"
 #include "DataVendedor.h"
+#include "DTProducto.h"
 using namespace std;
 class ICONTROLADOR{
 public:
@@ -15,7 +16,7 @@ public:
 //USUARIO
     virtual string listarUsuarios()=0;
 //PRODUCTO
-    //virtual int ingresoProducto(string vendedor, DTProducto datosProd) = 0;
+    virtual void ingresoProducto(int vendedor, DTProducto* datosProd) = 0;
     virtual string ListarProductos() = 0;
     virtual string DescribeProducto(int codigoP) = 0;
     virtual string listarProductosPendientes(string nick) = 0;

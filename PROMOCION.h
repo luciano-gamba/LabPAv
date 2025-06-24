@@ -21,18 +21,11 @@ public:
     string getNombre();
     string getDescripcion();
     date getFechaVen();
-    date getFechaSis() const;
-
-    // Setters
+    date getFechaSis(); 
     void setNombre(string);
     void setDescripcion(string);
     void setFechaVen(date);
-
-    // Métodos funcionales
-    void obtenerFechaSistema();
-    string solicitarListaPromociones();
-    ICollection* obtenerPromocion();  // devuelve los productos de la promoción
-
+    
 private:
     IDictionary* coleccionPromociones;  // productos asociados a la promoción
     string nombrePromo;
