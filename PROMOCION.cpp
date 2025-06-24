@@ -25,6 +25,10 @@ date PROMOCION::getFechaVen(){
     return getFechaVen();
 }
 
+date PROMOCION::getFechaSis(){
+    return getFechaSis();
+}
+
 void PROMOCION::setNombre(string n){
     setNombre(n);
 }
@@ -35,6 +39,10 @@ void PROMOCION::setDescripcion(string d){
 
 void PROMOCION::setFechaVen(date f){
     setFechaVen(f);
+}
+
+void PROMOCION::setFechaSis(date f){
+    setFechaSis(f);
 }
 
 void PROMOCION::obtenerFechaSistema(){
