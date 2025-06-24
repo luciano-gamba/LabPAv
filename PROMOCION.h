@@ -6,31 +6,40 @@
 #include <ctime>
 #include "date.h"
 #include "ICollection/interfaces/ICollectible.h"
+#include "ICollection/interfaces/IDictionary.h"
+#include "ICollection/interfaces/IIterator.h"
 
 using namespace std;
 
-class PROMOCION: public ICollectible{
+class PROMOCION : public ICollectible {
 public:
     PROMOCION();
-    PROMOCION(string nombre,string descripcion,date fechaV);
+    PROMOCION(string nombre, string descripcion, date fechaV);
     virtual ~PROMOCION();
-    void obtenerFechaSistema();
-    string solicitarListaPromociones();
+
+    // Getters
     string getNombre();
     string getDescripcion();
     date getFechaVen();
-    date getFechaSis() const; 
+    date getFechaSis() const;
+
+    // Setters
     void setNombre(string);
     void setDescripcion(string);
     void setFechaVen(date);
-    
+
+    // Métodos funcionales
+    void obtenerFechaSistema();
+    string solicitarListaPromociones();
+    ICollection* obtenerPromocion();  // devuelve los productos de la promoción
+
 private:
-    IDictionary* coleccionPromociones;
+    IDictionary* coleccionPromociones;  // productos asociados a la promoción
     string nombrePromo;
     string descripcionPromo;
     date fechaVen;
     date fechaSis;
+    string promoStr;
 };
 
 #endif /* PROMOCION_H */
-

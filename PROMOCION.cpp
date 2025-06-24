@@ -14,35 +14,27 @@ PROMOCION::~PROMOCION() {
 }
 
 string PROMOCION::getNombre(){
-    return getNombre();
+   return this->nombrePromo;
 }
 
 string PROMOCION::getDescripcion(){
-    return getDescripcion();
+   return this->descripcionPromo;
 }
 
 date PROMOCION::getFechaVen(){
-    return getFechaVen();
-}
-
-date PROMOCION::getFechaSis(){
-    return getFechaSis();
+    return this->fechaVen;
 }
 
 void PROMOCION::setNombre(string n){
-    setNombre(n);
+    this->nombrePromo=n;
 }
 
 void PROMOCION::setDescripcion(string d){
-    setDescripcion(d);
+    this->descripcionPromo=d;
 }
 
 void PROMOCION::setFechaVen(date f){
-    setFechaVen(f);
-}
-
-void PROMOCION::setFechaSis(date f){
-    setFechaSis(f);
+    this->fechaVen=f;
 }
 
 void PROMOCION::obtenerFechaSistema(){

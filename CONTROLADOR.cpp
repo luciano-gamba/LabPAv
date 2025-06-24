@@ -113,12 +113,40 @@ string CONTROLADOR::ListarProductosV(string NicknameV,string nombreProm,string d
 void CONTROLADOR::SelectProductoProm(int codigoP,int cantMin,int porcentajeDes){
 
 }
-string CONTROLADOR::solicitarListaPromociones(){
+
+/*string CONTROLADOR::solicitarListaPromociones(){
     return "a";
 }
-string CONTROLADOR::obtenerProductosVendedoresPromocion(){
-    return "a";
+   string CONTROLADOR::obtenerProductosVendedoresPromocion() {
+    string resultado;
+    PROMOCION* promo = (PROMOCION*)this->misPromociones->find(nombrePromo);
+    
+    if (promo == nullptr) {
+        return resultado; 
+    }
+    ICollection* productos = promo->obtenerPromocion();
+    IIterator* it = productos->getIterator();
+    while (it->hasCurrent()) {
+        Producto* prod =Producto*(it->getCurrent());
+        if (prod != nullptr) {
+            string nombreProd = prod->getNombre();
+            float precio = prod->getPrecio();
+            Vendedor* vend = prod->getVendedorAsociado();
+            if (vend != nullptr) { 
+                string nombreV = vend->getNombreVendedor();
+                string mailV = vend->getEmailVendedor();
+                string telV = vend->getTelVendedor();
+                string V = nombreV + " " + mailV + " " + telV;
+                string promoStr = nombreProd + " " + to_string(precio) + " " + V;
+                resultado += promoStr + "\n"; 
+            }
+        }
+        it->next();
+    }
+    delete it; 
+    return resultado; 
 }
+*/
 //COMPRA
 string CONTROLADOR::listarNicknamesC(){
     return "a";

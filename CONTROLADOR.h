@@ -9,7 +9,7 @@
 #include "COMENTARIO.h"
 #include "USUARIO.h"
 #include "DataCompra.h"
-
+#include "PROMOCION.h"
 #include <string>
 #include "VENDEDOR.h"
 #include "DataVendedor.h"
@@ -62,6 +62,7 @@ private:
     IDictionary* misUsuarios;
     IDictionary* misVendedores;
     IDictionary* misClientes;
+    IDictionary* misPromociones;
 };
 
 #endif /* CONTROLADOR_H */
