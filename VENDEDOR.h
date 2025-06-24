@@ -2,9 +2,12 @@
 #define VENDEDOR_H
 #include "USUARIO.h"
 #include "PRODUCTO.h"
+#include "PROMOCION.h"
 #include "DataVendedor.h"
 #include <string>
 #include "ICollection/interfaces/ICollection.h" //Siu
+using namespace std;
+
 class VENDEDOR : public USUARIO{
 public:
     VENDEDOR();
@@ -12,7 +15,7 @@ public:
     VENDEDOR(DataVendedor*,string);
     virtual ~VENDEDOR();
     string GetProductosAsoc();
-    void crearPromo(std::string nombreProm,std::string descripcionProm,date fechaVen);
+    PROMOCION* crearPromo(std::string nombreProm,std::string descripcionProm,date fechaVen);
     string dameProductosPendientes();
     string getNicknameVendedor();
     string getContraseniaVendedor();
@@ -25,6 +28,7 @@ public:
 private:
     std::string RUT;
     IDictionary* misProductos;
+    ICollection* misPromociones;
 };
 
 #endif /* VENDEDOR_H */

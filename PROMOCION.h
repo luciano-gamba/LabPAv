@@ -3,23 +3,25 @@
 #include <string>
 #include <ctime>
 #include "date.h"
+#include "ICollection/interfaces/ICollectible.h"
+
 using namespace std;
 
-class PROMOCION {
+class PROMOCION: public ICollectible{
 public:
     PROMOCION();
-    PROMOCION(const PROMOCION& orig);
+    PROMOCION(string nombre,string descripcion,date fechaV);
     virtual ~PROMOCION();
     void obtenerFechaSistema();
     string solicitarListaPromociones();
     string getNombre();
     string getDescrip();
     string getInfoPromo();
-     date getFechaVen();
+    date getFechaVen();
     
 private:
-    std::string nombrePromo;
-    std::string descripcionPromo;
+    string nombrePromo;
+    string descripcionPromo;
     date fechaVen;
     date fechaSis;
 };

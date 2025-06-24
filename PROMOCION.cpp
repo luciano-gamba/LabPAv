@@ -3,7 +3,10 @@
 PROMOCION::PROMOCION() {
 }
 
-PROMOCION::PROMOCION(const PROMOCION& orig) {
+PROMOCION::PROMOCION(string nombre,string descripcion,date fechaV){
+    this->nombrePromo = nombre;
+    this->descripcionPromo = descripcion;
+    this->fechaVen = fechaV;
 }
 
 PROMOCION::~PROMOCION() {
