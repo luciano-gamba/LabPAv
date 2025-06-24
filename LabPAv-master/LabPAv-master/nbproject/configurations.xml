@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>CLIENTE.h</itemPath>
+      <itemPath>COMENTARIO.h</itemPath>
+      <itemPath>COMPRA.h</itemPath>
+      <itemPath>CONTROLADOR.h</itemPath>
+      <itemPath>DataCliente.h</itemPath>
+      <itemPath>DataDireccion.h</itemPath>
+      <itemPath>DataProd.h</itemPath>
+      <itemPath>DataProducto.h</itemPath>
+      <itemPath>DataUsuario.h</itemPath>
+      <itemPath>DataVendedor.h</itemPath>
+      <itemPath>FABRICA.h</itemPath>
+      <itemPath>ICONTROLADOR.h</itemPath>
+      <itemPath>PRODUCTO.h</itemPath>
+      <itemPath>PROMOCION.h</itemPath>
+      <itemPath>USUARIO.h</itemPath>
+      <itemPath>VENDEDOR.h</itemPath>
+      <itemPath>compra_producto.h</itemPath>
+      <itemPath>dataCliente.h</itemPath>
+      <itemPath>date.h</itemPath>
+      <itemPath>promocion_producto.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ICollection" displayName="ICollection" projectFiles="true">
+      <logicalFolder name="collections" displayName="collections" projectFiles="true">
+        <itemPath>ICollection/collections/List.cpp</itemPath>
+        <itemPath>ICollection/collections/List.h</itemPath>
+        <itemPath>ICollection/collections/ListIterator.cpp</itemPath>
+        <itemPath>ICollection/collections/ListIterator.h</itemPath>
+        <itemPath>ICollection/collections/ListNode.cpp</itemPath>
+        <itemPath>ICollection/collections/ListNode.h</itemPath>
+        <itemPath>ICollection/collections/OrderedDictionary.cpp</itemPath>
+        <itemPath>ICollection/collections/OrderedDictionary.h</itemPath>
+        <itemPath>ICollection/collections/OrderedDictionaryEntry.cpp</itemPath>
+        <itemPath>ICollection/collections/OrderedDictionaryEntry.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="interfaces" displayName="interfaces" projectFiles="true">
+        <itemPath>ICollection/interfaces/ICollectible.cpp</itemPath>
+        <itemPath>ICollection/interfaces/ICollectible.h</itemPath>
+        <itemPath>ICollection/interfaces/ICollection.cpp</itemPath>
+        <itemPath>ICollection/interfaces/ICollection.h</itemPath>
+        <itemPath>ICollection/interfaces/IDictionary.cpp</itemPath>
+        <itemPath>ICollection/interfaces/IDictionary.h</itemPath>
+        <itemPath>ICollection/interfaces/IIterator.cpp</itemPath>
+        <itemPath>ICollection/interfaces/IIterator.h</itemPath>
+        <itemPath>ICollection/interfaces/IKey.cpp</itemPath>
+        <itemPath>ICollection/interfaces/IKey.h</itemPath>
+        <itemPath>ICollection/interfaces/OrderedKey.cpp</itemPath>
+        <itemPath>ICollection/interfaces/OrderedKey.h</itemPath>
+      </logicalFolder>
+      <itemPath>ICollection/Integer.cpp</itemPath>
+      <itemPath>ICollection/Integer.h</itemPath>
+      <itemPath>ICollection/String.cpp</itemPath>
+      <itemPath>ICollection/String.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>CLIENTE.cpp</itemPath>
+      <itemPath>COMENTARIO.cpp</itemPath>
+      <itemPath>COMPRA.cpp</itemPath>
+      <itemPath>CONTROLADOR.cpp</itemPath>
+      <itemPath>DataCliente.cpp</itemPath>
+      <itemPath>DataDireccion.cpp</itemPath>
+      <itemPath>DataProd.cpp</itemPath>
+      <itemPath>DataProducto.cpp</itemPath>
+      <itemPath>DataUsuario.cpp</itemPath>
+      <itemPath>DataVendedor.cpp</itemPath>
+      <itemPath>FABRICA.cpp</itemPath>
+      <itemPath>PRODUCTO.cpp</itemPath>
+      <itemPath>PROMOCION.cpp</itemPath>
+      <itemPath>USUARIO.cpp</itemPath>
+      <itemPath>VENDEDOR.cpp</itemPath>
+      <itemPath>compra_producto.cpp</itemPath>
+      <itemPath>date.cpp</itemPath>
+      <itemPath>main.cpp</itemPath>
+      <itemPath>promocion_producto.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>../../Escritorio/ICollection</Elem>
+    <Elem>ICollection</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>../../Escritorio/ICollection</pElem>
+          </incDir>
+        </ccTool>
+      </compileType>
+      <item path="CLIENTE.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CLIENTE.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="COMENTARIO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="COMENTARIO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="COMPRA.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="COMPRA.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CONTROLADOR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CONTROLADOR.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataCliente.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataCliente.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataDireccion.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataDireccion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataProd.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataProd.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataProducto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataProducto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataUsuario.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataUsuario.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataVendedor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataVendedor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="FABRICA.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FABRICA.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICONTROLADOR.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/Integer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/Integer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/String.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/String.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/collections/List.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/collections/List.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListIterator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListIterator.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListNode.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionary.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionary.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionaryEntry.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionaryEntry.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollectible.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollectible.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IDictionary.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IDictionary.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IIterator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IIterator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IKey.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IKey.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/OrderedKey.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/OrderedKey.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="PRODUCTO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PRODUCTO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PROMOCION.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PROMOCION.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="USUARIO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="USUARIO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VENDEDOR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VENDEDOR.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="compra_producto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="compra_producto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dataCliente.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="date.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="date.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="promocion_producto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="promocion_producto.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="CLIENTE.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CLIENTE.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="COMENTARIO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="COMENTARIO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="COMPRA.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="COMPRA.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CONTROLADOR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CONTROLADOR.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataCliente.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataCliente.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataDireccion.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataDireccion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataProd.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataProd.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataProducto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataProducto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataUsuario.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataUsuario.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataVendedor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataVendedor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="FABRICA.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FABRICA.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICONTROLADOR.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/Integer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/Integer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/String.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/String.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/collections/List.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/collections/List.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListIterator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListIterator.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListNode.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/ListNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionary.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionary.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionaryEntry.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/collections/OrderedDictionaryEntry.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollectible.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollectible.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/ICollection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IDictionary.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IDictionary.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IIterator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IIterator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IKey.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/IKey.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/OrderedKey.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ICollection/interfaces/OrderedKey.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="PRODUCTO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PRODUCTO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PROMOCION.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PROMOCION.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="USUARIO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="USUARIO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VENDEDOR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VENDEDOR.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="compra_producto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="compra_producto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dataCliente.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="date.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="date.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="promocion_producto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="promocion_producto.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
