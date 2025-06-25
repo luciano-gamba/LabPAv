@@ -7,6 +7,9 @@
 #include "ICollection/interfaces/IDictionary.h"
 #include "ICollection/interfaces/IIterator.h"
 #include <set>
+//#include "VENDEDOR.h"
+using namespace std;
+class VENDEDOR;
 
 class PRODUCTO : public ICollectible {
 public:
@@ -17,8 +20,9 @@ public:
     int getCodigo(); 
     int getStock();
     float getPrecio();
-    std::string getNombre();
-    std::string getDescripcion();
+    string getNombre();
+    string getDescripcion();
+    string getNicknameVendedor();
     bool pendienteEnvio();
     string dameComprasPend();
     void marcoRecibido(int idCompra);
@@ -29,6 +33,7 @@ private:
     std::string nombre;
     std::string descripcion;
     IDictionary* misCompraProductos;
+    //VENDEDOR* vendedorAsociado;
 };
 
 #endif /* PRODUCTO_H */

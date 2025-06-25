@@ -29,7 +29,7 @@ public:
 //PROMOCION
     virtual void SelectProductoProm(int codigoP,int cantMin,int porcentajeDes) = 0;
     virtual string solicitarListaPromociones() = 0;
-    virtual string obtenerProductosVendedoresPromocion() = 0;    
+    virtual string obtenerProductosVendedoresPromocion(string nombrePromo) = 0;    
 //COMPRA
     virtual string listarNicknamesC() = 0;
     virtual void selectNicknameC(string nick) = 0;

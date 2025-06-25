@@ -142,10 +142,14 @@ int main(int argc, char** argv) {
             case 7:
                 break;
             case 8:
+                int op;
                 cout << ic->listarUsuarios();
                 cout << endl <<"<> Ingrese opción: ";
+                cin >> op;
+                
                 cout << ic->ListarProductos();
                 cout << endl <<"<> Ingrese opción: ";
+                cin >> op;
                 break;
             case 9:
                 break;

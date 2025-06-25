@@ -12,6 +12,8 @@
             <sourceRootList>
                 <sourceRootElem>../../Escritorio/ICollection</sourceRootElem>
                 <sourceRootElem>ICollection</sourceRootElem>
+                <sourceRootElem>../../Escritorio/ICollection</sourceRootElem>
+                <sourceRootElem>ICollection</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

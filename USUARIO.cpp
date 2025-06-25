@@ -1,10 +1,8 @@
 #include "USUARIO.h"
-#include "ICollection/Integer.h"
 #include "COMENTARIO.h"
 
-
 USUARIO::USUARIO() {
-    //this->misComentarios = new OrderedDictionary();
+    this->misComentarios = new OrderedDictionary();
 }
 
 USUARIO::USUARIO(string nick, string contra, date fecha){
@@ -40,7 +38,7 @@ void USUARIO::setFechaNac(date f){
     this->fechaNac=f;
 }
 
-void USUARIO::desAsignarComentarioAUsu(COMENTARIO *c){
+void USUARIO::desAsignarComentarioAUsu(COMENTARIO* c){
     IKey *ik = new Integer(c->getCodComent());
     this->misComentarios->remove(ik);
     delete ik;

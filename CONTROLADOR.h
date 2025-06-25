@@ -1,5 +1,6 @@
 #ifndef CONTROLADOR_H
 #define CONTROLADOR_H
+#include <iostream>
 #include "ICONTROLADOR.h"
 #include "ICollection/interfaces/IDictionary.h" 
 #include "ICollection/interfaces/IKey.h"
@@ -9,7 +10,7 @@
 #include "COMENTARIO.h"
 #include "USUARIO.h"
 #include "DataCompra.h"
-
+#include "PROMOCION.h"
 #include <string>
 #include "VENDEDOR.h"
 #include "DataVendedor.h"
@@ -46,7 +47,7 @@ public:
 //PROMOCION
     void SelectProductoProm(int codigoP,int cantMin,int porcentajeDes);
     string solicitarListaPromociones();
-    string obtenerProductosVendedoresPromocion();    
+    string obtenerProductosVendedoresPromocion(string nombrePromo);    
 //COMPRA
     string listarNicknamesC();
     void selectNicknameC(string nick);
@@ -63,6 +64,7 @@ private:
     IDictionary* misUsuarios;
     IDictionary* misVendedores;
     IDictionary* misClientes;
+    IDictionary* misPromociones;
 };
 
 #endif /* CONTROLADOR_H */
