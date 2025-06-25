@@ -25,6 +25,10 @@ date PROMOCION::getFechaVen(){
     return this->fechaVen;
 }
 
+date PROMOCION::getFechaSis(){
+    return this->fechaSis;
+}
+
 void PROMOCION::setNombre(string n){
     this->nombrePromo=n;
 }
