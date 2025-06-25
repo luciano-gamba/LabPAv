@@ -5,8 +5,11 @@
 #include "compra_producto.h"
 #include "ICollection/interfaces/ICollectible.h"
 #include "ICollection/interfaces/IDictionary.h"
-#include "VENDEDOR.h"
+#include "ICollection/interfaces/IIterator.h"
+#include <set>
+//#include "VENDEDOR.h"
 using namespace std;
+class VENDEDOR;
 
 class PRODUCTO : public ICollectible {
 public:
@@ -21,6 +24,8 @@ public:
     string getDescripcion();
     string getNicknameVendedor();
     bool pendienteEnvio();
+    string dameComprasPend();
+    void marcoRecibido(int idCompra);
 private:
     int codigo;
     int stock;

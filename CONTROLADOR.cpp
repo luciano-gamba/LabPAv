@@ -29,9 +29,20 @@ string CONTROLADOR::listarProductosPendientes(string nick) {
     return productosPendientes;
 }
 
-//set<dataCompraCliente> CONTROLADOR::listarCompraProductoPendiente(int codigoProd){
-//    return NULL;
-//}
+string CONTROLADOR::listarCompraProductoPendiente(int codigoProd){
+   string compras;
+   IKey* ik = new Integer(codigoProd);
+   PRODUCTO* p = (PRODUCTO*)this->misProductos->find(ik);
+   compras = p->dameComprasPend();
+   return compras;
+}
+
+void CONTROLADOR::selectCompraProductoPendiente(int idCompra){
+    VENDEDOR* v;
+    IKey* ik = new Integer(idCompra);
+    v = (VENDEDOR*)this->misVendedores->find(ik);
+    v->marcaloRecibido(idCompra);
+}
 
 //CLIENTE
 void CONTROLADOR::ingresoCliente(DataCliente* datosC, string contrasenia){    
@@ -65,6 +76,14 @@ string CONTROLADOR::listarUsuarios(){
     }
     return retorno;
 }
+
+string CONTROLADOR::listarInfoBasica(string nick){
+    string retorno;
+    IKey* ik = new String(nick.c_str());
+    USUARIO* u = (USUARIO*)this->misUsuarios->find(ik);
+    return retorno = u->getNickname() + " " + to_string(u->getFechaNac().getDia()) + "/" + to_string(u->getFechaNac().getMes()) + "/" + to_string(u->getFechaNac().getAnio());
+}
+
 //PRODUCTO
 void CONTROLADOR::ingresoProducto(int vendedor, DTProducto* datosProd){
     int control = this->misVendedores->getSize();
@@ -97,10 +116,6 @@ string CONTROLADOR::ListarProductos(){
 }
 string CONTROLADOR::DescribeProducto(int codigoP){
     return "a";
-}
-//set<dataCompraCliente> CONTROLADOR::listarCompraProductoPendiente(int codigoProd);
-void CONTROLADOR::selectCompraProductoPendiente(int idCompra){
-
 }
 //VENDEDOR    
 void CONTROLADOR::ingresoVendedor(DataVendedor* datosV, string contrasenia){

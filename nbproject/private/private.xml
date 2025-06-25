@@ -7,15 +7,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/mafiu/Documents/NetBeansProjects/LabPAv/CONTROLADOR.cpp</file>
-            <file>file:/C:/Users/mafiu/Documents/NetBeansProjects/LabPAv/DataUsuario.cpp</file>
-            <file>file:/C:/Users/mafiu/Documents/NetBeansProjects/LabPAv/PROMOCION.h</file>
-            <file>file:/C:/Users/mafiu/Documents/NetBeansProjects/LabPAv/VENDEDOR.h</file>
-            <file>file:/C:/Users/mafiu/Documents/NetBeansProjects/LabPAv/DataVendedor.cpp</file>
-            <file>file:/C:/Users/mafiu/Documents/NetBeansProjects/LabPAv/DataUsuario.h</file>
-            <file>file:/C:/Users/mafiu/Documents/NetBeansProjects/LabPAv/VENDEDOR.cpp</file>
-            <file>file:/C:/Users/mafiu/Documents/NetBeansProjects/LabPAv/PROMOCION.cpp</file>
-            <file>file:/C:/Users/mafiu/Documents/NetBeansProjects/LabPAv/main.cpp</file>
+            <file>file:/C:/proyecto/por%20si%20las%20dudas/LabPAv/COMPRA.cpp</file>
+            <file>file:/C:/proyecto/por%20si%20las%20dudas/LabPAv/COMPRA.h</file>
+            <file>file:/C:/proyecto/por%20si%20las%20dudas/LabPAv/compra_producto.h</file>
+            <file>file:/C:/proyecto/por%20si%20las%20dudas/LabPAv/PRODUCTO.h</file>
+            <file>file:/C:/proyecto/por%20si%20las%20dudas/LabPAv/DataCliente.h</file>
+            <file>file:/C:/proyecto/por%20si%20las%20dudas/LabPAv/CONTROLADOR.h</file>
+            <file>file:/C:/proyecto/por%20si%20las%20dudas/LabPAv/PRODUCTO.cpp</file>
+            <file>file:/C:/proyecto/por%20si%20las%20dudas/LabPAv/DataCompraCliente.h</file>
+            <file>file:/C:/proyecto/por%20si%20las%20dudas/LabPAv/DataCompraCliente.cpp</file>
+            <file>file:/C:/proyecto/por%20si%20las%20dudas/LabPAv/compra_producto.cpp</file>
+            <file>file:/C:/proyecto/por%20si%20las%20dudas/LabPAv/main.cpp</file>
+            <file>file:/C:/proyecto/por%20si%20las%20dudas/LabPAv/DataCliente.cpp</file>
+            <file>file:/C:/proyecto/por%20si%20las%20dudas/LabPAv/CONTROLADOR.cpp</file>
+            <file>file:/C:/proyecto/por%20si%20las%20dudas/LabPAv/DataUsuario.cpp</file>
         </group>
     </open-files>
 </project-private>

@@ -10,7 +10,11 @@ DTProducto::~DTProducto() {
 }
 
 DTProducto::DTProducto(string nom, float prec, int stock, string desc, TipoProducto cat){
-    
+    this->nomProd = nom;
+    this->cantStock = stock;
+    this->categoria = cat;
+    this->precio = prec;
+    this->descProd = desc;
 }
 
 string DTProducto::getNomProd(){

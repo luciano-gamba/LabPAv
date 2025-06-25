@@ -162,8 +162,21 @@ int main(int argc, char** argv) {
             case 9:
                 break;
             case 10:
+                //cout << ic->listarVendedores();
+                //cout << ic->listarProductosPendientes(nick);
+                //cout << ic->listarCompraProductoPendiente(codigoProd);
+                //ic->selectCompraProductoPendiente(idCompra);
                 break;
             case 11:
+                //cout << ic->listarUsuarios(); -ASUMO QUE ESTA HECHA-
+                //cout << ic->listarInfoBasica(nick); -HECHA-
+                
+                //si es VENDEDOR: -TENGO QUE VER UNA BUENA MANERA DE SABER SI ES VENDEDOR-
+                //cout << ic->listarProductos(); -ASUMO QUE ESTA HECHA-
+                //cout << ic->listarPromociones(); -ASUMO QUE ESTA HECHA-
+                
+                //si es USUARIO: -TENGO QUE VER UNA BUENA MANERA DE SABER SI ES USUARIO-
+                //cout << ic->listarCompras(); -ASUMO QUE ESTA HECHA-
                 break;          
         }
     }
