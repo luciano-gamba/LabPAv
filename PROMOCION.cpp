@@ -43,21 +43,3 @@ void PROMOCION::obtenerFechaSistema(){
     this->fechaSis = d;
 }
 
-string PROMOCION::solicitarListaPromociones() {
-    IIterator* it = this->coleccionPromociones->getIterator(); 
-    string resultado = "";
-    PROMOCION* promoActual;
-    while (it->hasCurrent()) {
-        promoActual = (PROMOCION*)it->getCurrent();
-        promoActual->obtenerFechaSistema(); // actualiza fechaSis internamente
-       if (promoActual->getFechaVen() > promoActual->getFechaSis()) {
-        string nombre = promoActual->getNombre();
-            resultado += nombre + "\n";
-        }
-
-        it->next();
-    }
-
-    return resultado;
-}
-

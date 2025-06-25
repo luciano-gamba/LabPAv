@@ -24,6 +24,7 @@ public:
     string getContraseniaVendedor();
     date getFechaNacVendedor();
     string getRUT();
+    string getEmailVendedor();
     void setNicknameVendedor(string);
     void setContraseniaVendedor(string);
     void setFechaNacVendedor(date);

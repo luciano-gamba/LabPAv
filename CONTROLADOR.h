@@ -45,7 +45,7 @@ public:
 //PROMOCION
     void SelectProductoProm(int codigoP,int cantMin,int porcentajeDes);
     string solicitarListaPromociones();
-    string obtenerProductosVendedoresPromocion();    
+    string obtenerProductosVendedoresPromocion(string nombrePromo);    
 //COMPRA
     string listarNicknamesC();
     void selectNicknameC(string nick);
