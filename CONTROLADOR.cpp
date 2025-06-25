@@ -29,9 +29,13 @@ string CONTROLADOR::listarProductosPendientes(string nick) {
     return productosPendientes;
 }
 
-//set<dataCompraCliente> CONTROLADOR::listarCompraProductoPendiente(int codigoProd){
-//    return NULL;
-//}
+set<DataCompraCliente> CONTROLADOR::listarCompraProductoPendiente(int codigoProd){
+   set<DataCompraCliente> compras;
+   IKey* ik = new Integer(codigoProd);
+   PRODUCTO* p = (PRODUCTO*)this->misProductos->find(ik);
+   compras = p->dameComprasPend();
+   return compras;
+}
 
 //CLIENTE
 void CONTROLADOR::ingresoCliente(DataCliente* datosC, string contrasenia){    

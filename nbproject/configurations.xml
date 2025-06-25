@@ -10,6 +10,7 @@
       <itemPath>CONTROLADOR.h</itemPath>
       <itemPath>DTProducto.h</itemPath>
       <itemPath>DataCliente.h</itemPath>
+      <itemPath>DataCompraCliente.h</itemPath>
       <itemPath>DataDireccion.h</itemPath>
       <itemPath>DataProd.h</itemPath>
       <itemPath>DataProducto.h</itemPath>
@@ -72,6 +73,7 @@
       <itemPath>CONTROLADOR.cpp</itemPath>
       <itemPath>DTProducto.cpp</itemPath>
       <itemPath>DataCliente.cpp</itemPath>
+      <itemPath>DataCompraCliente.cpp</itemPath>
       <itemPath>DataDireccion.cpp</itemPath>
       <itemPath>DataProd.cpp</itemPath>
       <itemPath>DataProducto.cpp</itemPath>
@@ -141,6 +143,10 @@
       <item path="DataCliente.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataCliente.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataCompraCliente.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataCompraCliente.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="DataDireccion.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -346,6 +352,10 @@
       <item path="DataCliente.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataCliente.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataCompraCliente.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataCompraCliente.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="DataDireccion.cpp" ex="false" tool="1" flavor2="0">
       </item>

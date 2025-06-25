@@ -6,6 +6,18 @@ COMPRA::COMPRA() {
 COMPRA::~COMPRA() {
 }
 
+int COMPRA::getid(){
+    return this->idCompra;
+}
+
+string COMPRA::getNickname(){
+    return this->miCliente->getNicknameCliente();
+}
+
+date COMPRA::getFecha(){
+    return this->fechaCompra;
+}
+
 /*
 void COMPRA::agregarProducto(string codigoProd ,int cant ) {
     iterator* it = this->misProductos->getIterator();

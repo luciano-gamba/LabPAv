@@ -5,6 +5,9 @@
 #include "compra_producto.h"
 #include "ICollection/interfaces/ICollectible.h"
 #include "ICollection/interfaces/IDictionary.h"
+#include "ICollection/interfaces/IIterator.h"
+#include "DataCompraCliente.h"
+#include <set>
 
 class PRODUCTO : public ICollectible {
 public:
@@ -18,6 +21,7 @@ public:
     std::string getNombre();
     std::string getDescripcion();
     bool pendienteEnvio();
+    set<DataCompraCliente> dameComprasPend();
 private:
     int codigo;
     int stock;
