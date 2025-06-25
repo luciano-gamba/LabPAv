@@ -13,12 +13,26 @@ bool compra_producto::getRecibido(){
     return this->recibido;
 }
 
-DataCompraCliente compra_producto::dameCompra(){
-    DataCompraCliente comProd;
+string compra_producto::dameCompra(){
+    string comProd;
     COMPRA* c;
     c = (COMPRA*)this->miCompra;
-    comProd.setIdCompra(c->getid());
-    comProd.setNicknameCli(c->getNickname());
-    comProd.setFechaCompra(c->getFecha());
+    date f = c->getFecha();
+    comProd = to_string(c->getid()) + " " + c->getNickname() + " " + to_string(f.getDia()) + " " + to_string(f.getMes()) + " " + to_string(f.getAnio());
     return comProd;
+}
+
+bool compra_producto::getsi_idCompra(int idCompra){
+    int id;
+    COMPRA* c = (COMPRA*)this->miCompra;
+    id = c->getid();
+    if(id = idCompra){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+void compra_producto::marcaRecibido(){
+    this->recibido = true;
 }

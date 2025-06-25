@@ -29,12 +29,19 @@ string CONTROLADOR::listarProductosPendientes(string nick) {
     return productosPendientes;
 }
 
-set<DataCompraCliente> CONTROLADOR::listarCompraProductoPendiente(int codigoProd){
-   set<DataCompraCliente> compras;
+string CONTROLADOR::listarCompraProductoPendiente(int codigoProd){
+   string compras;
    IKey* ik = new Integer(codigoProd);
    PRODUCTO* p = (PRODUCTO*)this->misProductos->find(ik);
    compras = p->dameComprasPend();
    return compras;
+}
+
+void CONTROLADOR::selectCompraProductoPendiente(int idCompra){
+    VENDEDOR* v;
+    IKey* ik = new Integer(idCompra);
+    v = (VENDEDOR*)this->misVendedores->find(ik);
+    v->marcaloRecibido(idCompra);
 }
 
 //CLIENTE
@@ -100,10 +107,6 @@ string CONTROLADOR::ListarProductos(){
 }
 string CONTROLADOR::DescribeProducto(int codigoP){
     return "a";
-}
-//set<dataCompraCliente> CONTROLADOR::listarCompraProductoPendiente(int codigoProd);
-void CONTROLADOR::selectCompraProductoPendiente(int idCompra){
-
 }
 //VENDEDOR    
 void CONTROLADOR::ingresoVendedor(DataVendedor* datosV, string contrasenia){

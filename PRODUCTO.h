@@ -6,7 +6,6 @@
 #include "ICollection/interfaces/ICollectible.h"
 #include "ICollection/interfaces/IDictionary.h"
 #include "ICollection/interfaces/IIterator.h"
-#include "DataCompraCliente.h"
 #include <set>
 
 class PRODUCTO : public ICollectible {
@@ -21,7 +20,8 @@ public:
     std::string getNombre();
     std::string getDescripcion();
     bool pendienteEnvio();
-    set<DataCompraCliente> dameComprasPend();
+    string dameComprasPend();
+    void marcoRecibido(int idCompra);
 private:
     int codigo;
     int stock;

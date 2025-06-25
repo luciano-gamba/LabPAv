@@ -95,4 +95,10 @@ PROMOCION* VENDEDOR::crearPromo(string nombreProm,string descripcionProm,date fe
     PROMOCION* prom = new PROMOCION(nombreProm ,descripcionProm ,fechaVen);
     this->misPromociones->add(prom);
     return prom;
-} 
+}
+
+void VENDEDOR::marcaloRecibido(int idCompra){
+    IKey* ik = new Integer(idCompra);
+    PRODUCTO* p = (PRODUCTO*)this->misProductos->find(ik);
+    p->marcoRecibido(idCompra);
+}

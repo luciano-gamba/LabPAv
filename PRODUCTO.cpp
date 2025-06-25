@@ -46,19 +46,31 @@ bool PRODUCTO::pendienteEnvio(){
     return recibio;
 }
 
-set<DataCompraCliente> PRODUCTO::dameComprasPend(){
-    set<DataCompraCliente> compra;
+string PRODUCTO::dameComprasPend(){
+    string compra;
     compra_producto* cp;
-    DataCompraCliente comProd;
+    string comProd;
     
     IIterator* it = this->misCompraProductos->getIterator();
     for(it; it->hasCurrent(); it->next()){
         cp = (compra_producto*)it->getCurrent();
         if(!cp->getRecibido()){
-            comProd = cp->dameCompra();
-            //compra.insert(comProd);
+            comProd = comProd + cp->dameCompra() + "\n";
         }
     }
     return compra;
+}
+
+void PRODUCTO::marcoRecibido(int idCompra){
+    compra_producto* cp;
+    
+    IIterator* it = this->misCompraProductos->getIterator();
+    cp = (compra_producto*)it->getCurrent();
+    for(it; it->hasCurrent() and cp->getsi_idCompra(idCompra); it->next()){
+        cp = (compra_producto*)it->getCurrent();
+        if(cp->getsi_idCompra(idCompra)){
+            cp->marcaRecibido();
+        }
+    }
 }
 //Faltaria el getTipo o getCat pero el struct ese no se si va en un .h separado o dentro de alguno supongo que luego podemos preguntar

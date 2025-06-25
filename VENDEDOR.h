@@ -28,6 +28,7 @@ public:
     void setContraseniaVendedor(string);
     void setFechaNacVendedor(date);
     void setRUT(string);
+    void marcaloRecibido(int idCompra);
 private:
     std::string RUT;
     IDictionary* misProductos;

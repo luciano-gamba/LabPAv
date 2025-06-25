@@ -16,7 +16,6 @@
 #include "DTProducto.h"
 #include "DataCliente.h"
 #include "DataVendedor.h"
-#include "DataCompraCliente.h"
 #include <set>
 using namespace std;
 
@@ -38,7 +37,7 @@ public:
     string ListarProductos();
     string DescribeProducto(int codigoP);
     string listarProductosPendientes(string nick);
-    set<DataCompraCliente> listarCompraProductoPendiente(int codigoProd);
+    string listarCompraProductoPendiente(int codigoProd);
     void selectCompraProductoPendiente(int idCompra);
 //VENDEDOR    
     void ingresoVendedor(DataVendedor* datosV, string contraseña);
