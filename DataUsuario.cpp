@@ -7,7 +7,8 @@ DataUsuario::DataUsuario(const DataUsuario& orig) {
 }
 
 DataUsuario::DataUsuario(string s, date d){
-    
+    this->nickname = s;
+    this->fechaNac = d;
 }
 
 DataUsuario::~DataUsuario() {
