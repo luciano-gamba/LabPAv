@@ -41,7 +41,8 @@ int main(int argc, char** argv) {
                 }while (opcion1<1 or opcion1>2);
                     cout << "Ingrese nickname: ";
                     string nick;
-                    cin >> nick;
+                    cin.ignore();
+                    getline(cin, nick);
                     
                     cout << "Ingrese fecha de nacimiento: " << endl;
                     cout << "Dia: ";
@@ -57,11 +58,13 @@ int main(int argc, char** argv) {
                     
                     cout << "Ingrese contraseña: ";
                     string contr;
-                    cin >> contr;
+                    cin.ignore();
+                    getline(cin, contr);
                 if(opcion1==1){
                     cout << "Ingrese ciudad: ";
                     string ciudad;
-                    cin >> ciudad;
+                    cin.ignore();
+                    getline(cin, ciudad);
                     
                     cout << "Ingrese dirección: " << endl;
                     cout << "Nro Puerta: ";
@@ -69,7 +72,7 @@ int main(int argc, char** argv) {
                     cin >> numPuerta;
                     cout << "Nombre Calle: ";
                     string nomCalle;
-                    cin >> nomCalle;
+                    getline(cin, nomCalle);
                     DataDireccion dir(numPuerta, nomCalle);
                     
                     DataCliente* datosC = new DataCliente(nick,fecha,ciudad,dir);
@@ -77,8 +80,9 @@ int main(int argc, char** argv) {
                     cout << "ingresó el cliente" << endl;
                 }else{
                     cout << "Ingrese RUT: ";
+                    cin.ignore();
                     string rut;
-                    cin >> rut;
+                    getline(cin, rut);
                     DataVendedor* datosV = new DataVendedor(nick,fecha,rut);
                     ic->ingresoVendedor(datosV,contr);
                 }
@@ -90,15 +94,18 @@ int main(int argc, char** argv) {
                 }
                 break; //Darle opciones de nicknames existentes tipo al listarlo le pones un numero alado (indice)
             case 3:{
-                string v = ic->ListaVendedores(); //si no tiene nada v = ?
-                cout << v << endl;
-                cout << "Elige un vendedor válido: ";
-                int opcion3 = 0;
-                cin >> opcion3;
-                if(opcion3 > 0){
+                string v = ic->ListaVendedores();
+                if(v == "#$%"){
+                    cout << "\t<>VENDEDORES<>\n\nNo existen vendedores.\n\n";
+                }else{
+                    cout << v << endl;
+                    cout << "Elige un vendedor válido: ";
+                    int opcion3 = 0;
+                    cin >> opcion3;
                     cout << "Ingresa el nombre del producto: ";
                     string nomProd;
-                    cin >> nomProd;
+                    cin.ignore();
+                    getline(cin, nomProd);
                     cout << "Ingresa el precio del producto: ";
                     float precio;
                     cin >> precio;
@@ -107,7 +114,8 @@ int main(int argc, char** argv) {
                     cin >> cantStock;
                     cout << "Ingresa la descripción del producto: ";
                     string descProd;
-                    cin >> descProd;
+                    cin.ignore();
+                    getline(cin, descProd);
                     cout << "Elija la categoria del producto: \n1.Ropa\n2.Electrodomesticos\n3.Otros\nOpcion: ";
                     int opcionP = 0;
                     do{    
