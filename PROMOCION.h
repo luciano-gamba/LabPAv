@@ -16,7 +16,8 @@ public:
     PROMOCION();
     PROMOCION(string nombre, string descripcion, date fechaV);
     virtual ~PROMOCION();
-
+    string solicitarListaPromociones();
+    void obtenerFechaSistema();
     // Getters
     string getNombre();
     string getDescripcion();
