@@ -39,9 +39,13 @@ OBJECTFILES= \
 	${OBJECTDIR}/COMENTARIO.o \
 	${OBJECTDIR}/COMPRA.o \
 	${OBJECTDIR}/CONTROLADOR.o \
+	${OBJECTDIR}/DTProducto.o \
+	${OBJECTDIR}/DataCliente.o \
 	${OBJECTDIR}/DataDireccion.o \
 	${OBJECTDIR}/DataProd.o \
 	${OBJECTDIR}/DataProducto.o \
+	${OBJECTDIR}/DataUsuario.o \
+	${OBJECTDIR}/DataVendedor.o \
 	${OBJECTDIR}/FABRICA.o \
 	${OBJECTDIR}/ICollection/Integer.o \
 	${OBJECTDIR}/ICollection/String.o \
@@ -110,6 +114,16 @@ ${OBJECTDIR}/CONTROLADOR.o: CONTROLADOR.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CONTROLADOR.o CONTROLADOR.cpp
 
+${OBJECTDIR}/DTProducto.o: DTProducto.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DTProducto.o DTProducto.cpp
+
+${OBJECTDIR}/DataCliente.o: DataCliente.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataCliente.o DataCliente.cpp
+
 ${OBJECTDIR}/DataDireccion.o: DataDireccion.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -124,6 +138,16 @@ ${OBJECTDIR}/DataProducto.o: DataProducto.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataProducto.o DataProducto.cpp
+
+${OBJECTDIR}/DataUsuario.o: DataUsuario.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataUsuario.o DataUsuario.cpp
+
+${OBJECTDIR}/DataVendedor.o: DataVendedor.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DataVendedor.o DataVendedor.cpp
 
 ${OBJECTDIR}/FABRICA.o: FABRICA.cpp
 	${MKDIR} -p ${OBJECTDIR}

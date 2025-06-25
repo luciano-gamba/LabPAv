@@ -1,5 +1,4 @@
 #include "CONTROLADOR.h"
-#include <iostream>
 
 //CONTROLADOR* CONTROLADOR::instancia = nullptr;
 
@@ -151,10 +150,10 @@ void CONTROLADOR::SelectProductoProm(int codigoP,int cantMin,int porcentajeDes){
     while (it->hasCurrent()) {
         promoActual = (PROMOCION*)it->getCurrent();
         promoActual->obtenerFechaSistema(); // actualiza fechaSis internamente
-       if (promoActual->getFechaVen() > promoActual->getFechaSis()) {
-        string nombre = promoActual->getNombre();
-            resultado += nombre + "\n";
-        }
+//       if (promoActual->getFechaVen() > promoActual->getFechaSis()) {
+//        string nombre = promoActual->getNombre();
+//            resultado += nombre + "\n";
+//        }
 
         it->next();
     }
@@ -162,28 +161,28 @@ void CONTROLADOR::SelectProductoProm(int codigoP,int cantMin,int porcentajeDes){
     return resultado;
 }
 
-   string CONTROLADOR::obtenerProductosVendedoresPromocion(string nombrePromo) {
+string CONTROLADOR::obtenerProductosVendedoresPromocion(string nombrePromo) {
     string resultado;
-    IKey* ikPromo = new String(nombrePromo.c_str());
-    PROMOCION* promo = (PROMOCION*)this->misPromociones->find(ikPromo);
-    delete ikPromo;
-    
-    if (promo == nullptr) {
-        return resultado; 
-    }
-    IIterator* it = this->misProductos->getIterator();
-    while (it->hasCurrent()) {
-        PRODUCTO* prod =(PRODUCTO*)(it->getCurrent());
-        if (prod != nullptr) {
-            string nombreProd = prod->getNombre();
-            float precio = prod->getPrecio();
-                string vend = prod->getNicknameVendedor();
-                string promoStr = nombreProd + " " + to_string(precio) + " " + vend;
-                resultado += promoStr + "\n"; 
-        }
-        it->next();
-    }
-    delete it; 
+//    IKey* ikPromo = new String(nombrePromo.c_str());
+//    PROMOCION* promo = (PROMOCION*)this->misPromociones->find(ikPromo);
+//    delete ikPromo;
+//    
+//    if (promo == nullptr) {
+//        return resultado; 
+//    }
+//    IIterator* it = this->misProductos->getIterator();
+//    while (it->hasCurrent()) {
+//        PRODUCTO* prod =(PRODUCTO*)(it->getCurrent());
+//        if (prod != nullptr) {
+//            string nombreProd = prod->getNombre();
+//            float precio = prod->getPrecio();
+//                string vend = prod->getNicknameVendedor();
+//                string promoStr = nombreProd + " " + to_string(precio) + " " + vend;
+//                resultado += promoStr + "\n"; 
+//        }
+//        it->next();
+//    }
+//    delete it; 
     return resultado; 
 }
 

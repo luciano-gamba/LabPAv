@@ -1,5 +1,6 @@
 #ifndef CONTROLADOR_H
 #define CONTROLADOR_H
+#include <iostream>
 #include "ICONTROLADOR.h"
 #include "ICollection/interfaces/IDictionary.h" 
 #include "ICollection/interfaces/IKey.h"

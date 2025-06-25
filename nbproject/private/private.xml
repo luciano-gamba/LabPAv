@@ -7,23 +7,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/main.cpp</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/ICONTROLADOR.h</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/PROMOCION.cpp</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/COMPRA.cpp</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/USUARIO.cpp</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/DataCompra.h</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/FABRICA.h</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/CategoriaProducto.h</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/FABRICA.cpp</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/DataCompra.cpp</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/PRODUCTO.h</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/CONTROLADOR.h</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/CONTROLADOR.cpp</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/PROMOCION.h</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/VENDEDOR.h</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/VENDEDOR.cpp</file>
-            <file>file:/C:/Users/brito/Desktop/Lucas/Tecnologo%20en%20Informatica/3Tercer%20Semestre/Programación%20Avanzada/LabPAv/PRODUCTO.cpp</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/COMENTARIO.h</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/USUARIO.cpp</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/main.cpp</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/CONTROLADOR.cpp</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/PRODUCTO.h</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/VENDEDOR.cpp</file>
+            <file>file:/home/luciano/NetBeansProjects/UtecMercadoSuelto/USUARIO.h</file>
         </group>
     </open-files>
 </project-private>

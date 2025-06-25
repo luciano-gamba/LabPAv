@@ -23,7 +23,6 @@
       <itemPath>USUARIO.h</itemPath>
       <itemPath>VENDEDOR.h</itemPath>
       <itemPath>compra_producto.h</itemPath>
-      <itemPath>dataCliente.h</itemPath>
       <itemPath>date.h</itemPath>
       <itemPath>promocion_producto.h</itemPath>
     </logicalFolder>
@@ -290,8 +289,6 @@
       </item>
       <item path="compra_producto.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="dataCliente.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="date.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="date.h" ex="false" tool="3" flavor2="0">
@@ -494,8 +491,6 @@
       <item path="compra_producto.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="compra_producto.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="dataCliente.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="date.cpp" ex="false" tool="1" flavor2="0">
       </item>
