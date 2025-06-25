@@ -13,7 +13,6 @@
 #include "ICollection/interfaces/ICollectible.h"
 using namespace std;
 
-//class USUARIO;
 
 class COMENTARIO : public ICollectible{
 public:

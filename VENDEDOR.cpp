@@ -48,6 +48,7 @@ VENDEDOR::VENDEDOR(DataVendedor* datosV, string contrasenia){
     this->setContraseniaVendedor(contrasenia);
     this->setFechaNacVendedor(datosV->getDateVendedor());
     this->setRUT(datosV->getRUT());
+    this->misProductos = new OrderedDictionary;
 }
 
 void VENDEDOR::añadirProducto(DTProducto* datosProd){

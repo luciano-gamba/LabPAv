@@ -1,4 +1,5 @@
 #include "CONTROLADOR.h"
+#include <iostream>
 
 //CONTROLADOR* CONTROLADOR::instancia = nullptr;
 
@@ -86,7 +87,7 @@ string CONTROLADOR::listarInfoBasica(string nick){
 //PRODUCTO
 void CONTROLADOR::ingresoProducto(int vendedor, DTProducto* datosProd){
     int control = this->misVendedores->getSize();
-    if(control < vendedor){
+    if(vendedor > control or vendedor < 1){
         cout << "VENDEDOR SELECCIONADO NO VÁLIDO" << endl;
     }else{
         IIterator* iter = this->misVendedores->getIterator();
@@ -97,6 +98,7 @@ void CONTROLADOR::ingresoProducto(int vendedor, DTProducto* datosProd){
             vendedor = vendedor - 1;
         }
         v->añadirProducto(datosProd);
+        cout << "Listo!" << endl;
     }
 }
 string CONTROLADOR::ListarProductos(){
@@ -136,17 +138,17 @@ string CONTROLADOR::ListaVendedores(){
     IIterator* it = this->misVendedores->getIterator();
     
     VENDEDOR* v;
-    int aux = 0;
     if(it->hasCurrent()){
-       while(it->hasCurrent()){
-        aux = aux + 1;
-        string s = to_string(aux);
-        v = (VENDEDOR*) it->getCurrent();
-        retorno = retorno + s + ". " + v->getNicknameVendedor() + "\n\n";
-        it->next();
-       }
+        int aux = 0;
+        while(it->hasCurrent()){
+            aux = aux + 1;
+            string s = to_string(aux);
+            v = (VENDEDOR*) it->getCurrent();
+            retorno = retorno + s + ". " + v->getNicknameVendedor() + "\n\n";
+            it->next();
+        }
     }else{
-        retorno = retorno + "No existen vendedores. [Seleccione 0 para salir]" + "\n\n";
+        retorno = "#$%";
     }
     return retorno;
 }
