@@ -33,6 +33,7 @@ public:
     
 //USUARIO
     string listarUsuarios();
+    string listarInfoBasica(string);
 //PRODUCTO
     void ingresoProducto(int vendedor, DTProducto* datosProd);
     string ListarProductos();

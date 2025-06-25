@@ -160,15 +160,15 @@ int main(int argc, char** argv) {
                 //ic->selectCompraProductoPendiente(idCompra);
                 break;
             case 11:
-                //cout << ic->listarUsuarios(); -ASUMO QUE ESTA HECHAS-
-                //cout << ic->listarInfoBasica(nick); -FALTA POR HACER, RESPONSABILIDAD MIA XD-
+                //cout << ic->listarUsuarios(); -ASUMO QUE ESTA HECHA-
+                //cout << ic->listarInfoBasica(nick); -HECHA-
                 
-                //si es VENDEDOR: -TENGO QUE VER UNA BUENA MANERA DE SABER ESTO-
-                //cout << ic->listarProductos(); -ASUMO QUE ESTA HECHAS-
-                //cout << ic->listarPromociones(); -ASUMO QUE ESTA HECHAS-
+                //si es VENDEDOR: -TENGO QUE VER UNA BUENA MANERA DE SABER SI ES VENDEDOR-
+                //cout << ic->listarProductos(); -ASUMO QUE ESTA HECHA-
+                //cout << ic->listarPromociones(); -ASUMO QUE ESTA HECHA-
                 
-                //si es USUSARIO: -TENGO QUE VER UNA BUENA MANERA DE SABER ESTO-
-                //cout << ic->listarCompras(); -ASUMO QUE ESTA HECHAS-
+                //si es USUARIO: -TENGO QUE VER UNA BUENA MANERA DE SABER SI ES USUARIO-
+                //cout << ic->listarCompras(); -ASUMO QUE ESTA HECHA-
                 break;          
         }
     }

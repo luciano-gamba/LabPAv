@@ -75,6 +75,14 @@ string CONTROLADOR::listarUsuarios(){
     }
     return retorno;
 }
+
+string CONTROLADOR::listarInfoBasica(string nick){
+    string retorno;
+    IKey* ik = new String(nick.c_str());
+    USUARIO* u = (USUARIO*)this->misUsuarios->find(ik);
+    return retorno = u->getNickname() + " " + to_string(u->getFechaNac().getDia()) + "/" + to_string(u->getFechaNac().getMes()) + "/" + to_string(u->getFechaNac().getAnio());
+}
+
 //PRODUCTO
 void CONTROLADOR::ingresoProducto(int vendedor, DTProducto* datosProd){
     int control = this->misVendedores->getSize();
