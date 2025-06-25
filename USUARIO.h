@@ -2,6 +2,8 @@
 #define USUARIO_H
 #include <string>
 #include "date.h"
+//#include "COMENTARIO.h"
+#include "ICollection/Integer.h"
 #include "ICollection/interfaces/ICollectible.h"
 #include "ICollection/interfaces/IDictionary.h"
 #include "ICollection/collections/OrderedDictionary.h"
@@ -27,7 +29,7 @@ public:
     
     void setFechaNac(date);
     
-    void desAsignarComentarioAUsu(COMENTARIO *c);
+    void desAsignarComentarioAUsu(COMENTARIO* c);
     
 private:
     string nickname;

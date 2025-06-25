@@ -145,12 +145,49 @@ string CONTROLADOR::ListarProductosV(string NicknameV,string nombreProm,string d
 void CONTROLADOR::SelectProductoProm(int codigoP,int cantMin,int porcentajeDes){
 
 }
-string CONTROLADOR::solicitarListaPromociones(){
-    return "a";
+   string CONTROLADOR::solicitarListaPromociones() {
+    IIterator* it = this->misPromociones->getIterator(); 
+    string resultado = "";
+    PROMOCION* promoActual;
+    while (it->hasCurrent()) {
+        promoActual = (PROMOCION*)it->getCurrent();
+        promoActual->obtenerFechaSistema(); // actualiza fechaSis internamente
+//       if (promoActual->getFechaVen() > promoActual->getFechaSis()) {
+//        string nombre = promoActual->getNombre();
+//            resultado += nombre + "\n";
+//        }
+
+        it->next();
+    }
+
+    return resultado;
 }
-string CONTROLADOR::obtenerProductosVendedoresPromocion(){
-    return "a";
+
+string CONTROLADOR::obtenerProductosVendedoresPromocion(string nombrePromo) {
+    string resultado;
+//    IKey* ikPromo = new String(nombrePromo.c_str());
+//    PROMOCION* promo = (PROMOCION*)this->misPromociones->find(ikPromo);
+//    delete ikPromo;
+//    
+//    if (promo == nullptr) {
+//        return resultado; 
+//    }
+//    IIterator* it = this->misProductos->getIterator();
+//    while (it->hasCurrent()) {
+//        PRODUCTO* prod =(PRODUCTO*)(it->getCurrent());
+//        if (prod != nullptr) {
+//            string nombreProd = prod->getNombre();
+//            float precio = prod->getPrecio();
+//                string vend = prod->getNicknameVendedor();
+//                string promoStr = nombreProd + " " + to_string(precio) + " " + vend;
+//                resultado += promoStr + "\n"; 
+//        }
+//        it->next();
+//    }
+//    delete it; 
+    return resultado; 
 }
+
 //COMPRA
 string CONTROLADOR::listarNicknamesC(){
     return "a";

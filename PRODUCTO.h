@@ -5,6 +5,8 @@
 #include "compra_producto.h"
 #include "ICollection/interfaces/ICollectible.h"
 #include "ICollection/interfaces/IDictionary.h"
+#include "VENDEDOR.h"
+using namespace std;
 
 class PRODUCTO : public ICollectible {
 public:
@@ -15,8 +17,9 @@ public:
     int getCodigo(); 
     int getStock();
     float getPrecio();
-    std::string getNombre();
-    std::string getDescripcion();
+    string getNombre();
+    string getDescripcion();
+    string getNicknameVendedor();
     bool pendienteEnvio();
 private:
     int codigo;
@@ -25,6 +28,7 @@ private:
     std::string nombre;
     std::string descripcion;
     IDictionary* misCompraProductos;
+    //VENDEDOR* vendedorAsociado;
 };
 
 #endif /* PRODUCTO_H */

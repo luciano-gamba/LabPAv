@@ -14,58 +14,32 @@ PROMOCION::~PROMOCION() {
 }
 
 string PROMOCION::getNombre(){
-    return getNombre();
+   return this->nombrePromo;
 }
 
 string PROMOCION::getDescripcion(){
-    return getDescripcion();
+   return this->descripcionPromo;
 }
 
 date PROMOCION::getFechaVen(){
-    return getFechaVen();
-}
-
-date PROMOCION::getFechaSis(){
-    return getFechaSis();
+    return this->fechaVen;
 }
 
 void PROMOCION::setNombre(string n){
-    setNombre(n);
+    this->nombrePromo=n;
 }
 
 void PROMOCION::setDescripcion(string d){
-    setDescripcion(d);
+    this->descripcionPromo=d;
 }
 
 void PROMOCION::setFechaVen(date f){
-    setFechaVen(f);
-}
-
-void PROMOCION::setFechaSis(date f){
-    setFechaSis(f);
+    this->fechaVen=f;
 }
 
 void PROMOCION::obtenerFechaSistema(){
     time_t ya = time(NULL);
     date d = date(localtime(&ya)->tm_mday,localtime(&ya)->tm_mon+1,localtime(&ya)->tm_year+1900);
     this->fechaSis = d;
-}
-
-string PROMOCION::solicitarListaPromociones() {
-    IIterator* it = this->coleccionPromociones->getIterator(); 
-    string resultado = "";
-    PROMOCION* promoActual;
-    while (it->hasCurrent()) {
-        promoActual = (PROMOCION*)it->getCurrent();
-        promoActual->obtenerFechaSistema(); // actualiza fechaSis internamente
-       if (promoActual->getFechaVen() > promoActual->getFechaSis()) {
-        string nombre = promoActual->getNombre();
-            resultado += nombre + "\n";
-        }
-
-        it->next();
-    }
-
-    return resultado;
 }
 

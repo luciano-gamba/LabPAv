@@ -23,7 +23,6 @@
       <itemPath>USUARIO.h</itemPath>
       <itemPath>VENDEDOR.h</itemPath>
       <itemPath>compra_producto.h</itemPath>
-      <itemPath>dataCliente.h</itemPath>
       <itemPath>date.h</itemPath>
       <itemPath>promocion_producto.h</itemPath>
     </logicalFolder>
@@ -98,8 +97,21 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
   </logicalFolder>
   <sourceRootList>
+    <Elem>../../Escritorio/ICollection</Elem>
+    <Elem>ICollection</Elem>
     <Elem>../../Escritorio/ICollection</Elem>
     <Elem>ICollection</Elem>
   </sourceRootList>
@@ -289,8 +301,6 @@
       <item path="compra_producto.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="compra_producto.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="dataCliente.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="date.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -494,8 +504,6 @@
       <item path="compra_producto.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="compra_producto.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="dataCliente.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="date.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -17,13 +17,14 @@ public:
     VENDEDOR(DataVendedor*,string);
     virtual ~VENDEDOR();
     string GetProductosAsoc();
-    PROMOCION* crearPromo(std::string nombreProm,std::string descripcionProm,date fechaVen);
+//    PROMOCION* crearPromo(string nombreProm,string descripcionProm,date fechaVen);
     string dameProductosPendientes();
     void añadirProducto(DTProducto*);
     string getNicknameVendedor();
     string getContraseniaVendedor();
     date getFechaNacVendedor();
     string getRUT();
+    string getEmailVendedor();
     void setNicknameVendedor(string);
     void setContraseniaVendedor(string);
     void setFechaNacVendedor(date);
