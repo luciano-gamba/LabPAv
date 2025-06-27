@@ -3,6 +3,7 @@
 #include "USUARIO.h"
 #include "DataDireccion.h"
 #include "DataCliente.h"
+#include "COMPRA.h"
 #include <string>
 
 class CLIENTE : public USUARIO{
@@ -16,12 +17,15 @@ public:
     date getFechaNacCliente();
     string getCiudad();
     DataDireccion getDireccion();
+    COMPRA* getCompraActiva();
+    void setCompraActiva(COMPRA* c);
     void setNicknameCliente(string);
     void setContraseniaCliente(string);
     void setFechaNacCliente(date);
     void setCiudad(string);
     void setDireccion(DataDireccion);
 private:
+    COMPRA* compraActiva;
     std::string ciudad;
     DataDireccion direccion;    
 };

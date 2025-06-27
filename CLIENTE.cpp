@@ -49,6 +49,14 @@ void CLIENTE::setCiudad(string c){
     this->ciudad=c;
 }
 
+void CLIENTE::setCompraActiva(COMPRA* c) {
+   this->compraActiva = c;
+}
+
+COMPRA* CLIENTE::getCompraActiva() {
+    return this->compraActiva;
+}
+
 CLIENTE::CLIENTE(DataCliente* datosC, string contrasenia){
     this->setNicknameCliente(datosC->getNicknameCliente());
     this->setContraseniaCliente(contrasenia);

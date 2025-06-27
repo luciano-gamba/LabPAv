@@ -1,7 +1,10 @@
 #include "PRODUCTO.h"
+#include "VENDEDOR.h"
+#include "compra_producto.h"
 #include "ICollection/interfaces/IIterator.h"
 
 PRODUCTO::PRODUCTO() {
+    this->vendedorAsociado = nullptr;
 }
 
 PRODUCTO::PRODUCTO(const PRODUCTO& orig) {
@@ -13,6 +16,7 @@ PRODUCTO::PRODUCTO(DTProducto* datosProd, int cod){
     this->precio = datosProd->getPrecio();
     this->stock = datosProd->getCantStock();
     this->descripcion = datosProd->getDescProd();
+    this->vendedorAsociado = nullptr;
 }
 
 PRODUCTO::~PRODUCTO() {
@@ -45,4 +49,16 @@ bool PRODUCTO::pendienteEnvio(){
     }
     return recibio;
 }
+
+std::string PRODUCTO::getNicknameVendedor(){
+    if(this->vendedorAsociado != nullptr){
+        return this->vendedorAsociado->getNicknameVendedor();
+    }
+    return ""; // Si no hay vendedor asociado
+}
+
+void PRODUCTO::setVendedorAsociado(VENDEDOR* v){
+    this->vendedorAsociado = v;
+}
+
 //Faltaria el getTipo o getCat pero el struct ese no se si va en un .h separado o dentro de alguno supongo que luego podemos preguntar

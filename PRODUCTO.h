@@ -2,11 +2,12 @@
 #define PRODUCTO_H
 #include <string>
 #include "DTProducto.h"
-#include "compra_producto.h"
 #include "ICollection/interfaces/ICollectible.h"
 #include "ICollection/interfaces/IDictionary.h"
-#include "VENDEDOR.h"
 using namespace std;
+
+// Declaración adelantada para evitar dependencia circular
+class VENDEDOR;
 
 class PRODUCTO : public ICollectible {
 public:
@@ -21,6 +22,7 @@ public:
     string getDescripcion();
     string getNicknameVendedor();
     bool pendienteEnvio();
+    void setVendedorAsociado(VENDEDOR* v);
 private:
     int codigo;
     int stock;
@@ -28,7 +30,7 @@ private:
     std::string nombre;
     std::string descripcion;
     IDictionary* misCompraProductos;
-    //VENDEDOR* vendedorAsociado;
+    VENDEDOR* vendedorAsociado;
 };
 
 #endif /* PRODUCTO_H */

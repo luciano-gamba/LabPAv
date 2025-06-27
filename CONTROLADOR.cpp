@@ -1,5 +1,6 @@
 #include "CONTROLADOR.h"
 
+
 //CONTROLADOR* CONTROLADOR::instancia = nullptr;
 
 CONTROLADOR::CONTROLADOR() {
@@ -7,6 +8,8 @@ CONTROLADOR::CONTROLADOR() {
     this->misUsuarios = new OrderedDictionary;
     this->misVendedores = new OrderedDictionary;
     this->misClientes = new OrderedDictionary;
+    this->misPromociones = new OrderedDictionary;
+    this->com = nullptr;
 }
 
 CONTROLADOR::~CONTROLADOR() {
@@ -150,10 +153,9 @@ void CONTROLADOR::SelectProductoProm(int codigoP,int cantMin,int porcentajeDes){
     while (it->hasCurrent()) {
         promoActual = (PROMOCION*)it->getCurrent();
         promoActual->obtenerFechaSistema(); // actualiza fechaSis internamente
-//       if (promoActual->getFechaVen() > promoActual->getFechaSis()) {
-//        string nombre = promoActual->getNombre();
-//            resultado += nombre + "\n";
-//        }
+      if (promoActual->getFechaVen() > promoActual->obtenerFechaSistema()) {
+        string nombre = promoActual->getNombre();           resultado += nombre + "\n";
+        }
 
         it->next();
     }
@@ -163,37 +165,106 @@ void CONTROLADOR::SelectProductoProm(int codigoP,int cantMin,int porcentajeDes){
 
 string CONTROLADOR::obtenerProductosVendedoresPromocion(string nombrePromo) {
     string resultado;
-//    IKey* ikPromo = new String(nombrePromo.c_str());
-//    PROMOCION* promo = (PROMOCION*)this->misPromociones->find(ikPromo);
-//    delete ikPromo;
-//    
-//    if (promo == nullptr) {
-//        return resultado; 
-//    }
-//    IIterator* it = this->misProductos->getIterator();
-//    while (it->hasCurrent()) {
-//        PRODUCTO* prod =(PRODUCTO*)(it->getCurrent());
-//        if (prod != nullptr) {
-//            string nombreProd = prod->getNombre();
-//            float precio = prod->getPrecio();
-//                string vend = prod->getNicknameVendedor();
-//                string promoStr = nombreProd + " " + to_string(precio) + " " + vend;
-//                resultado += promoStr + "\n"; 
-//        }
-//        it->next();
-//    }
-//    delete it; 
+    IKey* ikPromo = new String(nombrePromo.c_str());
+    PROMOCION* promo = (PROMOCION*)this->misPromociones->find(ikPromo);
+    delete ikPromo;
+   
+   if (promo == nullptr) {
+        return resultado; 
+    }
+    IIterator* it = this->misProductos->getIterator();
+    while (it->hasCurrent()) {
+        PRODUCTO* prod =(PRODUCTO*)(it->getCurrent());
+        if (prod != nullptr) {
+            string nombreProd = prod->getNombre();
+            float precio = prod->getPrecio();
+                string vend = prod->getNicknameVendedor();
+               string promoStr = nombreProd + " " + to_string(precio) + " " + vend;
+                resultado += promoStr + "\n"; 
+        }
+        it->next();
+    }
+    delete it; 
     return resultado; 
 }
 
 //COMPRA
 string CONTROLADOR::listarNicknamesC(){
-    return "a";
+    string listar = "\t<>CLIENTES<>\n\n";
+    IIterator* it= this->misClientes->getIterator();
+    CLIENTE* c;
+    int aux = 0;
+    if(it->hasCurrent()){
+        while(it->hasCurrent()){
+            aux = aux +1;
+            string l = to_string(aux);
+            c = (CLIENTE*) it->getCurrent();
+            listar = listar + l + " " + c->getNicknameCliente() + "\n\n";
+            it->next();
+        }
+    }else{
+        listar = listar + "No hay Clientes" + "\n\n";
+    }
+    
+    return listar;
 }
 void CONTROLADOR::selectNicknameC(string nick){
+    string seleccion;
+    IKey* ikCliente = new String(nick.c_str());
+   CLIENTE* cliente = (CLIENTE*)this->misClientes->find(ikCliente);
+    delete ikCliente;
+    
+    if (cliente == nullptr) {
+       cout<<"Cliente no Encontrado"<<endl;
+   }
 
-}
-void CONTROLADOR::agregarProducto(string codigoProd, int cant){
+   if(cliente->getCompraActiva() != nullptr){
+        //delete cliente->getCompraActiva();
+   }
+   cliente->setCompraActiva(COMPRA::create());
 
+   cout<<"Compra Iniciada" + nick + "\n\n";
 }
-    //DataCompra CONTROLADOR::mostrarDetalleCompra(){}
+void CONTROLADOR::agregarProducto(string codigoProd, int cant) {
+    IKey* key = new String(codigoProd.c_str());
+
+    if (!misProductos->member(key)) {
+        std::cout << "Producto no encontrado.\n";
+        delete key;
+        return;
+    }
+
+    PRODUCTO* p = (PRODUCTO*)misProductos->find(key);
+
+    if (p == nullptr) {
+        std::cout << "Error al recuperar el producto.\n";
+        delete key;
+        return;
+    }
+
+    this->com->agregarProducto(codigoProd, cant);
+
+    delete key;
+}
+
+ DataCompra CONTROLADOR::mostrarDetalleCompra() {
+    date f = com->getFechaCompra();
+    float m = com->montoCompra();
+    std::set<DataProducto> items = com->getItems();
+
+    DataCompra detalle;
+
+    std::cout << "=== RESUMEN DE LA COMPRA ===\n";
+    std::cout << "Fecha de compra: " << f.getInfoDate() << "\n";
+    std::cout << "Productos:\n";
+    
+    for (const DataProducto& item : items) {
+        std::cout << "- Producto incluido en la compra\n";
+    }
+
+    std::cout << "Monto total: $" << m << "\n";
+    std::cout << "=============================\n";
+
+    return detalle;
+}
+ 
