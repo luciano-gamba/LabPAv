@@ -1,12 +1,15 @@
 #include <cstdlib>
 #include <iostream>
-//#include <string>
+#include <string>
 using namespace std;
 #include "FABRICA.h"
 #include "ICONTROLADOR.h"
 #include "date.h"
 #include "DataDireccion.h"
 #include "DataCliente.h"
+#include "DataVendedor.h"
+#include "DTProducto.h"
+#include "TipoProducto.h"
 
 void limpiarPantalla() {
 #ifdef _WIN32
@@ -136,6 +139,9 @@ int main(int argc, char** argv) {
                 }
                 break; 
             case 3:{
+                limpiarPantalla();
+                centrarTexto("=== ALTA DE PRODUCTO ===");
+                cout << endl;
                 string v = ic->ListaVendedores();
                 if(v == "#$%"){
                     cout << "\t<>VENDEDORES<>\n\nNo existen vendedores.\n\n";
@@ -302,6 +308,7 @@ int main(int argc, char** argv) {
                 cin.ignore();
                 cin.get();
                 break;
+            }
            case 8:{
                 int opU;
                 cout << "\t<>USUARIOS<>\n\n";

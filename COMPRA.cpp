@@ -1,7 +1,12 @@
 #include "COMPRA.h"
 #include "PRODUCTO.h"
-#include "CONTROLADOR.h"
+#include "CLIENTE.h"
+
 COMPRA::COMPRA() {
+    idCompra = 0;
+    monto = 0.0;
+    miCliente = nullptr;
+    productosCompra = nullptr;
 }
 
 COMPRA::~COMPRA() {
@@ -12,19 +17,10 @@ int COMPRA::getid(){
 }
 
 string COMPRA::getNickname(){
-    return this->miCliente->getNicknameCliente();
-}
-
-date COMPRA::getFecha(){
-    return this->fechaCompra;
-}
-
-int COMPRA::getid(){
-    return this->idCompra;
-}
-
-string COMPRA::getNickname(){
-    return this->miCliente->getNicknameCliente();
+    if(miCliente != nullptr) {
+        return this->miCliente->getNicknameCliente();
+    }
+    return "";
 }
 
 date COMPRA::getFecha(){

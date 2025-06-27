@@ -4,9 +4,11 @@
 #include "DataProducto.h"
 #include "DataCompra.h"
 #include <set>
-#include "CLIENTE.h"
 #include "ICollection/interfaces/IDictionary.h"
-#include "compra_producto.h"
+
+// Declaraciones adelantadas para evitar dependencia circular
+class CLIENTE;
+class compra_producto;
 
 class COMPRA {
 public:

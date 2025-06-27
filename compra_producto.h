@@ -2,10 +2,10 @@
 #define COMPRA_PRODUCTO_H
 #include "date.h"
 #include "ICollection/interfaces/ICollectible.h"
-#include "COMPRA.h"
 
-// Declaración adelantada para evitar dependencia circular
+// Declaraciones adelantadas para evitar dependencia circular
 class PRODUCTO;
+class COMPRA;
 
 class compra_producto: public ICollectible {
 public:
