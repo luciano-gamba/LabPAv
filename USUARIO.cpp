@@ -1,8 +1,7 @@
 #include "USUARIO.h"
-#include "COMENTARIO.h"
 
 USUARIO::USUARIO() {
-    this->misComentarios = new OrderedDictionary();
+//    this->misComentarios = new OrderedDictionary();
 }
 
 USUARIO::USUARIO(string nick, string contra, date fecha){
@@ -38,8 +37,42 @@ void USUARIO::setFechaNac(date f){
     this->fechaNac=f;
 }
 
+string USUARIO::getInfoMisComentarios(){
+    
+    string retorno;
+    int aux=0;
+    IIterator* it = this->misComentarios->getIterator();
+    COMENTARIO* c;
+    while(it->hasCurrent()){
+        aux++;
+        c = (COMENTARIO*) it->getCurrent();
+        retorno = retorno +"<"+ to_string(aux) +">"+ c->getInfoComentario() + "\n";
+        it->next();
+    }
+    delete it;
+    
+    return retorno;  
+}
+void USUARIO::asignarComentarioAUsu(COMENTARIO* c){
+    ICollectible* ic = c;
+    this->misComentarios->add(ic);
+}
+
 void USUARIO::desAsignarComentarioAUsu(COMENTARIO* c){
-    IKey *ik = new Integer(c->getCodComent());
-    this->misComentarios->remove(ik);
-    delete ik;
+    ICollectible* ic = c;
+    this->misComentarios->remove(ic);
+}
+void USUARIO::eliminarComentarioUsuario(int opC){
+
+    IIterator* itC = this->misComentarios->getIterator();
+    COMENTARIO* c;
+    while (opC != 1) {
+        opC--;
+        itC->next();
+    }
+    c = (COMENTARIO*) itC->getCurrent();
+    delete itC;
+    
+    c->~COMENTARIO();
+    delete c;
 }

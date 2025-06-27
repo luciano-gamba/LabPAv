@@ -7,6 +7,30 @@ COMPRA::COMPRA() {
 COMPRA::~COMPRA() {
 }
 
+int COMPRA::getid(){
+    return this->idCompra;
+}
+
+string COMPRA::getNickname(){
+    return this->miCliente->getNicknameCliente();
+}
+
+date COMPRA::getFecha(){
+    return this->fechaCompra;
+}
+
+int COMPRA::getid(){
+    return this->idCompra;
+}
+
+string COMPRA::getNickname(){
+    return this->miCliente->getNicknameCliente();
+}
+
+date COMPRA::getFecha(){
+    return this->fechaCompra;
+}
+
 COMPRA* COMPRA::create() {
     return new COMPRA();
 }

@@ -66,7 +66,8 @@ int main(int argc, char** argv) {
                     cout << "Ingrese nickname: " << endl;
                     cout << "\nEsperando Instruccion: ";
                     string nick;
-                    cin >> nick;
+                    cin.ignore();
+                    getline(cin, nick);
                     
                     cout << "Ingrese fecha de nacimiento: " << endl;
                     cout << "Dia: " << endl;
@@ -86,12 +87,14 @@ int main(int argc, char** argv) {
                     cout << "Ingrese contraseña: " << endl;
                     cout << "\nEsperando Instruccion: ";
                     string contr;
-                    cin >> contr;
+                    cin.ignore();
+                    getline(cin, contr);
                 if(opcion1==1){
                     cout << "Ingrese ciudad: " << endl;
                     cout << "\nEsperando Instruccion: ";
                     string ciudad;
-                    cin >> ciudad;
+                    cin.ignore();
+                    getline(cin, ciudad);
                     
                     cout << "Ingrese direccion: " << endl;
                     cout << "Nro Puerta: " << endl;
@@ -101,7 +104,7 @@ int main(int argc, char** argv) {
                     cout << "Nombre Calle: " << endl;
                     cout << "\nEsperando Instruccion: ";
                     string nomCalle;
-                    cin >> nomCalle;
+                    getline(cin, nomCalle);
                     DataDireccion dir(numPuerta, nomCalle);
                     
                     DataCliente* datosC = new DataCliente(nick,fecha,ciudad,dir);
@@ -110,8 +113,9 @@ int main(int argc, char** argv) {
                 }else{
                     cout << "Ingrese RUT: " << endl;
                     cout << "\nEsperando Instruccion: ";
+                    cin.ignore();
                     string rut;
-                    cin >> rut;
+                    getline(cin, rut);
                     DataVendedor* datosV = new DataVendedor(nick,fecha,rut);
                     ic->ingresoVendedor(datosV,contr);
                 }
@@ -132,22 +136,19 @@ int main(int argc, char** argv) {
                 }
                 break; 
             case 3:{
-                limpiarPantalla();
-                centrarTexto("=== ALTA DE PRODUCTO ===");
-                cout << endl;
                 string v = ic->ListaVendedores();
-                cout << v << endl;
-                cout << "Elige un vendedor válido: " << endl;
-                cout << "\nEsperando Instruccion: ";
-                int opcion3 = 0;
-                cin >> opcion3;
-                if(opcion3 > 0){
-                    cout << "Ingresa el nombre del producto: " << endl;
-                    cout << "\nEsperando Instruccion: ";
+                if(v == "#$%"){
+                    cout << "\t<>VENDEDORES<>\n\nNo existen vendedores.\n\n";
+                }else{
+                    cout << v << endl;
+                    cout << "Elige un vendedor válido: ";
+                    int opcion3 = 0;
+                    cin >> opcion3;
+                    cout << "Ingresa el nombre del producto: ";
                     string nomProd;
-                    cin >> nomProd;
-                    cout << "Ingresa el precio del producto: " << endl;
-                    cout << "\nEsperando Instruccion: ";
+                    cin.ignore();
+                    getline(cin, nomProd);
+                    cout << "Ingresa el precio del producto: ";
                     float precio;
                     cin >> precio;
                     cout << "Ingresa el stock del producto: " << endl;
@@ -157,9 +158,9 @@ int main(int argc, char** argv) {
                     cout << "Ingresa la descripcion del producto: " << endl;
                     cout << "\nEsperando Instruccion: ";
                     string descProd;
-                    cin >> descProd;
-                    cout << "Elija la categoria del producto: \n1.Ropa\n2.Electrodomesticos\n3.Otros\nOpcion: " << endl;
-                    cout << "\nEsperando Instruccion: ";
+                    cin.ignore();
+                    getline(cin, descProd);
+                    cout << "Elija la categoria del producto: \n1.Ropa\n2.Electrodomesticos\n3.Otros\nOpcion: ";
                     int opcionP = 0;
                     do{    
                         cin >> opcionP;
@@ -301,47 +302,90 @@ int main(int argc, char** argv) {
                 cin.ignore();
                 cin.get();
                 break;
+           case 8:{
+                int opU;
+                cout << "\t<>USUARIOS<>\n\n";
+                cout << ic->listarUsuarios();
+                do{
+                cout << "<> Ingrese opción: ";
+                cin >> opU;
+                }while(opU<1);
+
+                int opP;
+                cout << "\t<>PRODUCTOS<>\n\n";
+                cout << ic->ListarProductos();
+                do{
+                cout << "<> Ingrese opción: ";
+                cin >> opP;
+                }while(opP<1);
+
+                int op;
+                do{
+                cout << "<> ¿Desea responder un comentario? (1:SI 2:NO): ";
+                cin >> op;
+                }while(op!=1 && op!=2);
+
+                if (op == 1) {
+
+                    int opC;
+                    cout << "\t<>COMENTARIOS<>\n\n";
+                    ic->listarComentariosProducto(opP);
+                    do {
+                        cout << "<> Ingrese opción: ";
+                        cin >> opC;
+                    } while (opC < 1);
+                    
+                    string texto;
+                    cout << "<> Escriba su comentario: ";
+                    cin >> texto;
+                    ic->responderComentarioProducto(opU, opP, opC, texto);
+
+                } else {
+                    string texto;
+                    cout << "<> Escriba su comentario: ";
+                    cin >> texto;
+                    ic->escribirComentarioProducto(opU, opP, texto);
+                }
+                break;
             }
-            case 8:
-                limpiarPantalla();
-                centrarTexto("=== DEJAR COMENTARIO ===");
-                cout << endl;
-                // IMPLEMENTAR DEJAR COMENTARIO
-                cout << "Funcionalidad no implementada";
-                cout << "\nPresione Enter para continuar...";
-                cin.ignore();
-                cin.get();
+            case 9:{
+                int opU;
+                cout << "\t<>USUARIOS<>\n\n";
+                cout << ic->listarUsuarios();
+                do{
+                cout << "<> Ingrese opción: ";
+                cin >> opU;
+                }while(opU<1);
+
+                int opC;
+                cout << "\t<>COMENTARIOS<>\n\n";
+                ic->listarComentariosUsuario(opU);
+                do{
+                cout << "<> Ingrese opción: ";
+                cin >> opC;
+                }while(opC<1);
+                
+                ic->eliminarComentarioUsuario(opU,opC);
+                
                 break;
-            case 9:
-                limpiarPantalla();
-                centrarTexto("=== ELIMINAR COMENTARIO ===");
-                cout << endl;
-                // IMPLEMENTAR ELIMINAR COMENTARIO
-                cout << "Funcionalidad no implementada";
-                cout << "\nPresione Enter para continuar...";
-                cin.ignore();
-                cin.get();
-                break;
+            }
             case 10:
-                limpiarPantalla();
-                centrarTexto("=== ENVIAR PRODUCTO ===");
-                cout << endl;
-                // IMPLEMENTAR ENVIAR PRODUCTO
-                cout << "Funcionalidad no implementada";
-                cout << "\nPresione Enter para continuar...";
-                cin.ignore();
-                cin.get();
+                //cout << ic->listarVendedores();
+                //cout << ic->listarProductosPendientes(nick);
+                //cout << ic->listarCompraProductoPendiente(codigoProd);
+                //ic->selectCompraProductoPendiente(idCompra);
                 break;
             case 11:
-                limpiarPantalla();
-                centrarTexto("=== EXPEDIENTE DE USUARIO ===");
-                cout << endl;
-                // IMPLEMENTAR EXPEDIENTE DE USUARIO
-                cout << "Funcionalidad no implementada";
-                cout << "\nPresione Enter para continuar...";
-                cin.ignore();
-                cin.get();
-                break;
+                //cout << ic->listarUsuarios(); -ASUMO QUE ESTA HECHA-
+                //cout << ic->listarInfoBasica(nick); -HECHA-
+                
+                //si es VENDEDOR: -TENGO QUE VER UNA BUENA MANERA DE SABER SI ES VENDEDOR-
+                //cout << ic->listarProductos(); -ASUMO QUE ESTA HECHA-
+                //cout << ic->listarPromociones(); -ASUMO QUE ESTA HECHA-
+                
+                //si es USUARIO: -TENGO QUE VER UNA BUENA MANERA DE SABER SI ES USUARIO-
+                //cout << ic->listarCompras(); -ASUMO QUE ESTA HECHA-
+                break;          
         }
     }
     

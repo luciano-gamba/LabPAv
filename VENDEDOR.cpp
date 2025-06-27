@@ -48,6 +48,7 @@ VENDEDOR::VENDEDOR(DataVendedor* datosV, string contrasenia){
     this->setContraseniaVendedor(contrasenia);
     this->setFechaNacVendedor(datosV->getDateVendedor());
     this->setRUT(datosV->getRUT());
+    this->misProductos = new OrderedDictionary;
 }
 
 void VENDEDOR::añadirProducto(DTProducto* datosProd){
@@ -92,8 +93,14 @@ string VENDEDOR::GetProductosAsoc(){
     return ProdV;
 }
 
-//PROMOCION* VENDEDOR::crearPromo(string nombreProm,string descripcionProm,date fechaVen){
-//    PROMOCION* prom = new PROMOCION(nombreProm ,descripcionProm ,fechaVen);
-//    this->misPromociones->add(prom);
-//    return prom;
-//} 
+PROMOCION* VENDEDOR::crearPromo(string nombreProm,string descripcionProm,date fechaVen){
+    PROMOCION* prom = new PROMOCION(nombreProm ,descripcionProm ,fechaVen);
+    this->misPromociones->add(prom);
+    return prom;
+}
+
+void VENDEDOR::marcaloRecibido(int idCompra){
+    IKey* ik = new Integer(idCompra);
+    PRODUCTO* p = (PRODUCTO*)this->misProductos->find(ik);
+    p->marcoRecibido(idCompra);
+}

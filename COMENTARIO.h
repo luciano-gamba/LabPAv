@@ -3,8 +3,6 @@
 #include <string>
 #include <ctime>
 #include "date.h"
-#include "USUARIO.h"
-#include "PRODUCTO.h"
 #include "ICollection/interfaces/IDictionary.h"
 #include "ICollection/collections/OrderedDictionary.h"
 #include "ICollection/Integer.h"
@@ -13,14 +11,14 @@
 #include "ICollection/interfaces/ICollectible.h"
 using namespace std;
 
-//class USUARIO;
+class USUARIO;
+class PRODUCTO;
 
 class COMENTARIO : public ICollectible{
 public:
     COMENTARIO();
     ~COMENTARIO();
    
-    void setCodComent(int n);
     void setTexto(string t);
     void setFechaCom();
     
@@ -30,16 +28,16 @@ public:
     
     string getInfoComentario();
     
-    COMENTARIO* crearRespuesta(string t);
+    void asignarComentarioACom(COMENTARIO* c);
+    void DesAsignarComentarioACom(COMENTARIO* c);
     
 private:
-    int codComent;
     string texto;
     date fechaCom;
     
     PRODUCTO *miProducto;
     USUARIO *miUsuario;
-    IDictionary *misComentarios;
+    ICollection *misComentarios;
 };
 
 #endif /* COMENTARIO_H */

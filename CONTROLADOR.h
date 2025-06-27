@@ -18,6 +18,7 @@
 #include "DTProducto.h"
 #include "DataCliente.h"
 #include "DataVendedor.h"
+#include <set>
 using namespace std;
 
 class CONTROLADOR: public ICONTROLADOR{
@@ -30,15 +31,20 @@ public:
 //CLIENTE
     void ingresoCliente(DataCliente* datosC, string contraseña);
 //COMENTARIO
-    
+    string listarComentariosProducto(int opP);
+    string listarComentariosUsuario(int opU);
+    void responderComentarioProducto(int opU, int opP, int opC, string texto);
+    void escribirComentarioProducto(int opU, int opP, string texto);
+    void eliminarComentarioUsuario(int opU, int opC);
 //USUARIO
     string listarUsuarios();
+    string listarInfoBasica(string);
 //PRODUCTO
     void ingresoProducto(int vendedor, DTProducto* datosProd);
     string ListarProductos();
     string DescribeProducto(int codigoP);
     string listarProductosPendientes(string nick);
-    //set<dataCompraCliente> listarCompraProductoPendiente(int codigoProd);
+    string listarCompraProductoPendiente(int codigoProd);
     void selectCompraProductoPendiente(int idCompra);
 //VENDEDOR    
     void ingresoVendedor(DataVendedor* datosV, string contraseña);

@@ -17,7 +17,7 @@ public:
     VENDEDOR(DataVendedor*,string);
     virtual ~VENDEDOR();
     string GetProductosAsoc();
-//    PROMOCION* crearPromo(string nombreProm,string descripcionProm,date fechaVen);
+    PROMOCION* crearPromo(string nombreProm,string descripcionProm,date fechaVen);
     string dameProductosPendientes();
     void añadirProducto(DTProducto*);
     string getNicknameVendedor();
@@ -29,6 +29,7 @@ public:
     void setContraseniaVendedor(string);
     void setFechaNacVendedor(date);
     void setRUT(string);
+    void marcaloRecibido(int idCompra);
 private:
     std::string RUT;
     IDictionary* misProductos;
