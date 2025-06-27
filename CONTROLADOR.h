@@ -30,7 +30,11 @@ public:
 //CLIENTE
     void ingresoCliente(DataCliente* datosC, string contraseña);
 //COMENTARIO
-    
+    string listarComentariosProducto(int opP);
+    string listarComentariosUsuario(int opU);
+    void responderComentarioProducto(int opU, int opP, int opC, string texto);
+    void escribirComentarioProducto(int opU, int opP, string texto);
+    void eliminarComentarioUsuario(int opU, int opC);
 //USUARIO
     string listarUsuarios();
     string listarInfoBasica(string);

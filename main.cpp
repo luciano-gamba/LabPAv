@@ -149,18 +149,73 @@ int main(int argc, char** argv) {
                 break;
             case 7:
                 break;
-            case 8:
-                int op;
+           case 8:{
+                int opU;
+                cout << "\t<>USUARIOS<>\n\n";
                 cout << ic->listarUsuarios();
-                cout << endl <<"<> Ingrese opción: ";
-                cin >> op;
-                
+                do{
+                cout << "<> Ingrese opción: ";
+                cin >> opU;
+                }while(opU<1);
+
+                int opP;
+                cout << "\t<>PRODUCTOS<>\n\n";
                 cout << ic->ListarProductos();
-                cout << endl <<"<> Ingrese opción: ";
+                do{
+                cout << "<> Ingrese opción: ";
+                cin >> opP;
+                }while(opP<1);
+
+                int op;
+                do{
+                cout << "<> ¿Desea responder un comentario? (1:SI 2:NO): ";
                 cin >> op;
+                }while(op!=1 && op!=2);
+
+                if (op == 1) {
+
+                    int opC;
+                    cout << "\t<>COMENTARIOS<>\n\n";
+                    ic->listarComentariosProducto(opP);
+                    do {
+                        cout << "<> Ingrese opción: ";
+                        cin >> opC;
+                    } while (opC < 1);
+                    
+                    string texto;
+                    cout << "<> Escriba su comentario: ";
+                    cin >> texto;
+                    ic->responderComentarioProducto(opU, opP, opC, texto);
+
+                } else {
+                    string texto;
+                    cout << "<> Escriba su comentario: ";
+                    cin >> texto;
+                    ic->escribirComentarioProducto(opU, opP, texto);
+                }
                 break;
-            case 9:
+            }
+            case 9:{
+                int opU;
+                cout << "\t<>USUARIOS<>\n\n";
+                cout << ic->listarUsuarios();
+                do{
+                cout << "<> Ingrese opción: ";
+                cin >> opU;
+                }while(opU<1);
+
+                int opC;
+                cout << "\t<>COMENTARIOS<>\n\n";
+                ic->listarComentariosUsuario(opU);
+                do{
+                cout << "<> Ingrese opción: ";
+                cin >> opC;
+                }while(opC<1);
+                
+                ic->eliminarComentarioUsuario(opU,opC);
+                
                 break;
+            }
             case 10:
                 //cout << ic->listarVendedores();
                 //cout << ic->listarProductosPendientes(nick);

@@ -60,18 +60,173 @@ void CONTROLADOR::ingresoCliente(DataCliente* datosC, string contrasenia){
     cout << "Hecho!" << endl;
 }
 //COMENTARIO
+string CONTROLADOR::listarComentariosProducto(int opP){
     
+    string retorno;
+    int controlP = this->misProductos->getSize();
+    if (controlP>=opP){
+        
+        IIterator* itP = this->misProductos->getIterator();
+        PRODUCTO* p;
+        while(opP != 1){
+           opP--;
+           itP->next();
+        }
+        p = (PRODUCTO*) itP->getCurrent();
+        delete itP;
+    
+        retorno = p->getInfoMisComentarios();
+    }
+    return retorno;
+}
+string CONTROLADOR::listarComentariosUsuario(int opU){
+    string retorno;
+    int controlU = this->misUsuarios->getSize();
+    if (controlU>=opU){
+        IIterator* itU = this->misUsuarios->getIterator();
+        USUARIO* u;
+        while(opU != 1){
+            opU--;
+            itU->next();
+        }
+        u = (USUARIO*) itU->getCurrent();
+        delete itU;
+    
+        retorno = u->getInfoMisComentarios();
+    }
+    return retorno;    
+}
+void CONTROLADOR::responderComentarioProducto(int opU, int opP, int opC, string texto){
+    
+    int controlU = this->misUsuarios->getSize();
+    int controlP = this->misProductos->getSize();   
+    if (controlU < opU || controlP < opP){
+        
+        cout << endl << "OPCIONES NO VÁLIDAS - COMENTARIO NO GUARDADO" << endl << endl;
+        cout << "VOLVER AL MENU:  ";
+        string s;
+        getline(cin,s);
+        getline(cin,s);
+    
+    }else{
+        
+        IIterator* itU = this->misUsuarios->getIterator();
+        USUARIO* u;
+        while(opU != 1){
+            opU--;
+            itU->next();
+        }
+        u = (USUARIO*) itU->getCurrent();
+        delete itU;
+        
+        IIterator* itP = this->misProductos->getIterator();
+        PRODUCTO* p;
+        while(opP != 1){
+            opP--;
+            itP->next();
+        }
+        p = (PRODUCTO*) itP->getCurrent();
+        delete itP;
+        
+        
+        int controlC = p->getSizeMisComentarios();  
+        cout << controlC;
+        string s;
+        getline(cin,s);
+        getline(cin,s);
+        if(controlC < opC){
+            
+            cout << endl << "OPCIONES NO VÁLIDAS - COMENTARIO NO GUARDADO" << endl << endl;
+            cout << "VOLVER AL MENU:  ";
+            string s;
+            getline(cin,s);
+            getline(cin,s);
+        
+        }else{
+            
+            COMENTARIO* c = p->crearRespuesta(opC,texto);
+            p->asignarComentarioAProd(c);
+            u->asignarComentarioAUsu(c);
+            
+        }
+    }
+    
+}
+void CONTROLADOR::escribirComentarioProducto(int opU, int opP, string texto){
+    
+    int controlU = this->misUsuarios->getSize();
+    int controlP = this->misProductos->getSize();
+   
+    if (controlU < opU || controlP < opP){
+        cout << endl << "OPCIONES NO VÁLIDAS - COMENTARIO NO GUARDADO" << endl << endl;
+        cout << "VOLVER AL MENU:  ";
+        string s;
+        getline(cin,s);
+        getline(cin,s);
+    }else{
+        
+        IIterator* itU = this->misUsuarios->getIterator();
+        USUARIO* u;
+        while(opU != 1){
+            opU--;
+            itU->next();
+        }
+        u = (USUARIO*) itU->getCurrent();
+        delete itU;
+        
+        IIterator* itP = this->misProductos->getIterator();
+        PRODUCTO* p;
+        while(opP != 1){
+            opP--;
+            itP->next();
+        }
+        p = (PRODUCTO*) itP->getCurrent();
+        delete itP;
+        
+        COMENTARIO* c = p->createComentario(texto);
+        p->asignarComentarioAProd(c);
+        u->asignarComentarioAUsu(c);
+        
+    }
+    
+}
+void CONTROLADOR::eliminarComentarioUsuario(int opU, int opC){
+    
+    int controlU = this->misUsuarios->getSize();
+   
+    if (controlU < opU){
+        cout << endl << "OPCIONES NO VÁLIDAS - COMENTARIO NO BORRADO" << endl << endl;
+        cout << "VOLVER AL MENU:  ";
+        string s;
+        getline(cin,s);
+        getline(cin,s);
+    }else{
+        
+        IIterator* itU = this->misUsuarios->getIterator();
+        USUARIO* u;
+        while(opU != 1){
+            opU--;
+            itU->next();
+        }
+        u = (USUARIO*) itU->getCurrent();
+        delete itU;
+                   
+        u->eliminarComentarioUsuario(opU);
+    }
+}    
 //USUARIO
 string CONTROLADOR::listarUsuarios(){
 
-    string retorno = "\t<>USUARIOS<>\n\n";
+    string retorno;
     IIterator* it = this->misUsuarios->getIterator();
     
     USUARIO* u;
+    int aux=0;
 
     while(it->hasCurrent()){
         u = (USUARIO*) it->getCurrent();
-        retorno = retorno + u->getNickname() + "\n\n";
+        aux++;
+        retorno = retorno + "<" + to_string(aux) + ">" + u->getNickname() + "\n";
         it->next();
     }
     return retorno;
@@ -102,13 +257,14 @@ void CONTROLADOR::ingresoProducto(int vendedor, DTProducto* datosProd){
     }
 }
 string CONTROLADOR::ListarProductos(){
-    string retorno = "\t<>PRODUCTOS<>\n\n";
+    string retorno;
     IIterator* it = this->misProductos->getIterator();
     PRODUCTO* p;
-
+    int aux=0;
     while(it->hasCurrent()){
         p = (PRODUCTO*) it->getCurrent();
-        retorno = retorno+"<>Codigo: "+to_string(p->getCodigo())+"\n<>Nombre: "+p->getNombre()+"\n<>Precio: $"+to_string(p->getPrecio())+"\n\n";
+        aux++;
+        retorno = retorno + "<"+to_string(aux)+">"+"Codigo: "+to_string(p->getCodigo())+"\nNombre: "+p->getNombre()+"\nPrecio: $"+to_string(p->getPrecio())+"\n\n";
         it->next();
     }
     return retorno;

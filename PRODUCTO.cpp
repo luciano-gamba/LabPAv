@@ -1,5 +1,4 @@
 #include "PRODUCTO.h"
-#include "ICollection/interfaces/IIterator.h"
 
 PRODUCTO::PRODUCTO() {
 }
@@ -74,3 +73,57 @@ void PRODUCTO::marcoRecibido(int idCompra){
     }
 }
 //Faltaria el getTipo o getCat pero el struct ese no se si va en un .h separado o dentro de alguno supongo que luego podemos preguntar
+
+string PRODUCTO::getInfoMisComentarios(){
+    
+    string retorno;
+    int aux=0;
+    IIterator* it = this->misComentarios->getIterator();
+    COMENTARIO* c;
+    while(it->hasCurrent()){
+        aux++;
+        c = (COMENTARIO*) it->getCurrent();
+        retorno = retorno +"<"+ to_string(aux) +">"+ c->getInfoComentario() + "\n";
+        it->next();
+    }
+    delete it;
+    
+    return retorno;           
+}
+int PRODUCTO::getSizeMisComentarios(){
+    return this->misComentarios->getSize();   
+}
+COMENTARIO* PRODUCTO::crearRespuesta(int opC, string texto){
+    
+    IIterator* it = this->misComentarios->getIterator();
+    COMENTARIO* co;
+    while(opC != 1){
+        opC--;
+        it->next();
+    }
+    co = (COMENTARIO*) it->getCurrent();
+    delete it;
+    
+    COMENTARIO* cr = this->createComentario(texto);
+    co->asignarComentarioACom(cr);
+    
+    return cr;
+}
+
+COMENTARIO* PRODUCTO::createComentario(string texto){
+    COMENTARIO* c = new COMENTARIO();
+    c->setTexto(texto);
+    c->setFechaCom();
+    return c;
+}
+
+void PRODUCTO::asignarComentarioAProd(COMENTARIO* c){
+    ICollectible* ic = c;
+    this->misComentarios->add(ic);
+}
+void PRODUCTO::desAsignarComentarioAProd(COMENTARIO* c){
+    ICollectible* ic = c;
+    this->misComentarios->remove(ic);    
+}
+
+
