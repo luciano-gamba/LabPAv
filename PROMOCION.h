@@ -16,12 +16,11 @@ public:
     PROMOCION();
     PROMOCION(string nombre, string descripcion, date fechaV);
     virtual ~PROMOCION();
-    void obtenerFechaSistema();
+    date obtenerFechaSistema();  
     // Getters
     string getNombre();
     string getDescripcion();
-    date getFechaVen();
-    date getFechaSis(); 
+    date getFechaVen(); 
     void setNombre(string);
     void setDescripcion(string);
     void setFechaVen(date);

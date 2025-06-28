@@ -2,14 +2,26 @@
 #define COMPRA_H
 #include "date.h"
 #include "DataProducto.h"
+#include "DataCompra.h"
 #include <set>
-#include "CLIENTE.h"
+#include "ICollection/interfaces/IDictionary.h"
+
+// Declaraciones adelantadas para evitar dependencia circular
+class CLIENTE;
+class compra_producto;
 
 class COMPRA {
 public:
     COMPRA();
     virtual ~COMPRA();
     void agregarProducto(string codigoProd ,int cant);
+    static COMPRA* create();
+    date getFechaCompra();
+    float montoCompra();
+    set<DataProducto> getItems();
+    void setFechaCompra(date);
+    void setMontoCompra(float);
+       
     int getid();
     string getNickname();
     date getFecha();
@@ -18,6 +30,7 @@ private:
     std::set<DataProducto> items;
     date fechaCompra;
     float monto;
+    IDictionary* productosCompra;
     CLIENTE* miCliente;
 };
 
