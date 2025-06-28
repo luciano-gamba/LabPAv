@@ -324,7 +324,7 @@ string CONTROLADOR::ListarProductosV(string NicknameV,string nombreProm,string d
 void CONTROLADOR::SelectProductoProm(int codigoP,int cantMin,int porcentajeDes){
 
 }
-   string CONTROLADOR::solicitarListaPromociones() {
+string CONTROLADOR::solicitarListaPromociones() {
     IIterator* it = this->misPromociones->getIterator(); 
     string resultado = "";
     PROMOCION* promoActual;

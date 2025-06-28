@@ -61,61 +61,51 @@ int main(int argc, char** argv) {
                 centrarTexto("=== ALTA DE USUARIO ===");
                 cout << endl;
                 cout << "Cliente o Vendedor? (1-2)" << endl;
-                cout << "\nEsperando Instruccion: ";
                 int opcion1;
                 do{
                     cin >> opcion1;
                 }while (opcion1<1 or opcion1>2);
-                    cout << "Ingrese nickname: " << endl;
-                    cout << "\nEsperando Instruccion: ";
-                    string nick;
-                    cin.ignore();
-                    getline(cin, nick);
-                    
-                    cout << "Ingrese fecha de nacimiento: " << endl;
-                    cout << "Dia: " << endl;
-                    cout << "\nEsperando Instruccion: ";
-                    int dia;
-                    cin >> dia;
-                    cout << "Mes: " << endl;
-                    cout << "\nEsperando Instruccion: ";
-                    int mes;
-                    cin >> mes;
-                    cout << "Año: " << endl;
-                    cout << "\nEsperando Instruccion: ";
-                    int anio;
-                    cin >> anio;
-                    date fecha(dia,mes,anio);
-                    
-                    cout << "Ingrese contraseña: " << endl;
-                    cout << "\nEsperando Instruccion: ";
-                    string contr;
-                    cin.ignore();
-                    getline(cin, contr);
+                cout << "Ingrese nickname: ";
+                string nick;
+                cin.ignore();
+                getline(cin, nick);
+
+                cout << "Ingrese fecha de nacimiento: " << endl;
+                cout << "Dia: " << endl;
+                int dia;
+                cin >> dia;
+                cout << "Mes: " << endl;
+                int mes;
+                cin >> mes;
+                cout << "Año: " << endl;
+                int anio;
+                cin >> anio;
+                date fecha(dia,mes,anio);
+
+                cout << "Ingrese contraseña: ";
+                string contr;
+                cin.ignore();
+                getline(cin, contr);
                 if(opcion1==1){
-                    cout << "Ingrese ciudad: " << endl;
-                    cout << "\nEsperando Instruccion: ";
+                    cout << "Ingrese ciudad: ";
                     string ciudad;
                     cin.ignore();
                     getline(cin, ciudad);
                     
                     cout << "Ingrese direccion: " << endl;
-                    cout << "Nro Puerta: " << endl;
-                    cout << "\nEsperando Instruccion: ";
+                    cout << "Nro Puerta: ";
                     int numPuerta;
                     cin >> numPuerta;
-                    cout << "Nombre Calle: " << endl;
-                    cout << "\nEsperando Instruccion: ";
+                    cout << "Nombre Calle: ";
                     string nomCalle;
+                    cin.ignore();
                     getline(cin, nomCalle);
                     DataDireccion dir(numPuerta, nomCalle);
                     
                     DataCliente* datosC = new DataCliente(nick,fecha,ciudad,dir);
                     ic->ingresoCliente(datosC,contr);
-                    cout << "ingresó el cliente" << endl;
                 }else{
-                    cout << "Ingrese RUT: " << endl;
-                    cout << "\nEsperando Instruccion: ";
+                    cout << "Ingrese RUT: ";
                     cin.ignore();
                     string rut;
                     getline(cin, rut);
@@ -157,12 +147,10 @@ int main(int argc, char** argv) {
                     cout << "Ingresa el precio del producto: ";
                     float precio;
                     cin >> precio;
-                    cout << "Ingresa el stock del producto: " << endl;
-                    cout << "\nEsperando Instruccion: ";
+                    cout << "Ingresa el stock del producto: ";
                     int cantStock;
                     cin >> cantStock;
-                    cout << "Ingresa la descripcion del producto: " << endl;
-                    cout << "\nEsperando Instruccion: ";
+                    cout << "Ingresa la descripcion del producto: ";
                     string descProd;
                     cin.ignore();
                     getline(cin, descProd);
