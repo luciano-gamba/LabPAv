@@ -38,7 +38,7 @@ public:
     virtual string listarNicknamesC() = 0;
     virtual void selectNicknameC(string nick) = 0;
     virtual void agregarProducto(string codigoProd, int cant) = 0;
-    //virtual DataCompra mostrarDetalleCompra() = 0;
+    virtual DataCompra mostrarDetalleCompra() = 0;
 
 };
 #endif /* ICONTROLADOR_H */

@@ -10,6 +10,7 @@
       <itemPath>CONTROLADOR.h</itemPath>
       <itemPath>DTProducto.h</itemPath>
       <itemPath>DataCliente.h</itemPath>
+      <itemPath>DataCompra.h</itemPath>
       <itemPath>DataDireccion.h</itemPath>
       <itemPath>DataProd.h</itemPath>
       <itemPath>DataProducto.h</itemPath>
@@ -71,6 +72,7 @@
       <itemPath>CONTROLADOR.cpp</itemPath>
       <itemPath>DTProducto.cpp</itemPath>
       <itemPath>DataCliente.cpp</itemPath>
+      <itemPath>DataCompra.cpp</itemPath>
       <itemPath>DataDireccion.cpp</itemPath>
       <itemPath>DataProd.cpp</itemPath>
       <itemPath>DataProducto.cpp</itemPath>
@@ -95,7 +97,6 @@
                    displayName="Important Files"
                    projectFiles="false"
                    kind="IMPORTANT_FILES_FOLDER">
-      <itemPath>Makefile</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -106,14 +107,12 @@
                    displayName="Important Files"
                    projectFiles="false"
                    kind="IMPORTANT_FILES_FOLDER">
-      <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>../../Escritorio/ICollection</Elem>
-    <Elem>ICollection</Elem>
     <Elem>../../Escritorio/ICollection</Elem>
-    <Elem>ICollection</Elem>
+    <Elem>.</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -153,6 +152,10 @@
       <item path="DataCliente.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataCliente.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataCompra.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataCompra.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="DataDireccion.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -356,6 +359,10 @@
       <item path="DataCliente.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DataCliente.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DataCompra.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DataCompra.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="DataDireccion.cpp" ex="false" tool="1" flavor2="0">
       </item>

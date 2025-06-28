@@ -8,6 +8,14 @@ VENDEDOR::VENDEDOR() {
 VENDEDOR::VENDEDOR(const VENDEDOR& orig) {
 }
 
+VENDEDOR::VENDEDOR(DataVendedor* datosV, string contrasenia){
+    this->setNicknameVendedor(datosV->getNicknameVendedor());
+    this->setContraseniaVendedor(contrasenia);
+    this->setFechaNacVendedor(datosV->getDateVendedor());
+    this->setRUT(datosV->getRUT());
+    this->misProductos = new OrderedDictionary;
+}
+
 VENDEDOR::~VENDEDOR() {
 }
 
@@ -41,14 +49,6 @@ void VENDEDOR::setFechaNacVendedor(date f){
 
 void VENDEDOR::setRUT(string r){
     this->RUT=r;
-}
-
-VENDEDOR::VENDEDOR(DataVendedor* datosV, string contrasenia){
-    this->setNicknameVendedor(datosV->getNicknameVendedor());
-    this->setContraseniaVendedor(contrasenia);
-    this->setFechaNacVendedor(datosV->getDateVendedor());
-    this->setRUT(datosV->getRUT());
-    this->misProductos = new OrderedDictionary;
 }
 
 void VENDEDOR::añadirProducto(DTProducto* datosProd){

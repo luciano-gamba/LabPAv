@@ -255,6 +255,11 @@ void CONTROLADOR::ingresoProducto(int vendedor, DTProducto* datosProd){
             iter->next();
             vendedor = vendedor - 1;
         }
+        int maxProd = this->misProductos->getSize() + 1;
+        PRODUCTO* p = new PRODUCTO(datosProd, maxProd);
+        IKey* ik = new Integer(maxProd);
+        this->misProductos->add(ik, p);
+        delete ik;
         v->añadirProducto(datosProd);
         cout << "Listo!" << endl;
     }
