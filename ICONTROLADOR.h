@@ -20,7 +20,7 @@ public:
     virtual string ListarProductos() = 0;
     virtual string DescribeProducto(int codigoP) = 0;
     virtual string listarProductosPendientes(string nick) = 0;
-    //virtual set<dataCompraCliente> listarCompraProductoPendiente(int codigoProd) = 0;
+    virtual string listarCompraProductoPendiente(int codigoProd) = 0;
     virtual void selectCompraProductoPendiente(int idCompra) = 0;
 //VENDEDOR    
     virtual void ingresoVendedor(DataVendedor* datosV, string contraseña) = 0;

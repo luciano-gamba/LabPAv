@@ -149,7 +149,7 @@ int main(int argc, char** argv) {
                 break;
             case 7:
                 break;
-            case 8:
+            case 8:{
                 int op;
                 cout << ic->listarUsuarios();
                 cout << endl <<"<> Ingrese opción: ";
@@ -159,14 +159,54 @@ int main(int argc, char** argv) {
                 cout << endl <<"<> Ingrese opción: ";
                 cin >> op;
                 break;
+            }
             case 9:
                 break;
-            case 10:
-                //cout << ic->listarVendedores();
+            case 10:{
+                string v = ic->ListaVendedores();
+                if(v == "#$%"){
+                    cout << "\t<>VENDEDORES<>\n\nNo existen vendedores.\n\n";
+                }else{
+                    cout << v << endl;
+                    cout << "Elige un vendedor válido: ";
+                    string opcion3;
+                    cin >> opcion3;
+                    string PP;
+                    
+                    if(v.find(opcion3) != string::npos){
+                        PP = ic->listarProductosPendientes(opcion3);
+                    }else{
+                        break;
+                    }
+                    
+                    cout << PP << endl;
+                        
+                    cout << "Elige un producto valido: ";
+                    int opcion4 = 0;
+                    cin >> opcion4;
+                    string CPP;
+                    
+                    if (PP.find(to_string(opcion4)) != string::npos){
+                        CPP = ic->listarCompraProductoPendiente(opcion4);
+                    }else{
+                        break;
+                    }
+
+                    cout << CPP << endl;
+
+                    cout << "Elige un producto valido: ";
+                    int idCompra = 0;
+                    cin >> idCompra;
+
+                    if (CPP.find(to_string(idCompra)) != string::npos){
+                        ic->selectCompraProductoPendiente(idCompra);
+                    }
+                }
                 //cout << ic->listarProductosPendientes(nick);
                 //cout << ic->listarCompraProductoPendiente(codigoProd);
                 //ic->selectCompraProductoPendiente(idCompra);
                 break;
+            }
             case 11:
                 //cout << ic->listarUsuarios(); -ASUMO QUE ESTA HECHA-
                 //cout << ic->listarInfoBasica(nick); -HECHA-

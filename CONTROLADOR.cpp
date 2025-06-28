@@ -24,24 +24,26 @@ CONTROLADOR::~CONTROLADOR() {
 string CONTROLADOR::listarProductosPendientes(string nick) {
     string productosPendientes;
     IKey* ik = new String(nick.c_str());
-    VENDEDOR* v = (VENDEDOR*)misVendedores->find(ik);
-    productosPendientes = v->dameProductosPendientes();
+    VENDEDOR* ve = (VENDEDOR*)this->misVendedores->find(ik);
+    productosPendientes = ve->dameProductosPendientes();
     return productosPendientes;
 }
 
 string CONTROLADOR::listarCompraProductoPendiente(int codigoProd){
-   string compras;
-   IKey* ik = new Integer(codigoProd);
-   PRODUCTO* p = (PRODUCTO*)this->misProductos->find(ik);
-   compras = p->dameComprasPend();
-   return compras;
+    string compras;
+    IKey* ik = new Integer(codigoProd);
+    PRODUCTO* pr = (PRODUCTO*)this->misProductos->find(ik);
+    compras = pr->dameComprasPend();
+    return compras;
 }
 
 void CONTROLADOR::selectCompraProductoPendiente(int idCompra){
+    
     VENDEDOR* v;
     IKey* ik = new Integer(idCompra);
     v = (VENDEDOR*)this->misVendedores->find(ik);
     v->marcaloRecibido(idCompra);
+    
 }
 
 //CLIENTE
