@@ -509,24 +509,28 @@ string CONTROLADOR::listarNicknamesC(){
     
     return listar;
 }
-void CONTROLADOR::selectNicknameC(string nick){
-    string seleccion;
-    IKey* ikCliente = new String(nick.c_str());
-    CLIENTE* cliente = (CLIENTE*)this->misClientes->find(ikCliente);
-    
-    if (cliente == nullptr) {
-       cout<<"Cliente no Encontrado"<<endl;
-   }
+void CONTROLADOR::selectNicknameC(int indiceCli){
+        
+      
+    int controlC = this->misClientes->getSize();
+    if (controlC >= indiceCli) {
+        IIterator* it = this->misClientes->getIterator();
+        CLIENTE* cli;
+        while (indiceCli != 1) {
+            indiceCli--;
+            it->next();
+        }
+        cli = (CLIENTE*) it->getCurrent();
+        delete it;
 
-   if(cliente->getCompraActiva() != nullptr){
-        //delete cliente->getCompraActiva();
-   }
-   cliente->setCompraActiva(COMPRA::create());
-
-   cout<<"Compra Iniciada" + nick + "\n\n";
+        this->com = cli->getCompraActiva();
+    } else {
+        cout << "Cliente no Encontrado" << endl;
+    }
 }
-void CONTROLADOR::agregarProducto(string codigoProd, int cant) {
-    IKey* key = new String(codigoProd.c_str());
+
+void CONTROLADOR::agregarProducto(int indice, int cant) {
+    IKey* key = new String(indice.c_str());
 
     if (!misProductos->member(key)) {
         std::cout << "Producto no encontrado.\n";
@@ -569,4 +573,17 @@ void CONTROLADOR::getUsuario(string nick){
     USUARIO* u;
     IKey* ik = new String(nick.c_str());
     u = (USUARIO*)this->misUsuarios->find(ik);
+}
+
+void CONTROLADOR::confirmarCompra(int indiceCli) {
+    IIterator* it = this->misClientes->getIterator();
+    CLIENTE* cli;
+    while (indiceCli != 1) {
+        indiceCli--;
+        it->next();
+    }
+    cli = (CLIENTE*) it->getCurrent();
+    delete it;
+
+    cli->agregarMisCompras(this->com);
 }

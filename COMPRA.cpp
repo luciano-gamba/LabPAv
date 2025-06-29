@@ -53,7 +53,7 @@ date COMPRA::getFechaCompra(){
 
 void COMPRA::agregarProducto(string codigoProd, int cant, PRODUCTO* p) {
     
-    if(this->productosCompra != nullptr){
+    if(this->productosCompra == nullptr){
         this->productosCompra = new OrderedDictionary;
     }
     compra_producto* cp = cp->create(p, cant);

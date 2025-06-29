@@ -172,7 +172,7 @@ int main(int argc, char** argv) {
                 }
                 cout << "\nPresione Enter para continuar...";
                 cin.ignore();
-               // cin.get();
+                cin.get();
                 break;
             }
             case 4:{
@@ -354,48 +354,45 @@ int main(int argc, char** argv) {
                 cin.get();
                 break;
             }
-            case 7: {
+            case 7:
+            {
                 limpiarPantalla();
                 centrarTexto("=== REALIZAR COMPRA ===");
                 cout << endl;
+
                 
-                string listaClientes = ic->listarNicknamesC();
-                cout << listaClientes << endl;
+                cout << ic->listarNicknamesC() << endl;
                 
                 cout << "Seleccione el numero del cliente: " << endl;
                 cout << "\nEsperando Instruccion: ";
-                int numCliente;
-                cin >> numCliente;
-                
-                cout << "Ingrese el nickname del cliente: " << endl;
-                cout << "\nEsperando Instruccion: ";
-                string nicknameCliente;
-                cin >> nicknameCliente;
-                
-                ic->selectNicknameC(nicknameCliente);
-                
+                int indiceCli;
+                cin >> indiceCli;
+
+                do {
+                    cout << "<> Ingrese opción: ";
+                    cin >> indiceCli;
+                } while (indiceCli < 1);
+
+                ic->selectNicknameC(indiceCli);
                 bool continuarComprando = true;
+
                 while (continuarComprando) {
-                    string productos = ic->ListarProductos();
                     cout << "\nProductos disponibles:" << endl;
-                    cout << productos << endl;
-                    
-                    cout << "Ingrese el codigo del producto a agregar (0 para terminar): " << endl;
-                    cout << "\nEsperando Instruccion: ";
-                    string codigoProducto;
-                    cin >> codigoProducto;
-                    
-                    if (codigoProducto == "0") {
+                    cout << ic->ListarProductos();
+
+                    cout << "Ingrese el codigo del producto a agregar (0 para terminar): ";
+                    string indiceP;
+                    cin >> indiceP;
+
+                    if (indiceP == "0") {
                         continuarComprando = false;
                     } else {
-                        cout << "Ingrese la cantidad: " << endl;
-                        cout << "\nEsperando Instruccion: ";
+                        cout << "Ingrese la cantidad: ";
                         int cantidad;
                         cin >> cantidad;
-                        
-                        ic->agregarProducto(codigoProducto, cantidad);
+                        ic->agregarProducto(indiceP, cantidad);
                         cout << "Producto agregado a la compra." << endl;
-                        
+
                         cout << "¿Desea agregar otro producto? (1=Si, 0=No): " << endl;
                         cout << "\nEsperando Instruccion: ";
                         int continuar;
@@ -403,10 +400,7 @@ int main(int argc, char** argv) {
                         continuarComprando = (continuar == 1);
                     }
                 }
-                
-                cout << "\n=== RESUMEN DE COMPRA ===" << endl;
-                cout << "Compra finalizada para el cliente: " << nicknameCliente << endl;
-                
+
                 cout << "\nPresione Enter para continuar...";
                 cin.ignore();
                 cin.get();
@@ -448,13 +442,15 @@ int main(int argc, char** argv) {
 
                     string texto;
                     cout << endl << "<> Escriba su comentario: ";
-                    cin >> texto;
+                    cin.ignore();
+                    getline(cin,texto);
                     ic->responderComentarioProducto(opU, opP, opC, texto);
 
                 } else {
                     string texto;
                     cout << endl << "<> Escriba su comentario: ";
-                    cin >> texto;
+                    cin.ignore();
+                    getline(cin,texto);
                     ic->escribirComentarioProducto(opU, opP, texto);
                 }
                 break;
