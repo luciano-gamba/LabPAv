@@ -1,10 +1,9 @@
 #include "PRODUCTO.h"
 #include "VENDEDOR.h"
-#include "compra_producto.h"
-#include "ICollection/interfaces/IIterator.h"
 
 PRODUCTO::PRODUCTO() {
     this->vendedorAsociado = nullptr;
+    this->misComentarios = new List();
 }
 
 PRODUCTO::PRODUCTO(const PRODUCTO& orig) {
@@ -17,6 +16,7 @@ PRODUCTO::PRODUCTO(DTProducto* datosProd, int cod){
     this->stock = datosProd->getCantStock();
     this->descripcion = datosProd->getDescProd();
     this->vendedorAsociado = nullptr;
+    this->misComentarios = new List();
 }
 
 PRODUCTO::~PRODUCTO() {
@@ -38,6 +38,21 @@ std::string PRODUCTO::getDescripcion(){
     return descripcion;
 }
 
+void PRODUCTO::setstock(int s){
+    this->stock = s;
+}
+
+void PRODUCTO::setprecio(float p){
+    this->precio = p;
+}
+
+void PRODUCTO::setnombre(string n){
+    this->nombre = n;
+}
+
+void PRODUCTO::setdescr(string d){
+    this->descripcion = d;
+}
 string PRODUCTO::getCategoria(){
     return TipoProductoToString(this->Categoria);
 }
@@ -45,12 +60,13 @@ string PRODUCTO::getCategoria(){
 bool PRODUCTO::pendienteEnvio(){
     bool recibio = true;
     compra_producto* cp;
-    
-    IIterator* it=this->misCompraProductos->getIterator();
-    for(it; it->hasCurrent() and recibio; it->next()){
-        cp = (compra_producto*)it->getCurrent();
-        recibio = cp->getRecibido();
-    }
+    //falta tener en cuenta si esta vacio (tengo que ver si lo controlo aca o no)
+    this->misCompraProductos = new OrderedDictionary(); // ESTO SE TIENE QUE HACER AL CREARLO EN COMPRA
+    IIterator* it = this->misCompraProductos->getIterator();
+        for(it; it->hasCurrent() and recibio; it->next()){
+            cp = (compra_producto*)it->getCurrent();
+            recibio = cp->getRecibido();
+        }
     return recibio;
 }
 
@@ -139,8 +155,10 @@ COMENTARIO* PRODUCTO::createComentario(string texto){
 }
 
 void PRODUCTO::asignarComentarioAProd(COMENTARIO* c){
+    c->asignarProductoACom(this);
     ICollectible* ic = c;
     this->misComentarios->add(ic);
+    
 }
 void PRODUCTO::desAsignarComentarioAProd(COMENTARIO* c){
     ICollectible* ic = c;

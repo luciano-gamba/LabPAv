@@ -39,7 +39,9 @@ public:
     void eliminarComentarioUsuario(int opU, int opC);
 //USUARIO
     string listarUsuarios();
+    string listarUsuariosCompletos();
     string listarInfoBasica(string);
+    void getUsuario(string nick);
 //PRODUCTO
     void ingresoProducto(int vendedor, DTProducto* datosProd);
     string ListarProductos();
@@ -70,7 +72,7 @@ private:
     COMPRA* com;
     IDictionary* misProductos;
     IDictionary* misUsuarios;
-    IDictionary* misVendedores;
+    IDictionary* misVendedores = NULL;
     IDictionary* misClientes;
     IDictionary* misPromociones;
 };

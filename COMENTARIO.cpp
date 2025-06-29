@@ -4,20 +4,30 @@
 
 
 COMENTARIO::COMENTARIO() {
+    this->miUsuario = nullptr;
+    this->miProducto = nullptr;    
+    this->misComentarios = new List();
     
 }
 
 COMENTARIO::~COMENTARIO() {
+    
     this->miProducto->desAsignarComentarioAProd(this);
     this->miUsuario->desAsignarComentarioAUsu(this);
-    IIterator* itC = this->misComentarios->getIterator();
-    COMENTARIO* cr;
-    while(itC->hasCurrent()){
-        cr = (COMENTARIO*) itC->getCurrent();
-        cr->~COMENTARIO();
-        delete cr;
-        itC->next();
+
+    if (this->misComentarios != nullptr) {
+
+        IIterator* itC = this->misComentarios->getIterator();
+        COMENTARIO* cr;
+        while (itC->hasCurrent()) {
+            cr = (COMENTARIO*) itC->getCurrent();
+            delete cr;
+            itC->next();
+        }
+        delete itC;
     }
+
+    delete this->misComentarios;
 }
 
 void COMENTARIO::setTexto(string t){
@@ -48,4 +58,11 @@ void COMENTARIO::asignarComentarioACom(COMENTARIO* c){
 void COMENTARIO::DesAsignarComentarioACom(COMENTARIO* c){
     ICollectible *ic = c;
     this->misComentarios->remove(ic);
+}
+void COMENTARIO::asignarUsuarioACom(USUARIO* u){
+    this->miUsuario=u;
+}
+
+void COMENTARIO::asignarProductoACom(PRODUCTO* p) {
+    this->miProducto=p;
 }
