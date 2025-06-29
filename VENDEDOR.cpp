@@ -3,12 +3,16 @@
 #include <cstdlib>
 
 VENDEDOR::VENDEDOR() {
+    this->misProductos = new OrderedDictionary();
+    this->misPromociones = new List();
 }
 
 VENDEDOR::VENDEDOR(const VENDEDOR& orig) {
 }
 
 VENDEDOR::~VENDEDOR() {
+    delete this->misProductos;
+    delete this->misPromociones;
 }
 
 string VENDEDOR::getNicknameVendedor(){
@@ -81,20 +85,25 @@ string VENDEDOR::GetProductosAsoc(){
     
     IIterator* IT=this->misProductos->getIterator();
     PRODUCTO* P;
-    int codP;
-    string nomP;
-    string ProdV = ""; //Creo una collecction donde guardare los datos que luego listare y esta función devolvera
+    int aux = 0;
+    string ProdV = ""; //Creo string que devolvere luego de ingresarle todos los codigo y nombre de los productos de este vendedor
     for(IT;IT->hasCurrent();IT->next()){
         P = (PRODUCTO*)IT->getCurrent();
-        codP=P->getCodigo(); 
-        nomP=P->getNombre(); //Ambos datos del producto que necesito para el listado
-        ProdV=ProdV +to_string(codP) + " - " + nomP + "\n";
+        aux++;
+        ProdV=ProdV + "<" +to_string(aux) + ">" + "Codigo: " + to_string(P->getCodigo()) + " - Nombre: "+ P->getNombre() + "\n\n";;
     }
+    //Liberando espacio de memoria
+    delete IT;
+    delete P;
+    
     return ProdV;
 }
 
 PROMOCION* VENDEDOR::crearPromo(string nombreProm,string descripcionProm,date fechaVen){
     PROMOCION* prom = new PROMOCION(nombreProm ,descripcionProm ,fechaVen);
+    if(this->misPromociones == NULL){
+        this->misPromociones = new List;
+    }
     this->misPromociones->add(prom);
     return prom;
 }

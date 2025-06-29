@@ -8,6 +8,8 @@
 #include "ICollection/interfaces/ICollectible.h"
 #include "ICollection/interfaces/IDictionary.h"
 #include "ICollection/interfaces/IIterator.h"
+#include "ICollection/collections/List.h"
+#include "promocion_producto.h"
 
 using namespace std;
 
@@ -24,9 +26,9 @@ public:
     void setNombre(string);
     void setDescripcion(string);
     void setFechaVen(date);
-    
+    void Conoceme(PRODUCTO* prod,int cantMin,int porcentajeDes);
 private:
-    IDictionary* coleccionPromociones;  // productos asociados a la promoción
+    ICollection* coleccionPromociones;  // productos asociados a la promoción
     string nombrePromo;
     string descripcionPromo;
     date fechaVen;

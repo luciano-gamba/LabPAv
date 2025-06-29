@@ -32,3 +32,29 @@ bool date::operator>(const date& otra) const {
         return this->mes > otra.mes;
     return this->dia > otra.dia;
 }
+void date::SetearFecha(){ //La pense y escribi por si alguien quiere ingresar una fecha y validarla asi se simplefica y no esta dentro del main
+    cout << "Dia: " << endl;
+    int dia;
+    cin >> dia;   
+    while(dia>31 or dia <1){
+        cout<< "Dia invalido, ingrese nuevamente: ";
+        cin >> dia;
+    }
+    cout << "Mes: " << endl;
+    int mes;
+    cin >> mes;
+    while(mes>12 or mes <1){
+        cout<< "Mes invalido, ingrese nuevamente: ";
+        cin >> mes;
+    }
+    cout << "Año: " << endl;
+    int anio;
+    cin >> anio;
+    while(anio < 1900){
+        cout<< "Año invalido, ingrese nuevamente: ";
+        cin >> anio;
+    }
+    this->dia=dia;
+    this->mes=mes;
+    this->anio=anio;
+}

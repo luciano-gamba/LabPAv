@@ -194,26 +194,132 @@ int main(int argc, char** argv) {
                 cin.get();
                 break;
             }
-            case 4:
+            case 4:{
+                
                 limpiarPantalla();
                 centrarTexto("=== CONSULTA PRODUCTO ===");
                 cout << endl;
-                // IMPLEMENTAR CONSULTA PRODUCTO
-                cout << "Funcionalidad no implementada";
+                string listaProduct = ic->ListarProductosBasic();
+                
+                if (listaProduct.empty()){
+                    cout << "No hay productos en el sistema." << endl;
+                    cout << "\nPresione Enter para continuar...";
+                    cin.ignore();
+                    cin.get();
+                    break;
+                }
+                cout<<"Productos Disponibles: "<<endl;
+                cout<<listaProduct<<endl; 
+                
+                cout<<"\n\nSeleccione el producto a describir: "<<endl;
+                cout<<"\nEsperando Instruccion: ";
+                
+                int codigoP;
+                cin.ignore();
+                cin >> codigoP;
+                
+                string descProd = ic->DescribeProducto(codigoP);
+                
+                cout<<descProd<<endl;
+                
                 cout << "\nPresione Enter para continuar...";
                 cin.ignore();
                 cin.get();
                 break;
-            case 5:
+            }
+            case 5:{
+                
                 limpiarPantalla();
                 centrarTexto("=== CREAR PROMOCION ===");
                 cout << endl;
-                // IMPLEMENTAR CREAR PROMOCION
-                cout << "Funcionalidad no implementada";
+                // CREAR PROMOCION
+                string Vend = ic->ListaVendedores();
+                if(Vend.empty()){
+                    cout << "No hay vendedores registrados en el sistema." << endl;
+                    cout << "\nPresione Enter para continuar...";
+                    cin.ignore();
+                    cin.get();
+                    break;
+                }
+                cout<<"Vendedores del Sistema: "<<endl;
+                cout<<Vend<<endl; 
+                
+                cout<<"\n\nSeleccione el vendedor que ofrecera la promocion: ";
+                
+                string nickIngresado;
+                cin.ignore();
+                getline(cin, nickIngresado);
+                string nomProm;
+                cout << "Ingrese el nombre de la promocion: ";
+                cin.ignore();
+                getline(cin, nomProm);
+                string descProm;
+                cout << "Ingrese la descripcion de la promocion: ";
+                cin.ignore();
+                getline(cin,descProm);
+                
+                
+                cout << "Ingrese fecha de vencimiento de la Promocion: " << endl;
+                    
+                date Fecha;
+                Fecha.SetearFecha();  // el usuario ingresa una fecha
+
+                // Uso un objeto temporal de tipo PROMOCION solo para acceder a obtenerFechaSistema
+                PROMOCION promoAux;
+                date fechaActual = promoAux.obtenerFechaSistema();
+                
+                while (!(Fecha > fechaActual)) {
+                    cout << "ERROR: La fecha debe ser posterior a hoy. Ingresela nuevamente: " << endl;
+                    Fecha.SetearFecha();
+                }
+                
+                string prod = ic->ListarProductosV(nickIngresado,nomProm,descProm,Fecha);
+                if(prod.empty()){
+                    cout<<"Vendedor no tiene productos asociados"<<endl;
+                    cout << "\nPresione Enter para continuar...";
+                    cin.ignore();
+                    cin.get();
+                    break;
+                }
+                cout << "Productos del vendedor " << nickIngresado << ": " << endl;
+                cout << prod <<endl;
+                bool quiere;
+                do{
+                cout<<"\n\nSeleccione el producto a agregar a la promocion: "<<endl;
+                cout<<"\nEsperando Instruccion: ";
+                
+                int codigoP;
+                cin.ignore();
+                cin >> codigoP;
+                
+                cout<<"\n\nIngrese la minima cantidad de este producto para que se aplique la promocion: "<<endl;
+                int cantMini;
+                cin.ignore();
+                cin >> cantMini;
+                
+                cout<<"\n\nSeleccione el porcentaje de descuento a aplicar a este producto en la promocion"<<endl;
+                int porcentajeDesc;
+                cin.ignore();
+                cin >> porcentajeDesc;
+                
+                
+                ic->SelectProductoProm(codigoP,nomProm,cantMini,porcentajeDesc);
+                
+                char opQuiere;
+                cout<<"\n\n¿Quiere seguir ingresando productos a la promocion?(s/n) :"<<endl;
+                cin >> opQuiere;
+                if(opQuiere=='s'){
+                    quiere=true;
+                }else{
+                    quiere=false;
+                }
+                }while(quiere);
+                
                 cout << "\nPresione Enter para continuar...";
                 cin.ignore();
                 cin.get();
                 break;
+            }
             case 6: {
                 limpiarPantalla();
                 centrarTexto("=== CONSULTAR PROMOCION ===");

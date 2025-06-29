@@ -6,6 +6,7 @@
 #include "ICollection/interfaces/IKey.h"
 #include "ICollection/String.h"
 #include "ICollection/interfaces/IIterator.h"
+#include "ICollection/Integer.h"
 #include "CLIENTE.h"
 #include "COMENTARIO.h"
 #include "USUARIO.h"
@@ -42,6 +43,7 @@ public:
 //PRODUCTO
     void ingresoProducto(int vendedor, DTProducto* datosProd);
     string ListarProductos();
+    string ListarProductosBasic(); //No muestra en el listado el precio a diferencia del otro es para que quede igual al caso de uso
     string DescribeProducto(int codigoP);
     string listarProductosPendientes(string nick);
     string listarCompraProductoPendiente(int codigoProd);
@@ -51,14 +53,14 @@ public:
     string ListaVendedores();
     string ListarProductosV(string NicknameV,string nombreProm,string descripcionProm,date fechaVenProm);
 //PROMOCION
-    void SelectProductoProm(int codigoP,int cantMin,int porcentajeDes);
+    void SelectProductoProm(int codigoP,string nombreProm,int cantMin,int porcentajeDes);
     string solicitarListaPromociones();
     string obtenerProductosVendedoresPromocion(string nombrePromo);    
 //COMPRA
     string listarNicknamesC();
     void selectNicknameC(string nick);
     void agregarProducto(string codigoProd, int cant);
-    DataCompra mostrarDetalleCompra();
+    void mostrarDetalleCompra();
     
 private:
    

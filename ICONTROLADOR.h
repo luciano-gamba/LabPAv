@@ -24,6 +24,7 @@ public:
     virtual string ListarProductos() = 0;
     virtual string DescribeProducto(int codigoP) = 0;
     virtual string listarProductosPendientes(string nick) = 0;
+    virtual string ListarProductosBasic() = 0;
     //virtual set<dataCompraCliente> listarCompraProductoPendiente(int codigoProd) = 0;
     virtual void selectCompraProductoPendiente(int idCompra) = 0;
 //VENDEDOR    
@@ -31,7 +32,7 @@ public:
     virtual string ListaVendedores() = 0;
     virtual string ListarProductosV(string NicknameV,string nombreProm,string descripcionProm,date fechaVenProm) = 0;
 //PROMOCION
-    virtual void SelectProductoProm(int codigoP,int cantMin,int porcentajeDes) = 0;
+    virtual void SelectProductoProm(int codigoP,string nombreProm,int cantMin,int porcentajeDes) = 0;
     virtual string solicitarListaPromociones() = 0;
     virtual string obtenerProductosVendedoresPromocion(string nombrePromo) = 0;    
 //COMPRA

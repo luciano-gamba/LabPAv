@@ -7,7 +7,11 @@
 #include "ICollection/interfaces/ICollectible.h"
 #include "ICollection/interfaces/IDictionary.h"
 #include "ICollection/interfaces/IIterator.h"
-#include <set>
+#include "ICollection/interfaces/ICollection.h"
+#include "TipoProducto.h"
+
+class promocion_producto;
+
 //#include "VENDEDOR.h"
 using namespace std;
 
@@ -27,6 +31,7 @@ public:
     string getNombre();
     string getDescripcion();
     string getNicknameVendedor();
+    string getCategoria();
     
     bool pendienteEnvio();
     void setVendedorAsociado(VENDEDOR* v);
@@ -39,15 +44,17 @@ public:
     COMENTARIO* createComentario(string texto);
     void asignarComentarioAProd(COMENTARIO* c);
     void desAsignarComentarioAProd(COMENTARIO* c);
-    
+    void Conoceme(promocion_producto* pp);
     
 private:
     int codigo;
     int stock;
     float precio;
-    std::string nombre;
-    std::string descripcion;
+    string nombre;
+    string descripcion;
+    TipoProducto Categoria;
     IDictionary* misCompraProductos;
+    ICollection* PromosdeProducto;
     ICollection* misComentarios;
     VENDEDOR* vendedorAsociado;
 };

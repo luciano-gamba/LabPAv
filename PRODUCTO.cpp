@@ -38,6 +38,10 @@ std::string PRODUCTO::getDescripcion(){
     return descripcion;
 }
 
+string PRODUCTO::getCategoria(){
+    return TipoProductoToString(this->Categoria);
+}
+
 bool PRODUCTO::pendienteEnvio(){
     bool recibio = true;
     compra_producto* cp;
@@ -144,3 +148,10 @@ void PRODUCTO::desAsignarComentarioAProd(COMENTARIO* c){
 }
 
 
+void PRODUCTO::Conoceme(promocion_producto* pp){
+    if(this->PromosdeProducto == nullptr){
+        this->PromosdeProducto = new List();
+    }
+    this->PromosdeProducto->add(pp);
+    
+}

@@ -1,4 +1,5 @@
 #include "PROMOCION.h"
+#include "promocion_producto.h"
 
 
 PROMOCION::PROMOCION() {
@@ -8,6 +9,7 @@ PROMOCION::PROMOCION(string nombre,string descripcion,date fechaV){
     this->nombrePromo = nombre;
     this->descripcionPromo = descripcion;
     this->fechaVen = fechaV;
+    this->coleccionPromociones = new List;
 }
 
 PROMOCION::~PROMOCION() {
@@ -44,3 +46,8 @@ date PROMOCION::obtenerFechaSistema(){
     return d;  
 }
 
+void PROMOCION::Conoceme(PRODUCTO* prod,int cantMin,int porcentajeDes){
+    promocion_producto* pp = new promocion_producto(this,prod,cantMin,porcentajeDes);
+    this->coleccionPromociones->add(pp);
+    
+}

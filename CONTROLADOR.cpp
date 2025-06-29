@@ -255,7 +255,7 @@ void CONTROLADOR::ingresoProducto(int vendedor, DTProducto* datosProd){
             iter->next();
             vendedor = vendedor - 1;
         }
-        v->añadirProducto(datosProd);
+        v->añadirProducto(datosProd); 
         cout << "Listo!" << endl;
     }
 }
@@ -273,8 +273,32 @@ string CONTROLADOR::ListarProductos(){
     return retorno;
 
 }
+string CONTROLADOR::ListarProductosBasic(){ //Version de listar de Lucas el caso de uso dice que solo muestra el codigo y nombre de los productos
+    string Prod = "";
+    IIterator* it = this->misProductos->getIterator();
+    PRODUCTO* p;
+    int aux = 0;
+    while(it->hasCurrent()){
+        p = (PRODUCTO*) it->getCurrent();
+        aux++;
+        Prod = Prod + "<" + to_string(aux) + ">" + "Codigo: " + to_string(p->getCodigo()) + " - Nombre: "+p->getNombre() + "\n\n";
+        it->next();
+    }
+    return Prod;
+}
 string CONTROLADOR::DescribeProducto(int codigoP){
-    return "a";
+    string Product = "";
+    int control = this->misVendedores->getSize();
+    
+    if(codigoP > control or codigoP < 1){
+        cout << "PRODUCTO SELECCIONADO NO EXISTENTE" << endl;
+    }else{
+        IKey* IK = new Integer(codigoP);
+        PRODUCTO* p = (PRODUCTO*)this->misProductos->find(IK);
+        Product = "Precio: " + to_string(p->getPrecio()) + "\nStock : " + to_string(p->getStock()) + "\nDescripcion: " + p->getDescripcion() + "\nCategoria: " + p->getCategoria() + "\nVendedor Asociado: "+ p->getNicknameVendedor();
+    }
+    
+    return Product;
 }
 //VENDEDOR    
 void CONTROLADOR::ingresoVendedor(DataVendedor* datosV, string contrasenia){
@@ -313,12 +337,35 @@ string CONTROLADOR::ListaVendedores(){
 }
 
 string CONTROLADOR::ListarProductosV(string NicknameV,string nombreProm,string descripcionProm,date fechaVenProm){
-    return "a";
+    IKey* ik = new String(NicknameV.c_str()); //Me falta controlar que el vendedor sea existente en dicho caso se manda pa fuera
+    VENDEDOR* vend = (VENDEDOR*)this->misVendedores->find(ik);
+    
+    
+    string productosDeVend = vend->GetProductosAsoc();
+    
+    PROMOCION* nuevaPromo = vend->crearPromo(nombreProm,descripcionProm,fechaVenProm);
+    IKey* ikP = new String(nombreProm.c_str()); //Debo crear la clave para poder buscar las promociones por su nombreProm ya que es un IDictionary
+    this->misPromociones->add(ikP,nuevaPromo);
+    
+    //Liberar espacios de memoria
+    delete ik;
+    delete ikP;
+    //No se debe liberar punteros obtenidos por Find porque te tira error
+    
+    return productosDeVend;
 }
 //PROMOCION
-void CONTROLADOR::SelectProductoProm(int codigoP,int cantMin,int porcentajeDes){
-
+void CONTROLADOR::SelectProductoProm(int codigoP,string nombreProm,int cantMin,int porcentajeDes){
+    IKey* ik = new Integer(codigoP);
+    IKey* IKProm = new String(nombreProm.c_str()); //Debo agregar algo que revise que el producto no este en otra promocion
+    PRODUCTO* prod;
+    PROMOCION* prom;
+    prod = (PRODUCTO*)this->misProductos->find(ik);
+    prom = (PROMOCION*)this->misPromociones->find(IKProm);
+    prom->Conoceme(prod,cantMin,porcentajeDes);
+    
 }
+
    string CONTROLADOR::solicitarListaPromociones() {
     IIterator* it = this->misPromociones->getIterator(); 
     string resultado = "";
@@ -327,7 +374,8 @@ void CONTROLADOR::SelectProductoProm(int codigoP,int cantMin,int porcentajeDes){
         promoActual = (PROMOCION*)it->getCurrent();
         promoActual->obtenerFechaSistema(); // actualiza fechaSis internamente
       if (promoActual->getFechaVen() > promoActual->obtenerFechaSistema()) {
-        string nombre = promoActual->getNombre();           resultado += nombre + "\n";
+        string nombre = promoActual->getNombre();           
+        resultado += nombre + "\n";
         }
 
         it->next();
@@ -420,24 +468,24 @@ void CONTROLADOR::agregarProducto(string codigoProd, int cant) {
     delete key;
 }
 
- DataCompra CONTROLADOR::mostrarDetalleCompra() {
+ void CONTROLADOR::mostrarDetalleCompra() {
     date f = com->getFechaCompra();
     float m = com->montoCompra();
-    std::set<DataProducto> items = com->getItems();
+    set<DataProducto> items = com->getItems();
 
-    DataCompra detalle;
+    
 
-    std::cout << "=== RESUMEN DE LA COMPRA ===\n";
-    std::cout << "Fecha de compra: " << f.getInfoDate() << "\n";
-    std::cout << "Productos:\n";
+    cout << "=== RESUMEN DE LA COMPRA ===\n";
+    cout << "Fecha de compra: " << f.getInfoDate() << "\n";
+    cout << "Productos:\n";
     
     for (const DataProducto& item : items) {
-        std::cout << "- Producto incluido en la compra\n";
+        cout << "- Producto incluido en la compra\n";
     }
 
-    std::cout << "Monto total: $" << m << "\n";
-    std::cout << "=============================\n";
+    cout << "Monto total: $" << m << "\n";
+    cout << "=============================\n";
 
-    return detalle;
+    
 }
  
