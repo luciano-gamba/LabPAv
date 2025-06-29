@@ -382,10 +382,10 @@ int main(int argc, char** argv) {
                     
                     cout << "Ingrese el codigo del producto a agregar (0 para terminar): " << endl;
                     cout << "\nEsperando Instruccion: ";
-                    string codigoProducto;
+                    int codigoProducto;
                     cin >> codigoProducto;
                     
-                    if (codigoProducto == "0") {
+                    if (codigoProducto == 0) {
                         continuarComprando = false;
                     } else {
                         cout << "Ingrese la cantidad: " << endl;
@@ -406,7 +406,7 @@ int main(int argc, char** argv) {
                 
                 cout << "\n=== RESUMEN DE COMPRA ===" << endl;
                 cout << "Compra finalizada para el cliente: " << nicknameCliente << endl;
-                
+                ic->mostrarDetalleCompra();
                 cout << "\nPresione Enter para continuar...";
                 cin.ignore();
                 cin.get();

@@ -12,11 +12,11 @@ public:
     compra_producto();
     compra_producto(const compra_producto& orig);
     virtual ~compra_producto();
+    compra_producto(PRODUCTO* p, int cant);
     bool getRecibido();
     string dameCompra();
     bool getsi_idCompra(int idCompra);
     void marcaRecibido();
-    compra_producto(PRODUCTO* p, int cant);
     PRODUCTO* getProducto();
     int getCantidad();
     void add();

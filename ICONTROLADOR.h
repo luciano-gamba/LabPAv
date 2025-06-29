@@ -42,7 +42,7 @@ public:
 //COMPRA
     virtual string listarNicknamesC() = 0;
     virtual void selectNicknameC(string nick) = 0;
-    virtual void agregarProducto(string codigoProd, int cant) = 0;
+    virtual void agregarProducto(int codigoProd, int cant) = 0;
     virtual void mostrarDetalleCompra() = 0;
     
 };

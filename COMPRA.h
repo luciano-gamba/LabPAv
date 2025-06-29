@@ -15,12 +15,12 @@ class COMPRA {
 public:
     COMPRA();
     virtual ~COMPRA();
-    void agregarProducto(string codigoProd ,int cant, PRODUCTO* p);
+    void agregarProducto(int codigoProd ,int cant, PRODUCTO* p);
     static COMPRA* create();
     date getFechaCompra();
     float montoCompra();
-    set<DataProducto> getItems();
-    void setFechaCompra(date);
+    string getItems();
+    void setFechaCompra();
     void setMontoCompra(float);
     void setCP();
        
@@ -29,7 +29,7 @@ public:
     date getFecha();
 private:
     int idCompra;
-    std::set<DataProducto> items;
+    ICollection* items; //aca se guardan los productos
     date fechaCompra;
     float monto;
     IDictionary* productosCompra;

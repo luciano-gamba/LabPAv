@@ -525,39 +525,40 @@ void CONTROLADOR::selectNicknameC(string nick){
 
    cout<<"Compra Iniciada" + nick + "\n\n";
 }
-void CONTROLADOR::agregarProducto(string codigoProd, int cant) {
-    IKey* key = new String(codigoProd.c_str());
-
-    if (!misProductos->member(key)) {
-        std::cout << "Producto no encontrado.\n";
-        return;
-    }
-
-    PRODUCTO* p = (PRODUCTO*)misProductos->find(key);
-
-    if (p == nullptr) {
-        std::cout << "Error al recuperar el producto.\n";
-        return;
-    }
-    //crear compra?
-    this->com->agregarProducto(codigoProd, cant, p);
+void CONTROLADOR::agregarProducto(int codigoProd, int cant) {
+    IKey* key = new Integer(codigoProd);
+    cout << "HASTA ACA ANDA 1\n";
+    //if (!this->misProductos->member(key)) {
+    //    cout << "HASTA ACA ANDA 1.1\n";
+    //    cout << "Producto no encontrado.\n";
+    //    return;
+    //}
     
+    PRODUCTO* p = (PRODUCTO*)this->misProductos->find(key);
+
+   // if (p == nullptr) {
+   //    cout << "Error al recuperar el producto.\n";
+   //     return;
+   //}
+    cout << "HASTA ACA ANDA 1.2\n";
+    //crear compra?
+    //this->com;
+    cout << "HASTA ACA ANDA 2\n";
+    this->com = new COMPRA;
+    this->com->agregarProducto(codigoProd, cant, p);
+    this->com->setFechaCompra();
 }
 
  void CONTROLADOR::mostrarDetalleCompra() {
-    date f = com->getFechaCompra();
-    float m = com->montoCompra();
-    set<DataProducto> items = com->getItems();
-
-    
+    date f = this->com->getFechaCompra();
+    float m = this->com->montoCompra();
+    string items = this->com->getItems();
 
     cout << "=== RESUMEN DE LA COMPRA ===\n";
     cout << "Fecha de compra: " << f.getInfoDate() << "\n";
     cout << "Productos:\n";
     
-    for (const DataProducto& item : items) {
-        cout << "- Producto incluido en la compra\n";
-    }
+    cout << items << endl;
 
     cout << "Monto total: $" << m << "\n";
     cout << "=============================\n";

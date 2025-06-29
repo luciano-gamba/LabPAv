@@ -13,6 +13,11 @@ compra_producto::compra_producto(const compra_producto& orig) {
 compra_producto::~compra_producto() {
 }
 
+compra_producto::compra_producto(PRODUCTO* p, int cant){
+    this->prod = p;
+    this->cantidad = cant;
+}
+
 bool compra_producto::getRecibido(){
     return this->recibido;
 }

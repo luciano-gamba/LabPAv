@@ -20,6 +20,7 @@ PRODUCTO::PRODUCTO(DTProducto* datosProd, int cod){
     this->vendedorAsociado = nullptr;
     this->misComentarios = new List();
     this->PromosdeProducto = nullptr;
+    this->misCompraProductos = nullptr;
 }
 
 PRODUCTO::~PRODUCTO() {

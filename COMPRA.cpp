@@ -4,10 +4,11 @@
 #include "ICollection/String.h"
 
 COMPRA::COMPRA() {
-    idCompra = 0;
-    monto = 0.0;
-    miCliente = nullptr;
-    productosCompra = nullptr;
+    this->idCompra = 0;
+    this->monto = 0.0;
+    this->miCliente = nullptr;
+    this->productosCompra = nullptr;
+    this->items = new List();
 }
 
 COMPRA::~COMPRA() {
@@ -39,30 +40,39 @@ date COMPRA::getFechaCompra(){
     return this->monto;
  }
 
- set<DataProducto> COMPRA::getItems() {
-    return items;
+string COMPRA::getItems() {
+    string retorno;
+    IIterator* it = this->items->getIterator();
+    DataProducto* dp;
+    while(it->hasCurrent()){
+        dp = (DataProducto*)it->getCurrent();
+        retorno = retorno + dp->getInfo() + "\n";
+        it->next();
+    }
+    return retorno;
 }
 
- void COMPRA::setFechaCompra(date f){
-     this->fechaCompra=f;
+ void COMPRA::setFechaCompra(){
+    time_t ya = time(NULL);
+    date d = date(localtime(&ya)->tm_mday,localtime(&ya)->tm_mon+1,localtime(&ya)->tm_year+1900);
+    this->fechaCompra = d;
  }
 
  void COMPRA::setMontoCompra(float m){
     this->monto=m;
  }
 
-void COMPRA::agregarProducto(string codigoProd, int cant, PRODUCTO* p) {
-    
-    if(this->productosCompra != nullptr){
+void COMPRA::agregarProducto(int codigoProd, int cant, PRODUCTO* p) {
+    if(this->productosCompra == nullptr){
         this->productosCompra = new OrderedDictionary;
     }
-    compra_producto* cp = cp->create(p, cant);
-    IKey* ik = new String(codigoProd.c_str());
+    compra_producto* cp = new compra_producto(p, cant);
+    IKey* ik = new Integer(codigoProd);
     this->productosCompra->add(ik, cp);
     p->agregar(cp);
-    
-    DataProducto dataProducto(codigoProd, cant);
-    items.insert(dataProducto);
+    DataProducto* dataProducto = new DataProducto(p->getPrecio(), p->getNombre(),codigoProd, cant);
+    this->monto = this->monto + (p->getPrecio()*cant);
+    this->items->add(dataProducto);
 }
 
 //void COMPRA::setCP(){

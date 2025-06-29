@@ -8,7 +8,6 @@
 #include "ICollection/interfaces/ICollectible.h"
 #include "ICollection/interfaces/IDictionary.h"
 #include "ICollection/interfaces/IIterator.h"
-#include "ICollection/interfaces/ICollection.h"
 #include "TipoProducto.h"
 #include <ctime>
 
