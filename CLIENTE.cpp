@@ -54,7 +54,8 @@ void CLIENTE::setCompraActiva(COMPRA* c) {
 }
 
 COMPRA* CLIENTE::getCompraActiva() {
-    return this->compraActiva;
+    COMPRA* comp = new COMPRA();
+    return comp;
 }
 
 CLIENTE::CLIENTE(DataCliente* datosC, string contrasenia){
@@ -63,4 +64,7 @@ CLIENTE::CLIENTE(DataCliente* datosC, string contrasenia){
     this->setFechaNacCliente(datosC->getDateCliente());
     this->setCiudad(datosC->getCiudad());
     this->setDireccion(datosC->getDireccion());
+}
+void CLIENTE::agregarMisCompras(COMPRA* com){
+    this->misCompras->add(com);
 }

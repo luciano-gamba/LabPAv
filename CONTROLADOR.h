@@ -60,9 +60,10 @@ public:
     string obtenerProductosVendedoresPromocion(string nombrePromo);    
 //COMPRA
     string listarNicknamesC();
-    void selectNicknameC(string nick);
+    void selectNicknameC(int indiceCli);
     void agregarProducto(string codigoProd, int cant);
     void mostrarDetalleCompra();
+    void confirmarCompra(int indiceCli);
     
 private:
    

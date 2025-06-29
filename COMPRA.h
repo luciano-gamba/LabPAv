@@ -3,7 +3,7 @@
 #include "date.h"
 #include "DataProducto.h"
 #include "DataCompra.h"
-#include <set>
+#include "ICollection/interfaces/ICollectible.h"
 #include "ICollection/interfaces/IDictionary.h"
 #include "PRODUCTO.h"
 
@@ -11,7 +11,7 @@
 class CLIENTE;
 class compra_producto;
 
-class COMPRA {
+class COMPRA : public ICollectible{
 public:
     COMPRA();
     virtual ~COMPRA();

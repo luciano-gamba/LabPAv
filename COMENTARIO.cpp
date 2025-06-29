@@ -25,9 +25,9 @@ COMENTARIO::~COMENTARIO() {
             itC->next();
         }
         delete itC;
+        
+        delete this->misComentarios;
     }
-
-    delete this->misComentarios;
 }
 
 void COMENTARIO::setTexto(string t){

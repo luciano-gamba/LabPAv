@@ -41,9 +41,10 @@ public:
     virtual string obtenerProductosVendedoresPromocion(string nombrePromo) = 0;    
 //COMPRA
     virtual string listarNicknamesC() = 0;
-    virtual void selectNicknameC(string nick) = 0;
+    virtual void selectNicknameC(int indiceCli) = 0;
     virtual void agregarProducto(string codigoProd, int cant) = 0;
     virtual void mostrarDetalleCompra() = 0;
+    virtual void confirmarCompra(int indiceCli) = 0;
     
 };
 #endif /* ICONTROLADOR_H */

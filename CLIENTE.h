@@ -24,10 +24,12 @@ public:
     void setFechaNacCliente(date);
     void setCiudad(string);
     void setDireccion(DataDireccion*);
+    void agregarMisCompras(COMPRA*);
 private:
     COMPRA* compraActiva;
     string ciudad;
-    DataDireccion* direccion;    
+    DataDireccion* direccion;  
+    ICollection* misCompras;
 };
 
 #endif /* CLIENTE_H */
