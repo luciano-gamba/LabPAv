@@ -11,14 +11,22 @@ enum class TipoProducto{
 
 inline string TipoProductoToString(TipoProducto tipo) {
     switch (tipo) {
-        case TipoProducto::Ropa: 
+        case TipoProducto::Ropa:{ 
             return "Ropa";
-        case TipoProducto::Electrodomesticos: 
+            break;
+        }
+        case TipoProducto::Electrodomesticos:{ 
             return "Electrodomésticos";
-        case TipoProducto::Otros: 
+            break;
+        }
+        case TipoProducto::Otros: {
             return "Otros";
-        default: 
+            break;
+        }
+        default:{ 
             return "Desconocido";
+            break;
+        }
     }
 }
 

@@ -307,7 +307,7 @@ void CONTROLADOR::ingresoProducto(int vendedor, DTProducto* datosProd){
         v = (VENDEDOR*) iter->getCurrent();
         PRODUCTO* p = v->añadirProducto(datosProd);
         ICollectible* ic = p;
-        IKey* ik = new Integer(p->getCodigo());
+        IKey* ik = new Integer(this->misProductos->getSize()+1);
         this->misProductos->add(ik,ic);
         cout << "Listo!" << endl;
     }
@@ -340,15 +340,20 @@ string CONTROLADOR::ListarProductosBasic(){ //Version de listar de Lucas el caso
     }
     return Prod;
 }
-string CONTROLADOR::DescribeProducto(int codigoP){
+string CONTROLADOR::DescribeProducto(int indiceP){
     string Product = "";
-    int control = this->misVendedores->getSize();
+    int control = this->misProductos->getSize();
     
-    if(codigoP > control or codigoP < 1){
-        cout << "PRODUCTO SELECCIONADO NO EXISTENTE" << endl;
+    
+    if(indiceP > control or indiceP < 1){
+        Product =  "PRODUCTO SELECCIONADO NO EXISTENTE";
     }else{
-        IKey* IK = new Integer(codigoP);
-        PRODUCTO* p = (PRODUCTO*)this->misProductos->find(IK);
+        IIterator* iter = this->misProductos->getIterator(); //Pido que me ingrese que producto a describir por el indice no puedo usar find.
+        while(indiceP != 1){
+            iter->next();
+            indiceP--;
+        }
+        PRODUCTO* p = (PRODUCTO*) iter->getCurrent();
         Product = "Precio: " + to_string(p->getPrecio()) + "\nStock : " + to_string(p->getStock()) + "\nDescripcion: " + p->getDescripcion() + "\nCategoria: " + p->getCategoria() + "\nVendedor Asociado: "+ p->getNicknameVendedor();
     }
     
@@ -390,11 +395,18 @@ string CONTROLADOR::ListaVendedores(){
     return retorno;
 }
 
-string CONTROLADOR::ListarProductosV(string NicknameV,string nombreProm,string descripcionProm,date fechaVenProm){
-    IKey* ik = new String(NicknameV.c_str()); //Me falta controlar que el vendedor sea existente en dicho caso se manda pa fuera
-    VENDEDOR* vend = (VENDEDOR*)this->misVendedores->find(ik);
-    
-    
+string CONTROLADOR::ListarProductosV(int Vendor,string nombreProm,string descripcionProm,date fechaVenProm){
+    int control = this->misVendedores->getSize();
+    if(Vendor > control or Vendor < 1){
+        return "VENDEDOR SELECCIONADO NO VÁLIDO";
+    }
+    IIterator* iter = this->misVendedores->getIterator();
+    VENDEDOR* vend;
+    while(Vendor != 1){
+        iter->next();
+        Vendor--;
+    }
+    vend = (VENDEDOR*) iter->getCurrent();
     string productosDeVend = vend->GetProductosAsoc();
     
     PROMOCION* nuevaPromo = vend->crearPromo(nombreProm,descripcionProm,fechaVenProm);
@@ -402,19 +414,35 @@ string CONTROLADOR::ListarProductosV(string NicknameV,string nombreProm,string d
     this->misPromociones->add(ikP,nuevaPromo);
     
     //Liberar espacios de memoria
-    delete ik;
+    delete iter;
     delete ikP;
     //No se debe liberar punteros obtenidos por Find porque te tira error
     
     return productosDeVend;
+    
+        
 }
 //PROMOCION
-void CONTROLADOR::SelectProductoProm(int codigoP,string nombreProm,int cantMin,int porcentajeDes){
-    IKey* ik = new Integer(codigoP);
-    IKey* IKProm = new String(nombreProm.c_str()); //Debo agregar algo que revise que el producto no este en otra promocion
+void CONTROLADOR::SelectProductoProm(int indiceProd,string nombreProm,int cantMin,int porcentajeDes){
+    int control = this->misProductos->getSize();
+    if(indiceProd > control or indiceProd < 1){
+        cout<<"\nProducto seleccionado no valido"<<endl;
+        return;
+    }
+    IIterator* iter = this->misProductos->getIterator();
+    
+    IKey* IKProm = new String(nombreProm.c_str()); 
     PRODUCTO* prod;
     PROMOCION* prom;
-    prod = (PRODUCTO*)this->misProductos->find(ik);
+    //prod = (PRODUCTO*)this->misProductos->find(ik); //Ya que el producto lo quiero pedir segun el indice no puedo usar un find
+    
+    while(indiceProd != 1){
+        iter->next();
+        indiceProd--;
+    }
+    
+    prod = (PRODUCTO*) iter->getCurrent(); //Debo agregar algo que revise que el producto no este en otra promocion activa
+    
     prom = (PROMOCION*)this->misPromociones->find(IKProm);
     prom->Conoceme(prod,cantMin,porcentajeDes);
     

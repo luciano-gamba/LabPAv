@@ -25,7 +25,7 @@ public:
 //PRODUCTO
     virtual void ingresoProducto(int vendedor, DTProducto* datosProd) = 0;
     virtual string ListarProductos() = 0;
-    virtual string DescribeProducto(int codigoP) = 0;
+    virtual string DescribeProducto(int indiceP) = 0;
     virtual string listarProductosPendientes(string nick) = 0;
     virtual string listarCompraProductoPendiente(int codigoProd) = 0;
     virtual string ListarProductosBasic() = 0;
@@ -34,9 +34,9 @@ public:
 //VENDEDOR    
     virtual void ingresoVendedor(DataVendedor* datosV, string contraseña) = 0;
     virtual string ListaVendedores() = 0;
-    virtual string ListarProductosV(string NicknameV,string nombreProm,string descripcionProm,date fechaVenProm) = 0;
+    virtual string ListarProductosV(int Vendor,string nombreProm,string descripcionProm,date fechaVenProm) = 0;
 //PROMOCION
-    virtual void SelectProductoProm(int codigoP,string nombreProm,int cantMin,int porcentajeDes) = 0;
+    virtual void SelectProductoProm(int indiceProd,string nombreProm,int cantMin,int porcentajeDes) = 0;
     virtual string solicitarListaPromociones() = 0;
     virtual string obtenerProductosVendedoresPromocion(string nombrePromo) = 0;    
 //COMPRA

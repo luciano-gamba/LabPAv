@@ -46,16 +46,16 @@ public:
     void ingresoProducto(int vendedor, DTProducto* datosProd);
     string ListarProductos();
     string ListarProductosBasic(); //No muestra en el listado el precio a diferencia del otro es para que quede igual al caso de uso
-    string DescribeProducto(int codigoP);
+    string DescribeProducto(int indiceP);
     string listarProductosPendientes(string nick);
     string listarCompraProductoPendiente(int codigoProd);
     void selectCompraProductoPendiente(int idCompra);
 //VENDEDOR    
     void ingresoVendedor(DataVendedor* datosV, string contraseña);
     string ListaVendedores();
-    string ListarProductosV(string NicknameV,string nombreProm,string descripcionProm,date fechaVenProm);
+    string ListarProductosV(int Vendor,string nombreProm,string descripcionProm,date fechaVenProm);
 //PROMOCION
-    void SelectProductoProm(int codigoP,string nombreProm,int cantMin,int porcentajeDes);
+    void SelectProductoProm(int indiceProd,string nombreProm,int cantMin,int porcentajeDes);
     string solicitarListaPromociones();
     string obtenerProductosVendedoresPromocion(string nombrePromo);    
 //COMPRA

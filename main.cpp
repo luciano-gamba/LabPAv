@@ -72,17 +72,9 @@ int main(int argc, char** argv) {
                 getline(cin, nick);
 
                 cout << "Ingrese fecha de nacimiento: " << endl;
-                cout << "Dia: " << endl;
-                int dia;
-                cin >> dia;
-                cout << "Mes: " << endl;
-                int mes;
-                cin >> mes;
-                cout << "Año: " << endl;
-                int anio;
-                cin >> anio;
-                date fecha(dia,mes,anio);
-
+                date fecha;
+                fecha.SetearFecha();  
+                
                 cout << "Ingrese contraseña: ";
                 string contr;
                 cin.ignore();
@@ -199,7 +191,7 @@ int main(int argc, char** argv) {
                 cout<<"Productos Disponibles: "<<endl;
                 cout<<listaProduct<<endl; 
                 
-                cout<<"\n\nSeleccione el producto a describir: "<<endl;
+                cout<<"\n\nSeleccione el producto a describir(por su indice): "<<endl;
                 cout<<"\nEsperando Instruccion: ";
                 
                 int codigoP;
@@ -232,11 +224,11 @@ int main(int argc, char** argv) {
                 cout<<"Vendedores del Sistema: "<<endl;
                 cout<<Vend<<endl; 
                 
-                cout<<"\n\nSeleccione el vendedor que ofrecera la promocion: ";
+                cout<<"\n\nSeleccione el vendedor que ofrecera la promocion(por su indice): ";
                 
-                string nickIngresado;
+                int Vendedor;
                 cin.ignore();
-                getline(cin, nickIngresado);
+                cin >> Vendedor;
                 string nomProm;
                 cout << "Ingrese el nombre de la promocion: ";
                 cin.ignore();
@@ -261,7 +253,7 @@ int main(int argc, char** argv) {
                     Fecha.SetearFecha();
                 }
                 
-                string prod = ic->ListarProductosV(nickIngresado,nomProm,descProm,Fecha);
+                string prod = ic->ListarProductosV(Vendedor,nomProm,descProm,Fecha);
                 if(prod.empty()){
                     cout<<"Vendedor no tiene productos asociados"<<endl;
                     cout << "\nPresione Enter para continuar...";
@@ -269,11 +261,19 @@ int main(int argc, char** argv) {
                     cin.get();
                     break;
                 }
-                cout << "Productos del vendedor " << nickIngresado << ": " << endl;
+                if(prod == "VENDEDOR SELECCIONADO NO VÁLIDO"){
+                    cout<<prod<<endl;
+                    cout << "\nPresione Enter para continuar...";
+                    cin.ignore();
+                    cin.get();
+                    break;
+                }
+                
+                cout << "Productos del vendedor: " << endl;
                 cout << prod <<endl;
                 bool quiere;
                 do{
-                cout<<"\n\nSeleccione el producto a agregar a la promocion: "<<endl;
+                cout<<"\n\nSeleccione el producto a agregar a la promocion(por su indice): "<<endl;
                 cout<<"\nEsperando Instruccion: ";
                 
                 int codigoP;
@@ -290,7 +290,6 @@ int main(int argc, char** argv) {
                 cin.ignore();
                 cin >> porcentajeDesc;
                 
-                
                 ic->SelectProductoProm(codigoP,nomProm,cantMini,porcentajeDesc);
                 
                 char opQuiere;
@@ -300,6 +299,7 @@ int main(int argc, char** argv) {
                     quiere=true;
                 }else{
                     quiere=false;
+                    cout << "Saliendo.." << endl;
                 }
                 }while(quiere);
                 
