@@ -2,7 +2,7 @@
 #define PROMOCION_PRODUCTO_H
 
 #include "ICollection/interfaces/ICollectible.h"
-
+#include "date.h"
 #include "PRODUCTO.h" //Como uso funciones de esta clase no puedo hacer un fordware declaration
 
 class PROMOCION;
@@ -15,6 +15,8 @@ public:
     promocion_producto(const promocion_producto& orig);
     promocion_producto(PROMOCION* prom,PRODUCTO* prod,int cantMini,int porcentajeDes);
     virtual ~promocion_producto();
+    date getFechaVen();
+    
 private:
     int cant;
     int cantMin;

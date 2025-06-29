@@ -10,6 +10,7 @@
 #include "ICollection/interfaces/IIterator.h"
 #include "ICollection/interfaces/ICollection.h"
 #include "TipoProducto.h"
+#include <ctime>
 
 class promocion_producto;
 
@@ -53,7 +54,7 @@ public:
     void asignarComentarioAProd(COMENTARIO* c);
     void desAsignarComentarioAProd(COMENTARIO* c);
     void Conoceme(promocion_producto* pp);
-    
+    bool estoyEnPromo();
 private:
     int codigo;
     int stock;

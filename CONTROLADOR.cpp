@@ -306,9 +306,8 @@ void CONTROLADOR::ingresoProducto(int vendedor, DTProducto* datosProd){
         }
         v = (VENDEDOR*) iter->getCurrent();
         PRODUCTO* p = v->añadirProducto(datosProd);
-        ICollectible* ic = p;
         IKey* ik = new Integer(this->misProductos->getSize()+1);
-        this->misProductos->add(ik,ic);
+        this->misProductos->add(ik,p);
         cout << "Listo!" << endl;
     }
 }
@@ -408,14 +407,11 @@ string CONTROLADOR::ListarProductosV(int Vendor,string nombreProm,string descrip
     }
     vend = (VENDEDOR*) iter->getCurrent();
     string productosDeVend = vend->GetProductosAsoc();
-    
     PROMOCION* nuevaPromo = vend->crearPromo(nombreProm,descripcionProm,fechaVenProm);
     IKey* ikP = new String(nombreProm.c_str()); //Debo crear la clave para poder buscar las promociones por su nombreProm ya que es un IDictionary
     this->misPromociones->add(ikP,nuevaPromo);
-    
     //Liberar espacios de memoria
     delete iter;
-    delete ikP;
     //No se debe liberar punteros obtenidos por Find porque te tira error
     
     return productosDeVend;
@@ -431,7 +427,7 @@ void CONTROLADOR::SelectProductoProm(int indiceProd,string nombreProm,int cantMi
     }
     IIterator* iter = this->misProductos->getIterator();
     
-    IKey* IKProm = new String(nombreProm.c_str()); 
+    IKey* ikP = new String(nombreProm.c_str()); 
     PRODUCTO* prod;
     PROMOCION* prom;
     //prod = (PRODUCTO*)this->misProductos->find(ik); //Ya que el producto lo quiero pedir segun el indice no puedo usar un find
@@ -441,9 +437,13 @@ void CONTROLADOR::SelectProductoProm(int indiceProd,string nombreProm,int cantMi
         indiceProd--;
     }
     
-    prod = (PRODUCTO*) iter->getCurrent(); //Debo agregar algo que revise que el producto no este en otra promocion activa
-    
-    prom = (PROMOCION*)this->misPromociones->find(IKProm);
+    prod = (PRODUCTO*) iter->getCurrent(); 
+    if(prod->estoyEnPromo()){
+        cout<<"\t\tERROR:Producto ya pertenece a otra promocion activa"<<endl;
+        return;
+    }
+        
+    prom = (PROMOCION*)this->misPromociones->find(ikP);
     prom->Conoceme(prod,cantMin,porcentajeDes);
     
 }
