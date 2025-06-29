@@ -37,9 +37,10 @@ void PROMOCION::setFechaVen(date f){
     this->fechaVen=f;
 }
 
-void PROMOCION::obtenerFechaSistema(){
+date PROMOCION::obtenerFechaSistema(){  
     time_t ya = time(NULL);
     date d = date(localtime(&ya)->tm_mday,localtime(&ya)->tm_mon+1,localtime(&ya)->tm_year+1900);
     this->fechaSis = d;
+    return d;  
 }
 

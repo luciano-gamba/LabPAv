@@ -1,4 +1,8 @@
 #include "compra_producto.h"
+#include "COMPRA.h"
+#include "PRODUCTO.h"
+#include <string>
+using namespace std;
 
 compra_producto::compra_producto() {
 }
@@ -26,7 +30,7 @@ bool compra_producto::getsi_idCompra(int idCompra){
     int id;
     COMPRA* c = (COMPRA*)this->miCompra;
     id = c->getid();
-    if(id = idCompra){
+    if(id == idCompra){
         return true;
     }else{
         return false;

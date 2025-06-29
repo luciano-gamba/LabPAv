@@ -1,16 +1,25 @@
 #include "COMENTARIO.h"
+#include "USUARIO.h"
+#include "PRODUCTO.h"
+
 
 COMENTARIO::COMENTARIO() {
     
 }
 
 COMENTARIO::~COMENTARIO() {
-    
+    this->miProducto->desAsignarComentarioAProd(this);
+    this->miUsuario->desAsignarComentarioAUsu(this);
+    IIterator* itC = this->misComentarios->getIterator();
+    COMENTARIO* cr;
+    while(itC->hasCurrent()){
+        cr = (COMENTARIO*) itC->getCurrent();
+        cr->~COMENTARIO();
+        delete cr;
+        itC->next();
+    }
 }
 
-void COMENTARIO::setCodComent(int n){
-    this->codComent=n;
-}
 void COMENTARIO::setTexto(string t){
     this->texto=t;
 }
@@ -20,9 +29,7 @@ void COMENTARIO::setFechaCom(){
     this->fechaCom = d;
 }
 
-int COMENTARIO::getCodComent(){
-    return this->codComent;
-}
+
 string COMENTARIO::getTexto(){
     return this->texto;
 }
@@ -31,21 +38,14 @@ date COMENTARIO::getFechaCom(){
 }
 
 string COMENTARIO::getInfoComentario(){
-    return "<>Codigo: "+to_string(this->codComent)+"\n<>Texto: "+this->texto+"\n<>Fecha: "+this->fechaCom.getInfoDate();
+    return "Texto: "+this->texto+"\nFecha: "+this->fechaCom.getInfoDate();
 }
 
-
-COMENTARIO* COMENTARIO::crearRespuesta(string t){
-    
-    int nuevoCodigo = this->misComentarios->getSize();
-    COMENTARIO *c = new COMENTARIO();
-    
-    c->setCodComent(nuevoCodigo);
-    c->setFechaCom();
-    c->setTexto(t);
-    
-    IKey *ik = new Integer(nuevoCodigo);
+void COMENTARIO::asignarComentarioACom(COMENTARIO* c){
     ICollectible *ic = c;
-    this->misComentarios->add(ik,ic);
-    return c;
+    this->misComentarios->add(ic);
+}
+void COMENTARIO::DesAsignarComentarioACom(COMENTARIO* c){
+    ICollectible *ic = c;
+    this->misComentarios->remove(ic);
 }

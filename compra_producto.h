@@ -2,7 +2,10 @@
 #define COMPRA_PRODUCTO_H
 #include "date.h"
 #include "ICollection/interfaces/ICollectible.h"
-#include "COMPRA.h"
+
+// Declaraciones adelantadas para evitar dependencia circular
+class PRODUCTO;
+class COMPRA;
 
 class compra_producto: public ICollectible {
 public:
@@ -13,7 +16,13 @@ public:
     string dameCompra();
     bool getsi_idCompra(int idCompra);
     void marcaRecibido();
+    compra_producto(PRODUCTO* p, int cant);
+    PRODUCTO* getProducto();
+    int getCantidad();
+    void add();
 private:
+    PRODUCTO* prod;
+    int cantidad;
     bool recibido;
     date fechaRecibida;
     COMPRA* miCompra;

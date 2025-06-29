@@ -1,12 +1,34 @@
 #include <cstdlib>
 #include <iostream>
-//#include <string>
+#include <string>
+#include <valarray>
 using namespace std;
 #include "FABRICA.h"
 #include "ICONTROLADOR.h"
 #include "date.h"
 #include "DataDireccion.h"
 #include "DataCliente.h"
+#include "DataVendedor.h"
+#include "DTProducto.h"
+#include "TipoProducto.h"
+
+void limpiarPantalla() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
+void centrarTexto(const string& texto) {
+    int ancho = 120;
+    int espacios = (ancho - texto.length()) / 2;
+    for (int i = 0; i < espacios; i++) {
+        cout << " ";
+    }
+    cout << texto << endl;
+}
+
 
 int main(int argc, char** argv) {
 
@@ -15,62 +37,76 @@ int main(int argc, char** argv) {
     int opcion = 1;
     while (opcion != 0){
         do{
-            cout << "\t<><UtecMercadoSuelto><>" << endl<< endl;
+            limpiarPantalla();
+            centrarTexto("<><UtecMercadoSuelto><>");
+            cout << endl;
             cout << "<1> Alta de Usuario" << endl;
             cout << "<2> Listado de Usuarios" << endl;
             cout << "<3> Alta de Producto" << endl;
             cout << "<4> Consulta Producto" << endl;
-            cout << "<5> Crear Promoción" << endl;
-            cout << "<6> Consultar Promoción" << endl;
+            cout << "<5> Crear Promocion" << endl;
+            cout << "<6> Consultar Promocion" << endl;
             cout << "<7> Realizar Compra" << endl;
             cout << "<8> Dejar Comentario" << endl;
             cout << "<9> Eliminar Comentario" << endl;
             cout << "<10> Enviar Producto" << endl;
             cout << "<11> Expediente de Usuario" << endl;
             cout << "<0> Cerrar Programa" << endl;
-            cout << endl <<"<> Ingrese opción: ";
+            cout << "\nEsperando Instruccion: ";
             cin >> opcion;
         }while(opcion<0 || opcion>11);
     
         switch (opcion){
             case 1: {
-                cout << "Cliente o Vendedor? (1-2)";
+                limpiarPantalla();
+                centrarTexto("=== ALTA DE USUARIO ===");
+                cout << endl;
+                cout << "Cliente o Vendedor? (1-2)" << endl;
+                cout << "\nEsperando Instruccion: ";
                 int opcion1;
                 do{
                     cin >> opcion1;
                 }while (opcion1<1 or opcion1>2);
-                    cout << "Ingrese nickname: ";
+                    cout << "Ingrese nickname: " << endl;
+                    cout << "\nEsperando Instruccion: ";
                     string nick;
                     cin.ignore();
                     getline(cin, nick);
                     
                     cout << "Ingrese fecha de nacimiento: " << endl;
-                    cout << "Dia: ";
+                    cout << "Dia: " << endl;
+                    cout << "\nEsperando Instruccion: ";
                     int dia;
                     cin >> dia;
-                    cout << "Mes: ";
+                    cout << "Mes: " << endl;
+                    cout << "\nEsperando Instruccion: ";
                     int mes;
                     cin >> mes;
-                    cout << "Año: ";
+                    cout << "Año: " << endl;
+                    cout << "\nEsperando Instruccion: ";
                     int anio;
                     cin >> anio;
                     date fecha(dia,mes,anio);
                     
-                    cout << "Ingrese contraseña: ";
+                    cout << "Ingrese contraseña: " << endl;
+                    cout << "\nEsperando Instruccion: ";
                     string contr;
                     cin.ignore();
                     getline(cin, contr);
                 if(opcion1==1){
-                    cout << "Ingrese ciudad: ";
+                    cout << "Ingrese ciudad: " << endl;
+                    cout << "\nEsperando Instruccion: ";
                     string ciudad;
                     cin.ignore();
                     getline(cin, ciudad);
                     
-                    cout << "Ingrese dirección: " << endl;
-                    cout << "Nro Puerta: ";
+                    cout << "Ingrese direccion: " << endl;
+                    cout << "Nro Puerta: " << endl;
+                    cout << "\nEsperando Instruccion: ";
                     int numPuerta;
                     cin >> numPuerta;
-                    cout << "Nombre Calle: ";
+                    cout << "Nombre Calle: " << endl;
+                    cout << "\nEsperando Instruccion: ";
                     string nomCalle;
                     getline(cin, nomCalle);
                     DataDireccion dir(numPuerta, nomCalle);
@@ -79,21 +115,34 @@ int main(int argc, char** argv) {
                     ic->ingresoCliente(datosC,contr);
                     cout << "ingresó el cliente" << endl;
                 }else{
-                    cout << "Ingrese RUT: ";
+                    cout << "Ingrese RUT: " << endl;
+                    cout << "\nEsperando Instruccion: ";
                     cin.ignore();
                     string rut;
                     getline(cin, rut);
                     DataVendedor* datosV = new DataVendedor(nick,fecha,rut);
                     ic->ingresoVendedor(datosV,contr);
                 }
+                cout << "\nPresione Enter para continuar...";
+                cin.ignore();
+                cin.get();
                 break;
             }
             case 2:{
+                limpiarPantalla();
+                centrarTexto("=== LISTADO DE USUARIOS ===");
+                cout << endl;
                 string u = ic->listarUsuarios();
                 cout << u;
+                cout << "\nPresione Enter para continuar...";
+                cin.ignore();
+                cin.get();
                 }
-                break; //Darle opciones de nicknames existentes tipo al listarlo le pones un numero alado (indice)
+                break; 
             case 3:{
+                limpiarPantalla();
+                centrarTexto("=== ALTA DE PRODUCTO ===");
+                cout << endl;
                 string v = ic->ListaVendedores();
                 if(v == "#$%"){
                     cout << "\t<>VENDEDORES<>\n\nNo existen vendedores.\n\n";
@@ -109,10 +158,12 @@ int main(int argc, char** argv) {
                     cout << "Ingresa el precio del producto: ";
                     float precio;
                     cin >> precio;
-                    cout << "Ingresa el stock del producto: ";
+                    cout << "Ingresa el stock del producto: " << endl;
+                    cout << "\nEsperando Instruccion: ";
                     int cantStock;
                     cin >> cantStock;
-                    cout << "Ingresa la descripción del producto: ";
+                    cout << "Ingresa la descripcion del producto: " << endl;
+                    cout << "\nEsperando Instruccion: ";
                     string descProd;
                     cin.ignore();
                     getline(cin, descProd);
@@ -139,28 +190,191 @@ int main(int argc, char** argv) {
                     DTProducto* datosProd = new DTProducto(nomProd, precio, cantStock, descProd, tipo);
                     ic->ingresoProducto(opcion3,datosProd);
                 }
+                cout << "\nPresione Enter para continuar...";
+                cin.ignore();
+               // cin.get();
+                break;
             }
-                break; //No se puede pedir una preecondicion de por ejemplo que el usuario no exista al querer crearlo debes revisar esto dentro de la oper que lo creo justamente
             case 4:
+                limpiarPantalla();
+                centrarTexto("=== CONSULTA PRODUCTO ===");
+                cout << endl;
+                // IMPLEMENTAR CONSULTA PRODUCTO
+                cout << "Funcionalidad no implementada";
+                cout << "\nPresione Enter para continuar...";
+                cin.ignore();
+                cin.get();
                 break;
             case 5:
+                limpiarPantalla();
+                centrarTexto("=== CREAR PROMOCION ===");
+                cout << endl;
+                // IMPLEMENTAR CREAR PROMOCION
+                cout << "Funcionalidad no implementada";
+                cout << "\nPresione Enter para continuar...";
+                cin.ignore();
+                cin.get();
                 break;
-            case 6:
-                break;
-            case 7:
-                break;
-            case 8:{
-                int op;
-                cout << ic->listarUsuarios();
-                cout << endl <<"<> Ingrese opción: ";
-                cin >> op;
+            case 6: {
+                limpiarPantalla();
+                centrarTexto("=== CONSULTAR PROMOCION ===");
+                cout << endl;
                 
-                cout << ic->ListarProductos();
-                cout << endl <<"<> Ingrese opción: ";
-                cin >> op;
+                string listaPromociones = ic->solicitarListaPromociones();
+                
+                if (listaPromociones.empty()) {
+                    cout << "No hay promociones disponibles." << endl;
+                    cout << "\nPresione Enter para continuar...";
+                    cin.ignore();
+                    cin.get();
+                    break;
+                }
+                
+                cout << "Promociones disponibles:" << endl;
+                cout << listaPromociones << endl;
+                
+                cout << "Ingrese el nombre de la promocion a consultar: " << endl;
+                cout << "\nEsperando Instruccion: ";
+                string nombrePromo;
+                cin >> nombrePromo;
+                
+                string productosVendedores = ic->obtenerProductosVendedoresPromocion(nombrePromo);
+                
+                if (productosVendedores.empty()) {
+                    cout << "No se encontro la promocion o no tiene productos asociados." << endl;
+                } else {
+                    cout << "\nProductos y vendedores en la promocion '" << nombrePromo << "':" << endl;
+                    cout << productosVendedores << endl;
+                }
+                
+                cout << "\nPresione Enter para continuar...";
+                cin.ignore();
+                //cin.get();
                 break;
             }
-            case 9:
+            case 7: {
+                limpiarPantalla();
+                centrarTexto("=== REALIZAR COMPRA ===");
+                cout << endl;
+                
+                string listaClientes = ic->listarNicknamesC();
+                cout << listaClientes << endl;
+                
+                cout << "Seleccione el numero del cliente: " << endl;
+                cout << "\nEsperando Instruccion: ";
+                int numCliente;
+                cin >> numCliente;
+                
+                cout << "Ingrese el nickname del cliente: " << endl;
+                cout << "\nEsperando Instruccion: ";
+                string nicknameCliente;
+                cin >> nicknameCliente;
+                
+                ic->selectNicknameC(nicknameCliente);
+                
+                bool continuarComprando = true;
+                while (continuarComprando) {
+                    string productos = ic->ListarProductos();
+                    cout << "\nProductos disponibles:" << endl;
+                    cout << productos << endl;
+                    
+                    cout << "Ingrese el codigo del producto a agregar (0 para terminar): " << endl;
+                    cout << "\nEsperando Instruccion: ";
+                    string codigoProducto;
+                    cin >> codigoProducto;
+                    
+                    if (codigoProducto == "0") {
+                        continuarComprando = false;
+                    } else {
+                        cout << "Ingrese la cantidad: " << endl;
+                        cout << "\nEsperando Instruccion: ";
+                        int cantidad;
+                        cin >> cantidad;
+                        
+                        ic->agregarProducto(codigoProducto, cantidad);
+                        cout << "Producto agregado a la compra." << endl;
+                        
+                        cout << "¿Desea agregar otro producto? (1=Si, 0=No): " << endl;
+                        cout << "\nEsperando Instruccion: ";
+                        int continuar;
+                        cin >> continuar;
+                        continuarComprando = (continuar == 1);
+                    }
+                }
+                
+                cout << "\n=== RESUMEN DE COMPRA ===" << endl;
+                cout << "Compra finalizada para el cliente: " << nicknameCliente << endl;
+                
+                cout << "\nPresione Enter para continuar...";
+                cin.ignore();
+                cin.get();
+                break;
+            }
+           case 8:{
+                int opU;
+                cout << "\t<>USUARIOS<>\n\n";
+                cout << ic->listarUsuarios();
+                do{
+                cout << "<> Ingrese opción: ";
+                cin >> opU;
+                }while(opU<1);
+
+                int opP;
+                cout << "\t<>PRODUCTOS<>\n\n";
+                cout << ic->ListarProductos();
+                do{
+                cout << "<> Ingrese opción: ";
+                cin >> opP;
+                }while(opP<1);
+
+                int op;
+                do{
+                cout << "<> ¿Desea responder un comentario? (1:SI 2:NO): ";
+                cin >> op;
+                }while(op!=1 && op!=2);
+
+                if (op == 1) {
+
+                    int opC;
+                    cout << "\t<>COMENTARIOS<>\n\n";
+                    ic->listarComentariosProducto(opP);
+                    do {
+                        cout << "<> Ingrese opción: ";
+                        cin >> opC;
+                    } while (opC < 1);
+                    
+                    string texto;
+                    cout << "<> Escriba su comentario: ";
+                    cin >> texto;
+                    ic->responderComentarioProducto(opU, opP, opC, texto);
+
+                } else {
+                    string texto;
+                    cout << "<> Escriba su comentario: ";
+                    cin >> texto;
+                    ic->escribirComentarioProducto(opU, opP, texto);
+                }
+                break;
+            }
+            case 9:{
+                int opU;
+                cout << "\t<>USUARIOS<>\n\n";
+                cout << ic->listarUsuarios();
+                do{
+                cout << "<> Ingrese opción: ";
+                cin >> opU;
+                }while(opU<1);
+
+                int opC;
+                cout << "\t<>COMENTARIOS<>\n\n";
+                ic->listarComentariosUsuario(opU);
+                do{
+                cout << "<> Ingrese opción: ";
+                cin >> opC;
+                }while(opC<1);
+                
+                ic->eliminarComentarioUsuario(opU,opC);
+                
                 break;
             case 10:{
                 string v = ic->ListaVendedores();
@@ -206,18 +420,38 @@ int main(int argc, char** argv) {
                 //cout << ic->listarCompraProductoPendiente(codigoProd);
                 //ic->selectCompraProductoPendiente(idCompra);
                 break;
+               }
             }
-            case 11:
-                //cout << ic->listarUsuarios(); -ASUMO QUE ESTA HECHA-
-                //cout << ic->listarInfoBasica(nick); -HECHA-
+            case 11:{
                 
-                //si es VENDEDOR: -TENGO QUE VER UNA BUENA MANERA DE SABER SI ES VENDEDOR-
-                //cout << ic->listarProductos(); -ASUMO QUE ESTA HECHA-
-                //cout << ic->listarPromociones(); -ASUMO QUE ESTA HECHA-
+                string usu;
+                usu = ic->listarUsuarios();
+                cout << usu;
                 
-                //si es USUARIO: -TENGO QUE VER UNA BUENA MANERA DE SABER SI ES USUARIO-
-                //cout << ic->listarCompras(); -ASUMO QUE ESTA HECHA-
-                break;          
+                string nick;
+                cout << "Mandame el nick pa: ";
+                cin >> nick;
+                
+                if(usu.find(nick)){
+                    string LFB;
+                    LFB = ic->listarInfoBasica(nick);
+                    cout << LFB << endl;
+                }else{
+                    break;
+                }
+                
+                USUARIO* usuario = new VENDEDOR;
+                
+                if(VENDEDOR* v = dynamic_cast<VENDEDOR*>(usuario)){
+                    cout << ic->ListarProductos();
+                    //cout << ic->listarPromociones(); -FALTA-
+                    getchar();
+                    getchar();
+                }else{
+                    //cout << ic->listarCompras(); -FALTA-
+                }
+                break;
+            }
         }
     }
     

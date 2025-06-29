@@ -11,6 +11,7 @@
 #include "USUARIO.h"
 #include "DataCompra.h"
 #include "PROMOCION.h"
+#include "COMPRA.h"
 #include <string>
 #include "VENDEDOR.h"
 #include "DataVendedor.h"
@@ -30,7 +31,11 @@ public:
 //CLIENTE
     void ingresoCliente(DataCliente* datosC, string contraseña);
 //COMENTARIO
-    
+    string listarComentariosProducto(int opP);
+    string listarComentariosUsuario(int opU);
+    void responderComentarioProducto(int opU, int opP, int opC, string texto);
+    void escribirComentarioProducto(int opU, int opP, string texto);
+    void eliminarComentarioUsuario(int opU, int opC);
 //USUARIO
     string listarUsuarios();
     string listarInfoBasica(string);
@@ -53,14 +58,17 @@ public:
     string listarNicknamesC();
     void selectNicknameC(string nick);
     void agregarProducto(string codigoProd, int cant);
-    //DataCompra mostrarDetalleCompra();
+    void mostrarDetalleCompra();
+//GET
+
+    void getUsuario(string nick);
     
 private:
    
     //CONTROLADOR();
     //static CONTROLADOR* instancia;
     
-
+    COMPRA* com;
     IDictionary* misProductos;
     IDictionary* misUsuarios;
     IDictionary* misVendedores;

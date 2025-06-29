@@ -12,9 +12,14 @@ public:
 //CLIENTE
     virtual void ingresoCliente(DataCliente* datosC, string contraseña) = 0;
 //COMENTARIO
-    
-//USUARIO
+    virtual string listarComentariosProducto(int opP) = 0;
+    virtual string listarComentariosUsuario(int opU) = 0;
+    virtual void responderComentarioProducto(int opU, int opP, int opC, string texto) = 0;
+    virtual void escribirComentarioProducto(int opU, int opP, string texto) = 0;
+    virtual void eliminarComentarioUsuario(int opU, int opC) = 0;
+    //USUARIO
     virtual string listarUsuarios()=0;
+    virtual string listarInfoBasica(string nick) = 0;
 //PRODUCTO
     virtual void ingresoProducto(int vendedor, DTProducto* datosProd) = 0;
     virtual string ListarProductos() = 0;
@@ -36,6 +41,10 @@ public:
     virtual void agregarProducto(string codigoProd, int cant) = 0;
     //virtual DataCompra mostrarDetalleCompra() = 0;
 
+//GET
+    
+    virtual void getUsuario(string nick) = 0;
+    
 };
 #endif /* ICONTROLADOR_H */
 

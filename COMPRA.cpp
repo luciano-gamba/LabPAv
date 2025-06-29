@@ -1,6 +1,12 @@
 #include "COMPRA.h"
+#include "PRODUCTO.h"
+#include "CLIENTE.h"
 
 COMPRA::COMPRA() {
+    idCompra = 0;
+    monto = 0.0;
+    miCliente = nullptr;
+    productosCompra = nullptr;
 }
 
 COMPRA::~COMPRA() {
@@ -11,40 +17,44 @@ int COMPRA::getid(){
 }
 
 string COMPRA::getNickname(){
-    return this->miCliente->getNicknameCliente();
+    if(miCliente != nullptr) {
+        return this->miCliente->getNicknameCliente();
+    }
+    return "";
 }
 
 date COMPRA::getFecha(){
     return this->fechaCompra;
 }
 
-/*
-void COMPRA::agregarProducto(string codigoProd ,int cant ) {
-    iterator* it = this->misProductos->getIterator();
-    producto* p;
-    bool encontrado = false;
-
-    for(it;it->hasCurrent(); it->next()){
-        p = (producto*)it->getCurrent();
-        if(p->getCodigo() == codigoProd){
-            p->sumarCantidad(cant); //hay que crear la funcion
-            encontrado = true;
-            break;
-        }
-    }
-    if(!encontrado){
-        producto* nuevo = new producto(codigoProd,cant);
-        this->misProductos->add(nuevo);
-    }
-    delete it;
+COMPRA* COMPRA::create() {
+    return new COMPRA();
 }
 
-DataCompra* Controlador::mostrarDetalleCompra(){
-    date fechaC = com->fechaCompra();
-    float montoC = com->montoCompra();
-    set<DataProducto*> c = com->getItems();
+date COMPRA::getFechaCompra(){
+    return this->fechaCompra;
+}
+ float COMPRA::montoCompra(){
+    return this->monto;
+ }
+
+ set<DataProducto> COMPRA::getItems() {
+    return items;
+}
+
+ void COMPRA::setFechaCompra(date f){
+     this->fechaCompra=f;
+ }
+
+ void COMPRA::setMontoCompra(float m){
+    this->monto=m;
+ }
+
+void COMPRA::agregarProducto(string codigoProd, int cant) {
     
-    DataCompra* detalle = new DataCompra(fechaC,montoC,c);
-    return detalle;
+    DataProducto dataProducto;
+    items.insert(dataProducto);
+    
+   
 }
-*/
+

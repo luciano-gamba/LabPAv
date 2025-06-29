@@ -11,7 +11,7 @@
  */
 
 #include "DataCompra.h"
-
+#include "PRODUCTO.h"
 DataCompra::DataCompra() {
 }
 
