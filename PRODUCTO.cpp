@@ -4,6 +4,7 @@
 PRODUCTO::PRODUCTO() {
     this->vendedorAsociado = nullptr;
     this->misComentarios = new List();
+    this->PromosdeProducto = nullptr;
 }
 
 PRODUCTO::PRODUCTO(const PRODUCTO& orig) {
@@ -18,6 +19,7 @@ PRODUCTO::PRODUCTO(DTProducto* datosProd, int cod){
     this->descripcion = datosProd->getDescProd();
     this->vendedorAsociado = nullptr;
     this->misComentarios = new List();
+    this->PromosdeProducto = nullptr;
 }
 
 PRODUCTO::~PRODUCTO() {
@@ -172,6 +174,30 @@ void PRODUCTO::Conoceme(promocion_producto* pp){
     }
     this->PromosdeProducto->add(pp);
     
+}
+bool PRODUCTO::estoyEnPromo(){
+    if(this->PromosdeProducto == nullptr){
+        return false;
+    }
+    IIterator* iter = this->PromosdeProducto->getIterator();
+    promocion_producto* pp;
+    
+    time_t ya = time(NULL);
+    date fechaSistema = date(localtime(&ya)->tm_mday,localtime(&ya)->tm_mon+1,localtime(&ya)->tm_year+1900);
+    //Consigo fecha Sistema
+    
+    
+    date fechaVenDePromo;
+    
+    while(iter->hasCurrent()){
+        pp = (promocion_producto*)iter->getCurrent();
+        fechaVenDePromo = pp->getFechaVen();
+        if(fechaVenDePromo > fechaSistema){
+            return true;
+        }
+        iter->next();
+    }
+    return false;
 }
 
 void PRODUCTO::agregar(compra_producto* cp){

@@ -97,7 +97,6 @@ string VENDEDOR::GetProductosAsoc(){
     }
     //Liberando espacio de memoria
     delete IT;
-    delete P;
     
     return ProdV;
 }

@@ -270,10 +270,11 @@ int main(int argc, char** argv) {
                     break;
                 }
                 
-                cout << "Productos del vendedor: " << endl;
-                cout << prod <<endl;
+                
                 bool quiere;
                 do{
+                cout << "Productos del vendedor: " << endl;
+                cout << prod <<endl;
                 cout<<"\n\nSeleccione el producto a agregar a la promocion(por su indice): "<<endl;
                 cout<<"\nEsperando Instruccion: ";
                 
@@ -281,27 +282,34 @@ int main(int argc, char** argv) {
                 cin.ignore();
                 cin >> codigoP;
                 
-                cout<<"\n\nIngrese la minima cantidad de este producto para que se aplique la promocion: "<<endl;
+                cout<<"\n\nIngrese la minima cantidad de este producto para que se aplique la promocion: ";
+                cout<<"\nEsperando Instruccion: ";
                 int cantMini;
                 cin.ignore();
                 cin >> cantMini;
                 
-                cout<<"\n\nSeleccione el porcentaje de descuento a aplicar a este producto en la promocion"<<endl;
+                cout<<"\n\nSeleccione el porcentaje de descuento a aplicar a este producto en la promocion: ";
+                cout<<"\nEsperando Instruccion: ";
                 int porcentajeDesc;
                 cin.ignore();
                 cin >> porcentajeDesc;
                 
                 ic->SelectProductoProm(codigoP,nomProm,cantMini,porcentajeDesc);
                 
-                char opQuiere;
-                cout<<"\n\n¿Quiere seguir ingresando productos a la promocion?(s/n) :"<<endl;
+                int opQuiere;
+                cout<<"\n\n¿Quiere seguir ingresando productos a la promocion?(1:si/2:no) :"<<endl;
                 cin >> opQuiere;
-                if(opQuiere=='s'){
-                    quiere=true;
-                }else{
-                    quiere=false;
-                    cout << "Saliendo.." << endl;
-                }
+                while(opQuiere>2 or opQuiere<1) {
+                    cout<<"\n\nOpcion incorrecta(1:si/2:no) :"<<endl;
+                    cin >> opQuiere;
+                }    
+                    if (opQuiere == 1) {
+                        quiere = true;
+                    } else {
+                        quiere = false;
+                        cout << "Saliendo.." << endl;
+                    }
+                
                 }while(quiere);
                 
                 cout << "\nPresione Enter para continuar...";
