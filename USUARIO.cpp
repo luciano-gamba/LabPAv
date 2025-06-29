@@ -71,7 +71,7 @@ void USUARIO::eliminarComentarioUsuario(int opC){
 
     if (controlC < opC) {
 
-        cout << endl << "OPCIONES NO VÁLIDAS - COMENTARIO NO BORRADO" << endl << endl;
+        cout << endl << "OPCIONES NO VALIDAS - COMENTARIO NO BORRADO" << endl << endl;
         cout << "VOLVER AL MENU:  ";
         string s;
         getline(cin, s);
@@ -90,7 +90,7 @@ void USUARIO::eliminarComentarioUsuario(int opC){
         
         delete c;
 
-        cout << endl << "OPCIONES VÁLIDAS - COMENTARIO BORRADO" << endl << endl;
+        cout << endl << "OPCIONES VALIDAS - COMENTARIO BORRADO" << endl << endl;
         cout << "VOLVER AL MENU:  ";
         string s;
         getline(cin, s);
