@@ -3,14 +3,16 @@
 DataCliente::DataCliente() {
 }
 
-DataCliente::DataCliente(string nick,date fecha,string ciud,DataDireccion dir): DataUsuario(nick, fecha), direccion(dir){
-    
+DataCliente::DataCliente(string nick, date fecha, string ciud, DataDireccion* dir): DataUsuario(nick, fecha){
+    this->ciudad = ciud;
+    this->direccion = dir;
 }
 
 DataCliente::DataCliente(const DataCliente& orig) {
 }
 
 DataCliente::~DataCliente() {
+    delete this->direccion;
 }
 
 string DataCliente::getNicknameCliente(){
@@ -24,7 +26,7 @@ date DataCliente::getDateCliente(){
 string DataCliente::getCiudad(){
     return this->ciudad;
 }
-DataDireccion DataCliente::getDireccion(){
+DataDireccion* DataCliente::getDireccion(){
     return this->direccion;
 }
 
@@ -40,6 +42,6 @@ void DataCliente::setCiudad(string c){
     this->ciudad=c;
 }
 
-void DataCliente::setDireccion(DataDireccion d){
+void DataCliente::setDireccion(DataDireccion* d){
     this->direccion=d;
 }

@@ -21,7 +21,7 @@ public:
     virtual string listarUsuarios()=0;
     virtual string listarUsuariosCompletos()=0;
     virtual string listarInfoBasica(string nick)=0;
-    
+    virtual void getUsuario(string nick) = 0;
 //PRODUCTO
     virtual void ingresoProducto(int vendedor, DTProducto* datosProd) = 0;
     virtual string ListarProductos() = 0;
@@ -44,10 +44,6 @@ public:
     virtual void selectNicknameC(string nick) = 0;
     virtual void agregarProducto(string codigoProd, int cant) = 0;
     virtual void mostrarDetalleCompra() = 0;
-
-//GET
-    
-    virtual void getUsuario(string nick) = 0;
     
 };
 #endif /* ICONTROLADOR_H */

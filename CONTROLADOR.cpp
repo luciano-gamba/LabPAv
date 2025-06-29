@@ -64,8 +64,7 @@ void CONTROLADOR::ingresoCliente(DataCliente* datosC, string contrasenia){
     bool existe = this->misUsuarios->member(ik);
     if(!existe){
         this->misClientes->add(ik, c);
-        USUARIO* u = new USUARIO(llave, contrasenia, datosC->getDateCliente());
-        this->misUsuarios->add(ik, u);
+        this->misUsuarios->add(ik, c);
     }else{
         delete c;
     }
@@ -263,7 +262,8 @@ string CONTROLADOR::listarUsuariosCompletos() {
             if (c != nullptr) {
                 retorno += "Nombre: " + c->getNickname() + "\n";
                 retorno += "Nacimiento: " + c->getFechaNac().getInfoDate() + "\n";
-                retorno += "Direccion: " + c->getDireccion().getInfoDireccion() + "\n\n";
+                retorno += "Direccion: " + c->getDireccion()->getInfoDireccion() + "\n";
+                retorno += "Ciudad: " + c->getCiudad() + "\n\n";
             } else {
                 VENDEDOR* v = dynamic_cast<VENDEDOR*>(u);
                 if (v != nullptr) {
@@ -366,8 +366,7 @@ void CONTROLADOR::ingresoVendedor(DataVendedor* datosV, string contrasenia){
     bool existe = this->misUsuarios->member(ik);
     if(!existe){
         this->misVendedores->add(ik,v);
-        USUARIO* u = new USUARIO(llave, contrasenia, datosV->getDateVendedor());
-        this->misUsuarios->add(ik, u);
+        this->misUsuarios->add(ik, v);
     }else{
         delete v;
     }

@@ -82,7 +82,6 @@ int main(int argc, char** argv) {
                 if(opcion1==1){
                     cout << "Ingrese ciudad: ";
                     string ciudad;
-                    cin.ignore();
                     getline(cin, ciudad);
                     
                     cout << "Ingrese direccion: " << endl;
@@ -93,15 +92,17 @@ int main(int argc, char** argv) {
                     string nomCalle;
                     cin.ignore();
                     getline(cin, nomCalle);
-                    DataDireccion dir(numPuerta, nomCalle);
-                    
+                    DataDireccion* dir = new DataDireccion(numPuerta, nomCalle);
                     DataCliente* datosC = new DataCliente(nick,fecha,ciudad,dir);
                     ic->ingresoCliente(datosC,contr);
                 }else{
-                    cout << "Ingrese RUT: ";
-                    cin.ignore();
                     string rut;
+                    cout << "Ingrese RUT: ";
                     getline(cin, rut);
+                    while(rut.length() != 12){
+                        cout << "ERROR, el RUT debe de ser de 12 caracteres: ";
+                        getline(cin, rut);
+                    }
                     DataVendedor* datosV = new DataVendedor(nick,fecha,rut);
                     ic->ingresoVendedor(datosV,contr);
                 }
@@ -114,7 +115,7 @@ int main(int argc, char** argv) {
                 limpiarPantalla();
                 centrarTexto("=== LISTADO DE USUARIOS ===");
                 cout << endl;
-                cout << ic->listarUsuarios(); //Completos();
+                cout << ic->listarUsuariosCompletos();
                 cout << "\nPresione Enter para continuar...";
                 cin.ignore();
                 cin.get();
@@ -560,13 +561,13 @@ int main(int argc, char** argv) {
                     break;
                 }
                 
-                USUARIO* usuario = new VENDEDOR; //lo tengo que cambiar!!!!!!!!!!!
+               USUARIO* usuario = new USUARIO; //lo tengo que cambiar!!!!!!!!!!!
                 
-                if(VENDEDOR* v = dynamic_cast<VENDEDOR*>(usuario)){
-                    cout << ic->ListarProductos();
-                    cout << ic->solicitarListaPromociones();
-                    getchar();
-                    getchar();
+                if (dynamic_cast<VENDEDOR*>(usuario)) {
+                   cout << ic->ListarProductos();
+                   cout << ic->solicitarListaPromociones();
+                   getchar();
+                   getchar();
                 }else{
                     //cout << ic->listarCompras(); -FALTA-
                 }

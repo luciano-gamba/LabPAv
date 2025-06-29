@@ -21,7 +21,7 @@ date CLIENTE::getFechaNacCliente(){
     return getFechaNac();
 }
 
-DataDireccion CLIENTE::getDireccion(){
+DataDireccion* CLIENTE::getDireccion(){
     return this->direccion;
 }
 
@@ -41,7 +41,7 @@ void CLIENTE::setFechaNacCliente(date f){
     setFechaNac(f);
 }
 
-void CLIENTE::setDireccion(DataDireccion d){
+void CLIENTE::setDireccion(DataDireccion* d){
     this->direccion=d;
 }
 

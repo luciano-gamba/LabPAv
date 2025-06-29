@@ -16,18 +16,18 @@ public:
     string getContraseniaCliente();
     date getFechaNacCliente();
     string getCiudad();
-    DataDireccion getDireccion();
+    DataDireccion* getDireccion();
     COMPRA* getCompraActiva();
     void setCompraActiva(COMPRA* c);
     void setNicknameCliente(string);
     void setContraseniaCliente(string);
     void setFechaNacCliente(date);
     void setCiudad(string);
-    void setDireccion(DataDireccion);
+    void setDireccion(DataDireccion*);
 private:
     COMPRA* compraActiva;
     string ciudad;
-    DataDireccion direccion;    
+    DataDireccion* direccion;    
 };
 
 #endif /* CLIENTE_H */
