@@ -19,7 +19,9 @@ public:
     virtual void eliminarComentarioUsuario(int opU, int opC) = 0;
     //USUARIO
     virtual string listarUsuarios()=0;
-    virtual string listarInfoBasica(string nick) = 0;
+    virtual string listarUsuariosCompletos()=0;
+    virtual string listarInfoBasica(string nick)=0;
+    
 //PRODUCTO
     virtual void ingresoProducto(int vendedor, DTProducto* datosProd) = 0;
     virtual string ListarProductos() = 0;
@@ -39,7 +41,7 @@ public:
     virtual string listarNicknamesC() = 0;
     virtual void selectNicknameC(string nick) = 0;
     virtual void agregarProducto(string codigoProd, int cant) = 0;
-    //virtual DataCompra mostrarDetalleCompra() = 0;
+    virtual DataCompra mostrarDetalleCompra() = 0;
 
 //GET
     

@@ -4,10 +4,8 @@
 #include "PRODUCTO.h"
 #include "PROMOCION.h"
 #include "DataVendedor.h"
-#include <string>
+#include "DataVendedor.h"
 #include "DTProducto.h"
-#include "ICollection/interfaces/ICollection.h" //Siu
-#include "ICollection/Integer.h"
 using namespace std;
 
 class VENDEDOR : public USUARIO{
@@ -19,7 +17,7 @@ public:
     string GetProductosAsoc();
     PROMOCION* crearPromo(string nombreProm,string descripcionProm,date fechaVen);
     string dameProductosPendientes();
-    void añadirProducto(DTProducto*);
+    PRODUCTO* añadirProducto(DTProducto*);
     string getNicknameVendedor();
     string getContraseniaVendedor();
     date getFechaNacVendedor();

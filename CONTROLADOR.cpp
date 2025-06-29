@@ -27,9 +27,16 @@ CONTROLADOR::~CONTROLADOR() {
 string CONTROLADOR::listarProductosPendientes(string nick) {
     string productosPendientes;
     IKey* ik = new String(nick.c_str());
-    VENDEDOR* ve = (VENDEDOR*)this->misVendedores->find(ik);
-    productosPendientes = ve->dameProductosPendientes();
-    return productosPendientes;
+    if(this->misVendedores->member(ik)){
+        VENDEDOR* ve = (VENDEDOR*)this->misVendedores->find(ik);
+        productosPendientes = ve->dameProductosPendientes();
+        return productosPendientes;
+    }else{
+        cout << "Este nick no existe";
+        getchar();
+        getchar();
+        return "^&*";
+    } 
 }
 
 string CONTROLADOR::listarCompraProductoPendiente(int codigoProd){
@@ -134,11 +141,7 @@ void CONTROLADOR::responderComentarioProducto(int opU, int opP, int opC, string 
         delete itP;
         
         
-        int controlC = p->getSizeMisComentarios();  
-        cout << controlC;
-        string s;
-        getline(cin,s);
-        getline(cin,s);
+        int controlC = p->getSizeMisComentarios(); 
         if(controlC < opC){
             
             cout << endl << "OPCIONES NO VÁLIDAS - COMENTARIO NO GUARDADO" << endl << endl;
@@ -152,10 +155,16 @@ void CONTROLADOR::responderComentarioProducto(int opU, int opP, int opC, string 
             COMENTARIO* c = p->crearRespuesta(opC,texto);
             p->asignarComentarioAProd(c);
             u->asignarComentarioAUsu(c);
-            
+
+            cout << endl << "OPCIONES VÁLIDAS - COMENTARIO GUARDADO" << endl << endl;
+            cout << "VOLVER AL MENU:  ";
+            string s;
+            getline(cin, s);
+            getline(cin, s);
+
         }
     }
-    
+
 }
 void CONTROLADOR::escribirComentarioProducto(int opU, int opP, string texto){
     
@@ -187,10 +196,16 @@ void CONTROLADOR::escribirComentarioProducto(int opU, int opP, string texto){
         }
         p = (PRODUCTO*) itP->getCurrent();
         delete itP;
-        
+          
         COMENTARIO* c = p->createComentario(texto);
         p->asignarComentarioAProd(c);
         u->asignarComentarioAUsu(c);
+        
+        cout << endl << "OPCIONES VÁLIDAS - COMENTARIO GUARDADO" << endl << endl;
+        cout << "VOLVER AL MENU:  ";
+        string s;
+        getline(cin,s);
+        getline(cin,s);
         
     }
     
@@ -205,6 +220,7 @@ void CONTROLADOR::eliminarComentarioUsuario(int opU, int opC){
         string s;
         getline(cin,s);
         getline(cin,s);
+        
     }else{
         
         IIterator* itU = this->misUsuarios->getIterator();
@@ -216,9 +232,9 @@ void CONTROLADOR::eliminarComentarioUsuario(int opU, int opC){
         u = (USUARIO*) itU->getCurrent();
         delete itU;
                    
-        u->eliminarComentarioUsuario(opU);
+        u->eliminarComentarioUsuario(opC);
     }
-}    
+}      
 //USUARIO
 string CONTROLADOR::listarUsuarios(){
 
@@ -236,12 +252,44 @@ string CONTROLADOR::listarUsuarios(){
     }
     return retorno;
 }
+string CONTROLADOR::listarUsuariosCompletos() {
+    string retorno;
+    IIterator* it = this->misUsuarios->getIterator();
+    while (it->hasCurrent()) {
+        USUARIO* u = (USUARIO*) it->getCurrent();
+        
+        if (u != nullptr) {
+            CLIENTE* c = dynamic_cast<CLIENTE*>(u);
+            if (c != nullptr) {
+                retorno += "Nombre: " + c->getNickname() + "\n";
+                retorno += "Nacimiento: " + c->getFechaNac().getInfoDate() + "\n";
+                retorno += "Direccion: " + c->getDireccion().getInfoDireccion() + "\n\n";
+            } else {
+                VENDEDOR* v = dynamic_cast<VENDEDOR*>(u);
+                if (v != nullptr) {
+                    retorno += "Nombre: " + v->getNickname() + "\n";
+                    retorno += "Nacimiento: " + v->getFechaNac().getInfoDate() + "\n";
+                    retorno += "RUT: " + v->getRUT() + "\n\n";
+                }
+            }
+        }
 
+        it->next();
+    }
+
+    delete it;
+    return retorno;
+}
 string CONTROLADOR::listarInfoBasica(string nick){
     string retorno;
     IKey* ik = new String(nick.c_str());
-    USUARIO* u = (USUARIO*)this->misUsuarios->find(ik);
-    return retorno = u->getNickname() + " " + to_string(u->getFechaNac().getDia()) + "/" + to_string(u->getFechaNac().getMes()) + "/" + to_string(u->getFechaNac().getAnio());
+    if(this->misUsuarios->member(ik)){
+        USUARIO* u = (USUARIO*)this->misUsuarios->find(ik);
+        retorno = u->getNickname() + " " + to_string(u->getFechaNac().getDia()) + "/" + to_string(u->getFechaNac().getMes()) + "/" + to_string(u->getFechaNac().getAnio());
+    }else{
+        retorno  = "Este usuario no existe";
+    }
+    return retorno;
 }
 
 //PRODUCTO
@@ -252,23 +300,19 @@ void CONTROLADOR::ingresoProducto(int vendedor, DTProducto* datosProd){
     }else{
         IIterator* iter = this->misVendedores->getIterator();
         VENDEDOR* v;
-        while(vendedor != 0){
-            v = (VENDEDOR*) iter->getCurrent();
+        while(vendedor != 1){
             iter->next();
-            vendedor = vendedor - 1;
+            vendedor--;
         }
-        PRODUCTO* p = new PRODUCTO;
-        p->setdescr(datosProd->getDescProd());
-        p->setnombre(datosProd->getNomProd());
-        p->setprecio(datosProd->getPrecio());
-        p->setstock(datosProd->getCantStock());
-        string llave = datosProd->getNomProd();
-        IKey* ik = new String(llave.c_str());
-        this->misProductos->add(ik,p);
-        v->añadirProducto(datosProd);
+        v = (VENDEDOR*) iter->getCurrent();
+        PRODUCTO* p = v->añadirProducto(datosProd);
+        ICollectible* ic = p;
+        IKey* ik = new Integer(p->getCodigo());
+        this->misProductos->add(ik,ic);
         cout << "Listo!" << endl;
     }
 }
+
 string CONTROLADOR::ListarProductos(){
     string retorno;
     IIterator* it = this->misProductos->getIterator();
@@ -293,7 +337,7 @@ void CONTROLADOR::ingresoVendedor(DataVendedor* datosV, string contrasenia){
     IKey* ik = new String(llave.c_str());
     bool existe = this->misUsuarios->member(ik);
     if(!existe){
-        this->misVendedores->add(ik, v);
+        this->misVendedores->add(ik,v);
         USUARIO* u = new USUARIO(llave, contrasenia, datosV->getDateVendedor());
         this->misUsuarios->add(ik, u);
     }else{
@@ -329,7 +373,7 @@ string CONTROLADOR::ListarProductosV(string NicknameV,string nombreProm,string d
 void CONTROLADOR::SelectProductoProm(int codigoP,int cantMin,int porcentajeDes){
 
 }
-   string CONTROLADOR::solicitarListaPromociones() {
+string CONTROLADOR::solicitarListaPromociones() {
     IIterator* it = this->misPromociones->getIterator(); 
     string resultado = "";
     PROMOCION* promoActual;
@@ -429,8 +473,7 @@ void CONTROLADOR::agregarProducto(string codigoProd, int cant) {
 
     delete key;
 }
-
-void CONTROLADOR::mostrarDetalleCompra() { //lo cambio por void porque ya muestra y es insecesario que devuelva algo
+ DataCompra CONTROLADOR::mostrarDetalleCompra() {
     date f = com->getFechaCompra();
     float m = com->montoCompra();
     std::set<DataProducto> items = com->getItems();

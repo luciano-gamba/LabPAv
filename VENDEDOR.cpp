@@ -1,11 +1,18 @@
 #include "VENDEDOR.h"
-#include "DataVendedor.h"
-#include <cstdlib>
+
 
 VENDEDOR::VENDEDOR() {
 }
 
 VENDEDOR::VENDEDOR(const VENDEDOR& orig) {
+}
+
+VENDEDOR::VENDEDOR(DataVendedor* datosV, string contrasenia){
+    this->setNicknameVendedor(datosV->getNicknameVendedor());
+    this->setContraseniaVendedor(contrasenia);
+    this->setFechaNacVendedor(datosV->getDateVendedor());
+    this->setRUT(datosV->getRUT());
+    this->misProductos = new OrderedDictionary;
 }
 
 VENDEDOR::~VENDEDOR() {
@@ -43,34 +50,30 @@ void VENDEDOR::setRUT(string r){
     this->RUT=r;
 }
 
-VENDEDOR::VENDEDOR(DataVendedor* datosV, string contrasenia){
-    this->setNicknameVendedor(datosV->getNicknameVendedor());
-    this->setContraseniaVendedor(contrasenia);
-    this->setFechaNacVendedor(datosV->getDateVendedor());
-    this->setRUT(datosV->getRUT());
-    this->misProductos = new OrderedDictionary;
-}
-
-void VENDEDOR::añadirProducto(DTProducto* datosProd){
+PRODUCTO* VENDEDOR::añadirProducto(DTProducto* datosProd){
+    
     int maxProd = this->misProductos->getSize() + 1;
     PRODUCTO* p = new PRODUCTO(datosProd, maxProd);
+    
     p->setVendedorAsociado(this); 
     IKey* ik = new Integer(maxProd);
-    this->misProductos->add(ik, p);
-    delete ik;
+    ICollectible* ic = p;
+    this->misProductos->add(ik, ic);
+    
+    return p;
 }
 
 string VENDEDOR::dameProductosPendientes(){
      bool pendiente;
      PRODUCTO* p;
      string productosPendientes;
-     
+    
     IIterator* it=this->misProductos->getIterator();
     for(it; it->hasCurrent();it->next()){
       p = (PRODUCTO*)it->getCurrent();
       pendiente = p->pendienteEnvio();
-      if(pendiente){
-          productosPendientes = productosPendientes + to_string(p->getCodigo()) + " " + p->getNombre() + "/n";
+      if(pendiente == true){
+          productosPendientes = productosPendientes + to_string(p->getCodigo()) + " " + p->getNombre() + "\n";
       }
     }
     return productosPendientes;

@@ -26,7 +26,7 @@ public:
     void setDireccion(DataDireccion);
 private:
     COMPRA* compraActiva;
-    std::string ciudad;
+    string ciudad;
     DataDireccion direccion;    
 };
 

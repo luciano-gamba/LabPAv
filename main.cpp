@@ -62,61 +62,51 @@ int main(int argc, char** argv) {
                 centrarTexto("=== ALTA DE USUARIO ===");
                 cout << endl;
                 cout << "Cliente o Vendedor? (1-2)" << endl;
-                cout << "\nEsperando Instruccion: ";
                 int opcion1;
                 do{
                     cin >> opcion1;
                 }while (opcion1<1 or opcion1>2);
-                    cout << "Ingrese nickname: " << endl;
-                    cout << "\nEsperando Instruccion: ";
-                    string nick;
-                    cin.ignore();
-                    getline(cin, nick);
-                    
-                    cout << "Ingrese fecha de nacimiento: " << endl;
-                    cout << "Dia: " << endl;
-                    cout << "\nEsperando Instruccion: ";
-                    int dia;
-                    cin >> dia;
-                    cout << "Mes: " << endl;
-                    cout << "\nEsperando Instruccion: ";
-                    int mes;
-                    cin >> mes;
-                    cout << "Año: " << endl;
-                    cout << "\nEsperando Instruccion: ";
-                    int anio;
-                    cin >> anio;
-                    date fecha(dia,mes,anio);
-                    
-                    cout << "Ingrese contraseña: " << endl;
-                    cout << "\nEsperando Instruccion: ";
-                    string contr;
-                    cin.ignore();
-                    getline(cin, contr);
+                cout << "Ingrese nickname: ";
+                string nick;
+                cin.ignore();
+                getline(cin, nick);
+
+                cout << "Ingrese fecha de nacimiento: " << endl;
+                cout << "Dia: " << endl;
+                int dia;
+                cin >> dia;
+                cout << "Mes: " << endl;
+                int mes;
+                cin >> mes;
+                cout << "Año: " << endl;
+                int anio;
+                cin >> anio;
+                date fecha(dia,mes,anio);
+
+                cout << "Ingrese contraseña: ";
+                string contr;
+                cin.ignore();
+                getline(cin, contr);
                 if(opcion1==1){
-                    cout << "Ingrese ciudad: " << endl;
-                    cout << "\nEsperando Instruccion: ";
+                    cout << "Ingrese ciudad: ";
                     string ciudad;
                     cin.ignore();
                     getline(cin, ciudad);
                     
                     cout << "Ingrese direccion: " << endl;
-                    cout << "Nro Puerta: " << endl;
-                    cout << "\nEsperando Instruccion: ";
+                    cout << "Nro Puerta: ";
                     int numPuerta;
                     cin >> numPuerta;
-                    cout << "Nombre Calle: " << endl;
-                    cout << "\nEsperando Instruccion: ";
+                    cout << "Nombre Calle: ";
                     string nomCalle;
+                    cin.ignore();
                     getline(cin, nomCalle);
                     DataDireccion dir(numPuerta, nomCalle);
                     
                     DataCliente* datosC = new DataCliente(nick,fecha,ciudad,dir);
                     ic->ingresoCliente(datosC,contr);
-                    cout << "ingresó el cliente" << endl;
                 }else{
-                    cout << "Ingrese RUT: " << endl;
-                    cout << "\nEsperando Instruccion: ";
+                    cout << "Ingrese RUT: ";
                     cin.ignore();
                     string rut;
                     getline(cin, rut);
@@ -132,8 +122,7 @@ int main(int argc, char** argv) {
                 limpiarPantalla();
                 centrarTexto("=== LISTADO DE USUARIOS ===");
                 cout << endl;
-                string u = ic->listarUsuarios();
-                cout << u;
+                cout << ic->listarUsuarios(); //Completos();
                 cout << "\nPresione Enter para continuar...";
                 cin.ignore();
                 cin.get();
@@ -158,12 +147,10 @@ int main(int argc, char** argv) {
                     cout << "Ingresa el precio del producto: ";
                     float precio;
                     cin >> precio;
-                    cout << "Ingresa el stock del producto: " << endl;
-                    cout << "\nEsperando Instruccion: ";
+                    cout << "Ingresa el stock del producto: ";
                     int cantStock;
                     cin >> cantStock;
-                    cout << "Ingresa la descripcion del producto: " << endl;
-                    cout << "\nEsperando Instruccion: ";
+                    cout << "Ingresa la descripcion del producto: ";
                     string descProd;
                     cin.ignore();
                     getline(cin, descProd);
@@ -310,94 +297,107 @@ int main(int argc, char** argv) {
                 cin.get();
                 break;
             }
-           case 8:{
+            case 8:
+            {
                 int opU;
-                cout << "\t<>USUARIOS<>\n\n";
+                centrarTexto("<>USUARIOS<>\n");
                 cout << ic->listarUsuarios();
-                do{
-                cout << "<> Ingrese opción: ";
-                cin >> opU;
-                }while(opU<1);
+                do {
+                    cout << "<> Ingrese opción: ";
+                    cin >> opU;
+                } while (opU < 1);
 
                 int opP;
-                cout << "\t<>PRODUCTOS<>\n\n";
+                centrarTexto("<>PRODUCTOS<>\n");
                 cout << ic->ListarProductos();
-                do{
-                cout << "<> Ingrese opción: ";
-                cin >> opP;
-                }while(opP<1);
+                do {
+                    cout << "<> Ingrese opción: ";
+                    cin >> opP;
+                } while (opP < 1);
 
                 int op;
-                do{
-                cout << "<> ¿Desea responder un comentario? (1:SI 2:NO): ";
-                cin >> op;
-                }while(op!=1 && op!=2);
+                do {
+                    cout << "<> ¿Desea responder un comentario? (1:SI 2:NO): ";
+                    cin >> op;
+                } while (op != 1 && op != 2);
 
                 if (op == 1) {
 
                     int opC;
-                    cout << "\t<>COMENTARIOS<>\n\n";
-                    ic->listarComentariosProducto(opP);
+                    centrarTexto("<>COMENTARIOS<>\n");
+                    cout << ic->listarComentariosProducto(opP);
                     do {
                         cout << "<> Ingrese opción: ";
                         cin >> opC;
                     } while (opC < 1);
-                    
+
                     string texto;
-                    cout << "<> Escriba su comentario: ";
+                    cout << endl << "<> Escriba su comentario: ";
                     cin >> texto;
                     ic->responderComentarioProducto(opU, opP, opC, texto);
 
                 } else {
                     string texto;
-                    cout << "<> Escriba su comentario: ";
+                    cout << endl << "<> Escriba su comentario: ";
                     cin >> texto;
                     ic->escribirComentarioProducto(opU, opP, texto);
                 }
                 break;
             }
-            case 9:{
+            case 9:
+            {
                 int opU;
-                cout << "\t<>USUARIOS<>\n\n";
+                centrarTexto("<>USUARIOS<>\n");
                 cout << ic->listarUsuarios();
-                do{
-                cout << "<> Ingrese opción: ";
-                cin >> opU;
-                }while(opU<1);
+                do {
+                    cout << "<> Ingrese opción: ";
+                    cin >> opU;
+                } while (opU < 1);
 
                 int opC;
-                cout << "\t<>COMENTARIOS<>\n\n";
-                ic->listarComentariosUsuario(opU);
-                do{
-                cout << "<> Ingrese opción: ";
-                cin >> opC;
-                }while(opC<1);
-                
-                ic->eliminarComentarioUsuario(opU,opC);
-                
+                centrarTexto("<>COMENTARIOS<>\n");
+                cout << ic->listarComentariosUsuario(opU);
+                do {
+                    cout << "<> Ingrese opción: ";
+                    cin >> opC;
+                } while (opC < 1);
+
+                ic->eliminarComentarioUsuario(opU, opC);
+
                 break;
             case 10:{
                 string v = ic->ListaVendedores();
                 if(v == "#$%"){
                     cout << "\t<>VENDEDORES<>\n\nNo existen vendedores.\n\n";
+                    getchar();
+                    getchar();
                 }else{
                     cout << v << endl;
-                    cout << "Elige un vendedor válido: ";
                     string opcion3;
+                    cout << "Elige un vendedor válido (NOMBRE no numero): ";
                     cin >> opcion3;
                     string PP;
                     
                     if(v.find(opcion3) != string::npos){
                         PP = ic->listarProductosPendientes(opcion3);
+                        if(PP == "^&*"){
+                            break;
+                        }
                     }else{
+                        cout << "Este nick no existe";
+                        getchar();
+                        getchar();
                         break;
                     }
                     
                     cout << PP << endl;
-                        
-                    cout << "Elige un producto valido: ";
+                    
                     int opcion4 = 0;
+                    do{
+                    cout << "Elige un producto valido: ";
                     cin >> opcion4;
+                    } while(opcion4 < 0);
+                    
                     string CPP;
                     
                     if (PP.find(to_string(opcion4)) != string::npos){
@@ -405,20 +405,19 @@ int main(int argc, char** argv) {
                     }else{
                         break;
                     }
-
+                    
                     cout << CPP << endl;
-
-                    cout << "Elige un producto valido: ";
+                    
                     int idCompra = 0;
+                    do{
+                    cout << "Selecciona un producto valido para marcarlo enviado: ";
                     cin >> idCompra;
-
+                    } while(idCompra < 0);
+                    
                     if (CPP.find(to_string(idCompra)) != string::npos){
                         ic->selectCompraProductoPendiente(idCompra);
                     }
                 }
-                //cout << ic->listarProductosPendientes(nick);
-                //cout << ic->listarCompraProductoPendiente(codigoProd);
-                //ic->selectCompraProductoPendiente(idCompra);
                 break;
                }
             }
@@ -428,11 +427,18 @@ int main(int argc, char** argv) {
                 usu = ic->listarUsuarios();
                 cout << usu;
                 
+                if(usu.empty()){
+                    cout << "No hay usuarios ingresados" << endl;
+                    getchar();
+                    getchar();
+                    break;
+                }
+                
                 string nick;
                 cout << "Mandame el nick pa: ";
                 cin >> nick;
                 
-                if(usu.find(nick)){
+                if(usu.find(nick) != string::npos){
                     string LFB;
                     LFB = ic->listarInfoBasica(nick);
                     cout << LFB << endl;
@@ -440,11 +446,11 @@ int main(int argc, char** argv) {
                     break;
                 }
                 
-                USUARIO* usuario = new VENDEDOR;
+                USUARIO* usuario = new VENDEDOR; //lo tengo que cambiar!!!!!!!!!!!
                 
                 if(VENDEDOR* v = dynamic_cast<VENDEDOR*>(usuario)){
                     cout << ic->ListarProductos();
-                    //cout << ic->listarPromociones(); -FALTA-
+                    cout << ic->solicitarListaPromociones();
                     getchar();
                     getchar();
                 }else{

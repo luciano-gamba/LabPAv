@@ -3,11 +3,10 @@
 #include <string>
 #include <ctime>
 #include "date.h"
-#include "ICollection/interfaces/IDictionary.h"
-#include "ICollection/collections/OrderedDictionary.h"
+#include "ICollection/interfaces/ICollection.h"
 #include "ICollection/Integer.h"
 #include "ICollection/interfaces/IKey.h"
-#include "ICollection/collections/OrderedDictionaryEntry.h"
+#include "ICollection/collections/List.h"
 #include "ICollection/interfaces/ICollectible.h"
 using namespace std;
 
@@ -22,7 +21,6 @@ public:
     void setTexto(string t);
     void setFechaCom();
     
-    int getCodComent();
     string getTexto();
     date getFechaCom();
     
@@ -30,6 +28,9 @@ public:
     
     void asignarComentarioACom(COMENTARIO* c);
     void DesAsignarComentarioACom(COMENTARIO* c);
+    
+    void asignarUsuarioACom(USUARIO* u);
+    void asignarProductoACom(PRODUCTO* p);
     
 private:
     string texto;
