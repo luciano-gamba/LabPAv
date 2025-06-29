@@ -14,6 +14,7 @@ PRODUCTO::PRODUCTO(DTProducto* datosProd, int cod){
     this->nombre = datosProd->getNomProd();
     this->precio = datosProd->getPrecio();
     this->stock = datosProd->getCantStock();
+    this->Categoria = datosProd->getCategoria();
     this->descripcion = datosProd->getDescProd();
     this->vendedorAsociado = nullptr;
     this->misComentarios = new List();
