@@ -512,8 +512,7 @@ string CONTROLADOR::listarNicknamesC(){
 void CONTROLADOR::selectNicknameC(string nick){
     string seleccion;
     IKey* ikCliente = new String(nick.c_str());
-   CLIENTE* cliente = (CLIENTE*)this->misClientes->find(ikCliente);
-    delete ikCliente;
+    CLIENTE* cliente = (CLIENTE*)this->misClientes->find(ikCliente);
     
     if (cliente == nullptr) {
        cout<<"Cliente no Encontrado"<<endl;
@@ -531,7 +530,6 @@ void CONTROLADOR::agregarProducto(string codigoProd, int cant) {
 
     if (!misProductos->member(key)) {
         std::cout << "Producto no encontrado.\n";
-        delete key;
         return;
     }
 
@@ -539,13 +537,11 @@ void CONTROLADOR::agregarProducto(string codigoProd, int cant) {
 
     if (p == nullptr) {
         std::cout << "Error al recuperar el producto.\n";
-        delete key;
         return;
     }
-
-    this->com->agregarProducto(codigoProd, cant);
-
-    delete key;
+    //crear compra?
+    this->com->agregarProducto(codigoProd, cant, p);
+    
 }
 
  void CONTROLADOR::mostrarDetalleCompra() {

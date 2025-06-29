@@ -53,6 +53,7 @@ public:
     void asignarComentarioAProd(COMENTARIO* c);
     void desAsignarComentarioAProd(COMENTARIO* c);
     void Conoceme(promocion_producto* pp);
+    void agregar(compra_producto*);
     
 private:
     int codigo;
@@ -61,7 +62,7 @@ private:
     string nombre;
     string descripcion;
     TipoProducto Categoria;
-    IDictionary* misCompraProductos;
+    ICollection* misCompraProductos;
     ICollection* PromosdeProducto;
     ICollection* misComentarios;
     VENDEDOR* vendedorAsociado;

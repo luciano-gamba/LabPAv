@@ -5,6 +5,7 @@
 #include "DataCompra.h"
 #include <set>
 #include "ICollection/interfaces/IDictionary.h"
+#include "PRODUCTO.h"
 
 // Declaraciones adelantadas para evitar dependencia circular
 class CLIENTE;
@@ -14,13 +15,14 @@ class COMPRA {
 public:
     COMPRA();
     virtual ~COMPRA();
-    void agregarProducto(string codigoProd ,int cant);
+    void agregarProducto(string codigoProd ,int cant, PRODUCTO* p);
     static COMPRA* create();
     date getFechaCompra();
     float montoCompra();
     set<DataProducto> getItems();
     void setFechaCompra(date);
     void setMontoCompra(float);
+    void setCP();
        
     int getid();
     string getNickname();

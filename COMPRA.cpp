@@ -1,6 +1,7 @@
 #include "COMPRA.h"
 #include "PRODUCTO.h"
 #include "CLIENTE.h"
+#include "ICollection/String.h"
 
 COMPRA::COMPRA() {
     idCompra = 0;
@@ -50,11 +51,21 @@ date COMPRA::getFechaCompra(){
     this->monto=m;
  }
 
-void COMPRA::agregarProducto(string codigoProd, int cant) {
+void COMPRA::agregarProducto(string codigoProd, int cant, PRODUCTO* p) {
     
-    DataProducto dataProducto;
+    if(this->productosCompra != nullptr){
+        this->productosCompra = new OrderedDictionary;
+    }
+    compra_producto* cp = cp->create(p, cant);
+    IKey* ik = new String(codigoProd.c_str());
+    this->productosCompra->add(ik, cp);
+    p->agregar(cp);
+    
+    DataProducto dataProducto(codigoProd, cant);
     items.insert(dataProducto);
-    
-   
 }
 
+//void COMPRA::setCP(){
+//    this->micp = new compra_producto();
+//    PRODUCTO* p;
+//}

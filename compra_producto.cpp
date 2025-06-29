@@ -40,3 +40,10 @@ bool compra_producto::getsi_idCompra(int idCompra){
 void compra_producto::marcaRecibido(){
     this->recibido = true;
 }
+
+compra_producto* compra_producto::create(PRODUCTO* p, int cant){
+    compra_producto* cp = new compra_producto;
+    this->prod = p;
+    this->cantidad = cant;
+    return cp;
+}

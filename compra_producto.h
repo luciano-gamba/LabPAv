@@ -20,10 +20,11 @@ public:
     PRODUCTO* getProducto();
     int getCantidad();
     void add();
+    compra_producto* create(PRODUCTO*, int);
 private:
     PRODUCTO* prod;
     int cantidad;
-    bool recibido;
+    bool recibido = false;
     date fechaRecibida;
     COMPRA* miCompra;
 };

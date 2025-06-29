@@ -62,7 +62,6 @@ bool PRODUCTO::pendienteEnvio(){
     bool recibio = true;
     compra_producto* cp;
     //falta tener en cuenta si esta vacio (tengo que ver si lo controlo aca o no)
-    this->misCompraProductos = new OrderedDictionary(); // ESTO SE TIENE QUE HACER AL CREARLO EN COMPRA
     IIterator* it = this->misCompraProductos->getIterator();
         for(it; it->hasCurrent() and recibio; it->next()){
             cp = (compra_producto*)it->getCurrent();
@@ -173,4 +172,11 @@ void PRODUCTO::Conoceme(promocion_producto* pp){
     }
     this->PromosdeProducto->add(pp);
     
+}
+
+void PRODUCTO::agregar(compra_producto* cp){
+    if(this->misCompraProductos == nullptr){
+        this->misCompraProductos = new List();
+    }
+    this->misCompraProductos->add(cp);
 }
