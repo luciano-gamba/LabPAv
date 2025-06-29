@@ -9,6 +9,7 @@ public:
     DataDireccion(const DataDireccion& orig);
     DataDireccion(int,string);
     virtual ~DataDireccion();
+    string getInfoDireccion();
 private:
     int numPuerta;
     string nomCalle;

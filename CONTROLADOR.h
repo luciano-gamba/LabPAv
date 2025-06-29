@@ -38,6 +38,7 @@ public:
     void eliminarComentarioUsuario(int opU, int opC);
 //USUARIO
     string listarUsuarios();
+    string listarUsuariosCompletos();
     string listarInfoBasica(string);
 //PRODUCTO
     void ingresoProducto(int vendedor, DTProducto* datosProd);

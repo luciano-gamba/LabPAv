@@ -19,6 +19,9 @@ public:
     virtual void eliminarComentarioUsuario(int opU, int opC) = 0;
     //USUARIO
     virtual string listarUsuarios()=0;
+    virtual string listarUsuariosCompletos()=0;
+    virtual string listarInfoBasica(string nick)=0;
+    
 //PRODUCTO
     virtual void ingresoProducto(int vendedor, DTProducto* datosProd) = 0;
     virtual string ListarProductos() = 0;

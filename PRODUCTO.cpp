@@ -1,10 +1,9 @@
 #include "PRODUCTO.h"
 #include "VENDEDOR.h"
-#include "compra_producto.h"
-#include "ICollection/interfaces/IIterator.h"
 
 PRODUCTO::PRODUCTO() {
     this->vendedorAsociado = nullptr;
+    this->misComentarios = new List();
 }
 
 PRODUCTO::PRODUCTO(const PRODUCTO& orig) {
@@ -17,6 +16,7 @@ PRODUCTO::PRODUCTO(DTProducto* datosProd, int cod){
     this->stock = datosProd->getCantStock();
     this->descripcion = datosProd->getDescProd();
     this->vendedorAsociado = nullptr;
+    this->misComentarios = new List();
 }
 
 PRODUCTO::~PRODUCTO() {
@@ -135,8 +135,10 @@ COMENTARIO* PRODUCTO::createComentario(string texto){
 }
 
 void PRODUCTO::asignarComentarioAProd(COMENTARIO* c){
+    c->asignarProductoACom(this);
     ICollectible* ic = c;
     this->misComentarios->add(ic);
+    
 }
 void PRODUCTO::desAsignarComentarioAProd(COMENTARIO* c){
     ICollectible* ic = c;

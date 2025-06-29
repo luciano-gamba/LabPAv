@@ -1,6 +1,5 @@
 #include "VENDEDOR.h"
-#include "DataVendedor.h"
-#include <cstdlib>
+
 
 VENDEDOR::VENDEDOR() {
 }
@@ -51,13 +50,17 @@ void VENDEDOR::setRUT(string r){
     this->RUT=r;
 }
 
-void VENDEDOR::añadirProducto(DTProducto* datosProd){
+PRODUCTO* VENDEDOR::añadirProducto(DTProducto* datosProd){
+    
     int maxProd = this->misProductos->getSize() + 1;
     PRODUCTO* p = new PRODUCTO(datosProd, maxProd);
+    
     p->setVendedorAsociado(this); 
     IKey* ik = new Integer(maxProd);
-    this->misProductos->add(ik, p);
-    delete ik;
+    ICollectible* ic = p;
+    this->misProductos->add(ik, ic);
+    
+    return p;
 }
 
 string VENDEDOR::dameProductosPendientes(){

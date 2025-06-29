@@ -1,16 +1,18 @@
 #include "USUARIO.h"
 
 USUARIO::USUARIO() {
-//    this->misComentarios = new OrderedDictionary();
+    this->misComentarios = new List();
 }
 
 USUARIO::USUARIO(string nick, string contra, date fecha){
     this->nickname = nick;
     this->contrasenia = contra;
     this->fechaNac = fecha;
+    this->misComentarios = new List();
 }
 
 USUARIO::~USUARIO() {
+    
 }
 
 string USUARIO::getNickname(){
@@ -54,6 +56,7 @@ string USUARIO::getInfoMisComentarios(){
     return retorno;  
 }
 void USUARIO::asignarComentarioAUsu(COMENTARIO* c){
+    c->asignarUsuarioACom(this);
     ICollectible* ic = c;
     this->misComentarios->add(ic);
 }
@@ -63,16 +66,34 @@ void USUARIO::desAsignarComentarioAUsu(COMENTARIO* c){
     this->misComentarios->remove(ic);
 }
 void USUARIO::eliminarComentarioUsuario(int opC){
-
-    IIterator* itC = this->misComentarios->getIterator();
-    COMENTARIO* c;
-    while (opC != 1) {
-        opC--;
-        itC->next();
-    }
-    c = (COMENTARIO*) itC->getCurrent();
-    delete itC;
     
-    c->~COMENTARIO();
-    delete c;
+    int controlC = this->misComentarios->getSize();
+
+    if (controlC < opC) {
+
+        cout << endl << "OPCIONES NO VÁLIDAS - COMENTARIO NO BORRADO" << endl << endl;
+        cout << "VOLVER AL MENU:  ";
+        string s;
+        getline(cin, s);
+        getline(cin, s);
+
+    } else {
+
+        IIterator* itC = this->misComentarios->getIterator();
+        COMENTARIO* c;
+        while (opC != 1) {
+            opC--;
+            itC->next();
+        }
+        c = (COMENTARIO*) itC->getCurrent();
+        delete itC;
+        
+        delete c;
+
+        cout << endl << "OPCIONES VÁLIDAS - COMENTARIO BORRADO" << endl << endl;
+        cout << "VOLVER AL MENU:  ";
+        string s;
+        getline(cin, s);
+        getline(cin, s);
+    }
 }

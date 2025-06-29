@@ -121,8 +121,7 @@ int main(int argc, char** argv) {
                 limpiarPantalla();
                 centrarTexto("=== LISTADO DE USUARIOS ===");
                 cout << endl;
-                string u = ic->listarUsuarios();
-                cout << u;
+                cout << ic->listarUsuariosCompletos();
                 cout << "\nPresione Enter para continuar...";
                 cin.ignore();
                 cin.get();
@@ -297,71 +296,73 @@ int main(int argc, char** argv) {
                 cin.get();
                 break;
             }
-           case 8:{
+            case 8:
+            {
                 int opU;
-                cout << "\t<>USUARIOS<>\n\n";
+                centrarTexto("<>USUARIOS<>\n");
                 cout << ic->listarUsuarios();
-                do{
-                cout << "<> Ingrese opción: ";
-                cin >> opU;
-                }while(opU<1);
+                do {
+                    cout << "<> Ingrese opción: ";
+                    cin >> opU;
+                } while (opU < 1);
 
                 int opP;
-                cout << "\t<>PRODUCTOS<>\n\n";
+                centrarTexto("<>PRODUCTOS<>\n");
                 cout << ic->ListarProductos();
-                do{
-                cout << "<> Ingrese opción: ";
-                cin >> opP;
-                }while(opP<1);
+                do {
+                    cout << "<> Ingrese opción: ";
+                    cin >> opP;
+                } while (opP < 1);
 
                 int op;
-                do{
-                cout << "<> ¿Desea responder un comentario? (1:SI 2:NO): ";
-                cin >> op;
-                }while(op!=1 && op!=2);
+                do {
+                    cout << "<> ¿Desea responder un comentario? (1:SI 2:NO): ";
+                    cin >> op;
+                } while (op != 1 && op != 2);
 
                 if (op == 1) {
 
                     int opC;
-                    cout << "\t<>COMENTARIOS<>\n\n";
-                    ic->listarComentariosProducto(opP);
+                    centrarTexto("<>COMENTARIOS<>\n");
+                    cout << ic->listarComentariosProducto(opP);
                     do {
                         cout << "<> Ingrese opción: ";
                         cin >> opC;
                     } while (opC < 1);
-                    
+
                     string texto;
-                    cout << "<> Escriba su comentario: ";
+                    cout << endl << "<> Escriba su comentario: ";
                     cin >> texto;
                     ic->responderComentarioProducto(opU, opP, opC, texto);
 
                 } else {
                     string texto;
-                    cout << "<> Escriba su comentario: ";
+                    cout << endl << "<> Escriba su comentario: ";
                     cin >> texto;
                     ic->escribirComentarioProducto(opU, opP, texto);
                 }
                 break;
             }
-            case 9:{
+            case 9:
+            {
                 int opU;
-                cout << "\t<>USUARIOS<>\n\n";
+                centrarTexto("<>USUARIOS<>\n");
                 cout << ic->listarUsuarios();
-                do{
-                cout << "<> Ingrese opción: ";
-                cin >> opU;
-                }while(opU<1);
+                do {
+                    cout << "<> Ingrese opción: ";
+                    cin >> opU;
+                } while (opU < 1);
 
                 int opC;
-                cout << "\t<>COMENTARIOS<>\n\n";
-                ic->listarComentariosUsuario(opU);
-                do{
-                cout << "<> Ingrese opción: ";
-                cin >> opC;
-                }while(opC<1);
-                
-                ic->eliminarComentarioUsuario(opU,opC);
-                
+                centrarTexto("<>COMENTARIOS<>\n");
+                cout << ic->listarComentariosUsuario(opU);
+                do {
+                    cout << "<> Ingrese opción: ";
+                    cin >> opC;
+                } while (opC < 1);
+
+                ic->eliminarComentarioUsuario(opU, opC);
+
                 break;
             }
             case 10:

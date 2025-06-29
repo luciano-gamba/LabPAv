@@ -4,9 +4,11 @@
 #include "DTProducto.h"
 #include "compra_producto.h"
 #include "COMENTARIO.h"
+#include "ICollection/interfaces/ICollection.h"
 #include "ICollection/interfaces/ICollectible.h"
 #include "ICollection/interfaces/IDictionary.h"
 #include "ICollection/interfaces/IIterator.h"
+#include "ICollection/collections/List.h"
 #include <set>
 //#include "VENDEDOR.h"
 using namespace std;
