@@ -17,7 +17,7 @@ public:
     date getFechaNacCliente();
     string getCiudad();
     DataDireccion* getDireccion();
-    COMPRA* getCompraActiva();
+    COMPRA* getCompraActiva(CLIENTE* cli);
     void setCompraActiva(COMPRA* c);
     void setNicknameCliente(string);
     void setContraseniaCliente(string);

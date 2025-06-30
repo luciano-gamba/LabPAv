@@ -523,7 +523,7 @@ void CONTROLADOR::selectNicknameC(int indiceCli){
         cli = (CLIENTE*) it->getCurrent();
         delete it;
 
-        this->com = cli->getCompraActiva();
+        this->com = cli->getCompraActiva(cli);
     } else {
         cout << "Cliente no Encontrado" << endl;
     }
@@ -532,7 +532,7 @@ void CONTROLADOR::selectNicknameC(int indiceCli){
 void CONTROLADOR::agregarProducto(int indice, int cant) {
     int control = this->misProductos->getSize();
     if(indice > control or indice < 1){
-        cout << "VENDEDOR SELECCIONADO NO VÁLIDO" << endl;
+        cout << "PRODUCTO SELECCIONADO NO VALIDO" << endl;
     }else{
         IIterator* iter = this->misProductos->getIterator();
         PRODUCTO* p;

@@ -53,13 +53,14 @@ void CLIENTE::setCompraActiva(COMPRA* c) {
    this->compraActiva = c;
 }
 
-COMPRA* CLIENTE::getCompraActiva() {
+COMPRA* CLIENTE::getCompraActiva(CLIENTE* cli) {
     COMPRA* comp = new COMPRA();
     if(this->misCompras == nullptr){
         this->misCompras = new List();
     }
     int id = this->misCompras->getSize()+1;
     comp->setId(id);
+    
     return comp;
 }
 

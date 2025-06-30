@@ -28,6 +28,7 @@ string compra_producto::dameCompra(){
     string comProd;
     COMPRA* c;
     c = (COMPRA*)this->miCompra;
+    cout << c->getNickname() << endl << "ANDO ACA";
     date f = c->getFecha();
     comProd = to_string(c->getid()) + " " + c->getNickname() + " " + to_string(f.getDia()) + " " + to_string(f.getMes()) + " " + to_string(f.getAnio());
     return comProd;

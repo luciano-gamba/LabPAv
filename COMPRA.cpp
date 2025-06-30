@@ -39,6 +39,16 @@ date COMPRA::getFechaCompra(){
  float COMPRA::montoCompra(){
     return this->monto;
  }
+ 
+ void COMPRA::setTodo(int idCompra, date fechaCompra, float monto){
+     this->fechaCompra = fechaCompra;
+     this->monto = monto;
+     this->idCompra = idCompra;
+ }
+ 
+ void COMPRA::setMiCliente(CLIENTE* cli){
+     this->miCliente = cli;
+ }
 
 string COMPRA::getItems() {
     string retorno;
@@ -70,6 +80,7 @@ void COMPRA::agregarProducto(int codigoProd, int cant, PRODUCTO* p) {
     if(this->productosCompra == nullptr){
         this->productosCompra = new OrderedDictionary;
     }
+    this->setFechaCompra();
     compra_producto* cp = new compra_producto(p, cant, this);
     IKey* ik = new Integer(codigoProd);
     this->productosCompra->add(ik, cp);

@@ -24,6 +24,8 @@ public:
     void setMontoCompra(float);
     void setCP();
     void setId(int id);
+    void setTodo(int idCompra, date fechaCompra, float monto);
+    void setMiCliente(CLIENTE* cli);
        
     int getid();
     string getNickname();
