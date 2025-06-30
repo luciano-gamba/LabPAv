@@ -71,20 +71,20 @@ int main(int argc, char** argv) {
                 cin.ignore();
                 getline(cin, nick);
 
-                cout << "Ingrese fecha de nacimiento: " << endl;
+                cout << "Ingrese Fecha de Nacimiento: " << endl;
                 date fecha;
                 fecha.SetearFecha();  
                 
-                cout << "Ingrese contraseña: ";
+                cout << "Ingrese Contrasenia: ";
                 string contr;
                 cin.ignore();
                 getline(cin, contr);
                 if(opcion1==1){
-                    cout << "Ingrese ciudad: ";
+                    cout << "Ingrese Ciudad: ";
                     string ciudad;
                     getline(cin, ciudad);
                     
-                    cout << "Ingrese direccion: " << endl;
+                    cout << "Ingrese Direccion: " << endl;
                     cout << "Nro Puerta: ";
                     int numPuerta;
                     cin >> numPuerta;
@@ -108,7 +108,7 @@ int main(int argc, char** argv) {
                 }
                 cout << "\nPresione Enter para continuar...";
                 cin.ignore();
-                cin.get();
+                //cin.get();
                 break;
             }
             case 2:{
@@ -130,7 +130,7 @@ int main(int argc, char** argv) {
                     cout << "\t<>VENDEDORES<>\n\nNo existen vendedores.\n\n";
                 }else{
                     cout << v << endl;
-                    cout << "Elige un vendedor válido: ";
+                    cout << "Elige un vendedor valido: ";
                     int opcion3 = 0;
                     cin >> opcion3;
                     cout << "Ingresa el nombre del producto: ";
@@ -297,7 +297,7 @@ int main(int argc, char** argv) {
                 ic->SelectProductoProm(codigoP,nomProm,cantMini,porcentajeDesc);
                 
                 int opQuiere;
-                cout<<"\n\n¿Quiere seguir ingresando productos a la promocion?(1:si/2:no) :"<<endl;
+                cout<<"\n\n¿Quiere seguir ingresando productos a la promocion?(1:SI/2:NO) :"<<endl;
                 cin >> opQuiere;
                 while(opQuiere>2 or opQuiere<1) {
                     cout<<"\n\nOpcion incorrecta(1:si/2:no) :"<<endl;
@@ -415,7 +415,7 @@ int main(int argc, char** argv) {
                 centrarTexto("<>USUARIOS<>\n");
                 cout << ic->listarUsuarios();
                 do {
-                    cout << "<> Ingrese opción: ";
+                    cout << "<> Ingrese opcion: ";
                     cin >> opU;
                 } while (opU < 1);
 
@@ -423,7 +423,7 @@ int main(int argc, char** argv) {
                 centrarTexto("<>PRODUCTOS<>\n");
                 cout << ic->ListarProductos();
                 do {
-                    cout << "<> Ingrese opción: ";
+                    cout << "<> Ingrese opcion: ";
                     cin >> opP;
                 } while (opP < 1);
 
@@ -439,7 +439,7 @@ int main(int argc, char** argv) {
                     centrarTexto("<>COMENTARIOS<>\n");
                     cout << ic->listarComentariosProducto(opP);
                     do {
-                        cout << "<> Ingrese opción: ";
+                        cout << "<> Ingrese opcion: ";
                         cin >> opC;
                     } while (opC < 1);
 
@@ -488,7 +488,7 @@ int main(int argc, char** argv) {
                 }else{
                     cout << v << endl;
                     string opcion3;
-                    cout << "Elige un vendedor válido (NOMBRE no numero): ";
+                    cout << "Elige un vendedor valido (NOMBRE no numero): ";
                     cin >> opcion3;
                     string PP;
                     
@@ -542,14 +542,14 @@ int main(int argc, char** argv) {
                 cout << usu;
                 
                 if(usu.empty()){
-                    cout << "No hay usuarios ingresados" << endl;
+                    cout << "No hay usuarios Ingresados" << endl;
                     getchar();
                     getchar();
                     break;
                 }
                 
                 string nick;
-                cout << "Mandame el nick pa: ";
+                cout << "Ingrese su Nick: ";
                 cin >> nick;
                 
                 if(usu.find(nick) != string::npos){
@@ -573,6 +573,7 @@ int main(int argc, char** argv) {
                 break;
             }
         }
+        cout<<"\nNOS VEMOS!!!"<<endl;
     }
     
     return 0;

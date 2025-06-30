@@ -47,11 +47,11 @@ void date::SetearFecha(){ //La pense y escribi por si alguien quiere ingresar un
         cout<< "Mes invalido, ingrese nuevamente: ";
         cin >> mes;
     }
-    cout << "Año: " << endl;
+    cout << "Anio: " << endl;
     int anio;
     cin >> anio;
     while(anio < 1900){
-        cout<< "Año invalido, ingrese nuevamente: ";
+        cout<< "Anio invalido, ingrese nuevamente: ";
         cin >> anio;
     }
     this->dia=dia;

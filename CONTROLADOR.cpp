@@ -113,7 +113,7 @@ void CONTROLADOR::responderComentarioProducto(int opU, int opP, int opC, string 
     int controlP = this->misProductos->getSize();   
     if (controlU < opU || controlP < opP){
         
-        cout << endl << "OPCIONES NO VÁLIDAS - COMENTARIO NO GUARDADO" << endl << endl;
+        cout << endl << "OPCIONES NO VALIDAS - COMENTARIO NO GUARDADO" << endl << endl;
         cout << "VOLVER AL MENU:  ";
         string s;
         getline(cin,s);
@@ -143,7 +143,7 @@ void CONTROLADOR::responderComentarioProducto(int opU, int opP, int opC, string 
         int controlC = p->getSizeMisComentarios(); 
         if(controlC < opC){
             
-            cout << endl << "OPCIONES NO VÁLIDAS - COMENTARIO NO GUARDADO" << endl << endl;
+            cout << endl << "OPCIONES NO VALIDAS - COMENTARIO NO GUARDADO" << endl << endl;
             cout << "VOLVER AL MENU:  ";
             string s;
             getline(cin,s);
@@ -155,7 +155,7 @@ void CONTROLADOR::responderComentarioProducto(int opU, int opP, int opC, string 
             p->asignarComentarioAProd(c);
             u->asignarComentarioAUsu(c);
 
-            cout << endl << "OPCIONES VÁLIDAS - COMENTARIO GUARDADO" << endl << endl;
+            cout << endl << "OPCIONES VALIDAS - COMENTARIO GUARDADO" << endl << endl;
             cout << "VOLVER AL MENU:  ";
             string s;
             getline(cin, s);
@@ -171,7 +171,7 @@ void CONTROLADOR::escribirComentarioProducto(int opU, int opP, string texto){
     int controlP = this->misProductos->getSize();
    
     if (controlU < opU || controlP < opP){
-        cout << endl << "OPCIONES NO VÁLIDAS - COMENTARIO NO GUARDADO" << endl << endl;
+        cout << endl << "OPCIONES NO VALIDAS - COMENTARIO NO GUARDADO" << endl << endl;
         cout << "VOLVER AL MENU:  ";
         string s;
         getline(cin,s);
@@ -200,7 +200,7 @@ void CONTROLADOR::escribirComentarioProducto(int opU, int opP, string texto){
         p->asignarComentarioAProd(c);
         u->asignarComentarioAUsu(c);
         
-        cout << endl << "OPCIONES VÁLIDAS - COMENTARIO GUARDADO" << endl << endl;
+        cout << endl << "OPCIONES VALIDAS - COMENTARIO GUARDADO" << endl << endl;
         cout << "VOLVER AL MENU:  ";
         string s;
         getline(cin,s);
@@ -214,7 +214,7 @@ void CONTROLADOR::eliminarComentarioUsuario(int opU, int opC){
     int controlU = this->misUsuarios->getSize();
    
     if (controlU < opU){
-        cout << endl << "OPCIONES NO VÁLIDAS - COMENTARIO NO BORRADO" << endl << endl;
+        cout << endl << "OPCIONES NO VALIDAS - COMENTARIO NO BORRADO" << endl << endl;
         cout << "VOLVER AL MENU:  ";
         string s;
         getline(cin,s);
@@ -296,7 +296,7 @@ string CONTROLADOR::listarInfoBasica(string nick){
 void CONTROLADOR::ingresoProducto(int vendedor, DTProducto* datosProd){
     int control = this->misVendedores->getSize();
     if(vendedor > control or vendedor < 1){
-        cout << "VENDEDOR SELECCIONADO NO VÁLIDO" << endl;
+        cout << "VENDEDOR SELECCIONADO NO VALIDO" << endl;
     }else{
         IIterator* iter = this->misVendedores->getIterator();
         VENDEDOR* v;
@@ -396,7 +396,7 @@ string CONTROLADOR::ListaVendedores(){
 string CONTROLADOR::ListarProductosV(int Vendor,string nombreProm,string descripcionProm,date fechaVenProm){
     int control = this->misVendedores->getSize();
     if(Vendor > control or Vendor < 1){
-        return "VENDEDOR SELECCIONADO NO VÁLIDO";
+        return "VENDEDOR SELECCIONADO NO VALIDO";
     }
     IIterator* iter = this->misVendedores->getIterator();
     VENDEDOR* vend;

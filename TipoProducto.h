@@ -16,7 +16,7 @@ inline string TipoProductoToString(TipoProducto tipo) {
             break;
         }
         case TipoProducto::Electrodomesticos:{ 
-            return "Electrodomésticos";
+            return "Electrodomesticos";
             break;
         }
         case TipoProducto::Otros: {
