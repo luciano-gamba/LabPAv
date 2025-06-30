@@ -509,44 +509,50 @@ string CONTROLADOR::listarNicknamesC(){
     
     return listar;
 }
-void CONTROLADOR::selectNicknameC(string nick){
-    string seleccion;
-    IKey* ikCliente = new String(nick.c_str());
-    CLIENTE* cliente = (CLIENTE*)this->misClientes->find(ikCliente);
-    
-    if (cliente == nullptr) {
-       cout<<"Cliente no Encontrado"<<endl;
-   }
+void CONTROLADOR::selectNicknameC(int indiceCli){
+        
+      
+    int controlC = this->misClientes->getSize();
+    if (controlC >= indiceCli) {
+        IIterator* it = this->misClientes->getIterator();
+        CLIENTE* cli;
+        while (indiceCli != 1) {
+            indiceCli--;
+            it->next();
+        }
+        cli = (CLIENTE*) it->getCurrent();
+        delete it;
 
-   if(cliente->getCompraActiva() != nullptr){
-        //delete cliente->getCompraActiva();
-   }
-   cliente->setCompraActiva(COMPRA::create());
-
-   cout<<"Compra Iniciada" + nick + "\n\n";
+        this->com = cli->getCompraActiva();
+    } else {
+        cout << "Cliente no Encontrado" << endl;
+    }
 }
-void CONTROLADOR::agregarProducto(int codigoProd, int cant) {
-    IKey* key = new Integer(codigoProd);
-    cout << "HASTA ACA ANDA 1\n";
-    //if (!this->misProductos->member(key)) {
-    //    cout << "HASTA ACA ANDA 1.1\n";
-    //    cout << "Producto no encontrado.\n";
-    //    return;
-    //}
-    
-    PRODUCTO* p = (PRODUCTO*)this->misProductos->find(key);
 
-   // if (p == nullptr) {
-   //    cout << "Error al recuperar el producto.\n";
-   //     return;
-   //}
-    cout << "HASTA ACA ANDA 1.2\n";
-    //crear compra?
-    //this->com;
-    cout << "HASTA ACA ANDA 2\n";
-    this->com = new COMPRA;
-    this->com->agregarProducto(codigoProd, cant, p);
-    this->com->setFechaCompra();
+void CONTROLADOR::agregarProducto(int indice, int cant) {
+    int control = this->misProductos->getSize();
+    if(indice > control or indice < 1){
+        cout << "VENDEDOR SELECCIONADO NO VÁLIDO" << endl;
+    }else{
+        IIterator* iter = this->misProductos->getIterator();
+        PRODUCTO* p;
+        while(indice != 1){
+            iter->next();
+            indice--;
+        }
+        p = (PRODUCTO*) iter->getCurrent();
+
+        // if (p == nullptr) {
+        //    cout << "Error al recuperar el producto.\n";
+        //     return;
+        //}
+         //crear compra?
+         //this->com;
+         //this->com = new COMPRA;
+         this->com->agregarProducto(p->getCodigo(), cant, p);
+         this->com->setFechaCompra();
+    }
+    
 }
 
  void CONTROLADOR::mostrarDetalleCompra() {
@@ -570,4 +576,17 @@ void CONTROLADOR::getUsuario(string nick){
     USUARIO* u;
     IKey* ik = new String(nick.c_str());
     u = (USUARIO*)this->misUsuarios->find(ik);
+}
+
+void CONTROLADOR::confirmarCompra(int indiceCli) {
+    IIterator* it = this->misClientes->getIterator();
+    CLIENTE* cli;
+    while (indiceCli != 1) {
+        indiceCli--;
+        it->next();
+    }
+    cli = (CLIENTE*) it->getCurrent();
+    delete it;
+
+    cli->agregarMisCompras(this->com);
 }
