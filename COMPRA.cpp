@@ -61,12 +61,16 @@ string COMPRA::getItems() {
  void COMPRA::setMontoCompra(float m){
     this->monto=m;
  }
+ 
+ void COMPRA::setId(int id){
+    this->idCompra = id;
+}
 
 void COMPRA::agregarProducto(int codigoProd, int cant, PRODUCTO* p) {
     if(this->productosCompra == nullptr){
         this->productosCompra = new OrderedDictionary;
     }
-    compra_producto* cp = new compra_producto(p, cant);
+    compra_producto* cp = new compra_producto(p, cant, this);
     IKey* ik = new Integer(codigoProd);
     this->productosCompra->add(ik, cp);
     p->agregar(cp);

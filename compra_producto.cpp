@@ -13,9 +13,11 @@ compra_producto::compra_producto(const compra_producto& orig) {
 compra_producto::~compra_producto() {
 }
 
-compra_producto::compra_producto(PRODUCTO* p, int cant){
+compra_producto::compra_producto(PRODUCTO* p, int cant, COMPRA* c){
     this->prod = p;
     this->cantidad = cant;
+    this->miCompra = c;
+    this->recibido = false;
 }
 
 bool compra_producto::getRecibido(){

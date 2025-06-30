@@ -23,6 +23,7 @@ public:
     void setFechaCompra();
     void setMontoCompra(float);
     void setCP();
+    void setId(int id);
        
     int getid();
     string getNickname();

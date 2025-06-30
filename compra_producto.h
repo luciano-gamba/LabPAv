@@ -12,7 +12,7 @@ public:
     compra_producto();
     compra_producto(const compra_producto& orig);
     virtual ~compra_producto();
-    compra_producto(PRODUCTO* p, int cant);
+    compra_producto(PRODUCTO* p, int cant, COMPRA* c);
     bool getRecibido();
     string dameCompra();
     bool getsi_idCompra(int idCompra);
@@ -24,7 +24,7 @@ public:
 private:
     PRODUCTO* prod;
     int cantidad;
-    bool recibido = false;
+    bool recibido;
     date fechaRecibida;
     COMPRA* miCompra;
 };

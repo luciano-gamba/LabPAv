@@ -55,6 +55,11 @@ void CLIENTE::setCompraActiva(COMPRA* c) {
 
 COMPRA* CLIENTE::getCompraActiva() {
     COMPRA* comp = new COMPRA();
+    if(this->misCompras == nullptr){
+        this->misCompras = new List();
+    }
+    int id = this->misCompras->getSize()+1;
+    comp->setId(id);
     return comp;
 }
 
@@ -67,4 +72,26 @@ CLIENTE::CLIENTE(DataCliente* datosC, string contrasenia){
 }
 void CLIENTE::agregarMisCompras(COMPRA* com){
     this->misCompras->add(com);
+}
+
+string CLIENTE::getMisCompras(){
+    if(this->misCompras == nullptr){
+        this->misCompras = new List();
+    }
+    IIterator* it = this->misCompras->getIterator();
+    COMPRA* c;
+    string retorno;
+    
+    while(it->hasCurrent()){
+        c = (COMPRA*)it->getCurrent();
+        
+        date f = c->getFechaCompra();
+        float m = c->montoCompra();
+        string items = c->getItems();
+        
+        retorno = retorno + "\n=== RESUMEN DE LA COMPRA ===\n" + "id compra: " + to_string(c->getid()) + "\n" + "Fecha de compra: " + f.getInfoDate() + "\n" + "Productos:\n" + items + "\n" + "Monto total: $" + to_string(m) + "\n" + "=============================\n";
+        
+        it->next();
+    }
+    return retorno;
 }

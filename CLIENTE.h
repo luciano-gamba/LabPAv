@@ -25,11 +25,12 @@ public:
     void setCiudad(string);
     void setDireccion(DataDireccion*);
     void agregarMisCompras(COMPRA*);
+    string getMisCompras();
 private:
     COMPRA* compraActiva;
     string ciudad;
     DataDireccion* direccion;  
-    ICollection* misCompras;
+    ICollection* misCompras = nullptr;
 };
 
 #endif /* CLIENTE_H */

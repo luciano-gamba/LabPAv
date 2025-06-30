@@ -119,8 +119,8 @@ int main(int argc, char** argv) {
                 cout << "\nPresione Enter para continuar...";
                 cin.ignore();
                 cin.get();
+                break;
                 }
-                break; 
             case 3:{
                 limpiarPantalla();
                 centrarTexto("=== ALTA DE PRODUCTO ===");
@@ -407,6 +407,7 @@ int main(int argc, char** argv) {
                 cout << "\nPresione Enter para continuar...";
                 cin.ignore();
                 cin.get();
+                ic->confirmarCompra(indiceCli);
                 break;
             }
             case 8:
@@ -530,6 +531,8 @@ int main(int argc, char** argv) {
                     
                     if (CPP.find(to_string(idCompra)) != string::npos){
                         ic->selectCompraProductoPendiente(idCompra);
+                    }else{
+                        break;
                     }
                 }
                 break;
@@ -559,18 +562,9 @@ int main(int argc, char** argv) {
                 }else{
                     break;
                 }
-                
-               USUARIO* usuario = new USUARIO; //lo tengo que cambiar!!!!!!!!!!!
-                
-                if (dynamic_cast<VENDEDOR*>(usuario)) {
-                   cout << ic->ListarProductos();
-                   cout << ic->solicitarListaPromociones();
-                   getchar();
-                   getchar();
-                }else{
-                    //cout << ic->listarCompras(); -FALTA-
-                }
-                break;
+                cin.ignore();
+                ic->listarSegun(nick);
+                cin.ignore();
             }
         }
         cout<<"\nNOS VEMOS!!!"<<endl;

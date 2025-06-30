@@ -75,7 +75,7 @@ string VENDEDOR::dameProductosPendientes(){
     IIterator* it=this->misProductos->getIterator();
     for(it; it->hasCurrent();it->next()){
       p = (PRODUCTO*)it->getCurrent();
-      pendiente = p->pendienteEnvio();
+      pendiente = !p->pendienteEnvio();
       if(pendiente == true){
           productosPendientes = productosPendientes + to_string(p->getCodigo()) + " " + p->getNombre() + "\n";
       }

@@ -42,6 +42,7 @@ public:
     string listarUsuariosCompletos();
     string listarInfoBasica(string);
     void getUsuario(string nick);
+    void listarSegun(string nick);
 //PRODUCTO
     void ingresoProducto(int vendedor, DTProducto* datosProd);
     string ListarProductos();

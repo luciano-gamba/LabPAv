@@ -590,3 +590,25 @@ void CONTROLADOR::confirmarCompra(int indiceCli) {
 
     cli->agregarMisCompras(this->com);
 }
+
+void CONTROLADOR::listarSegun(string nick){
+    IKey* ik = new String(nick.c_str());
+    USUARIO* u = (USUARIO*)this->misUsuarios->find(ik);
+
+    CLIENTE* c = dynamic_cast<CLIENTE*>(u);
+    if (c != nullptr) {
+        cout << c->getMisCompras();
+        getchar();
+        getchar();
+        getchar();
+    } else {
+        VENDEDOR* v = dynamic_cast<VENDEDOR*>(u);
+        if (v != nullptr) {    
+            cout << this->ListarProductos();
+            cout << this->solicitarListaPromociones();
+            getchar();
+            getchar();
+            getchar();
+        }
+    }
+}
